@@ -1,0 +1,27 @@
+Unknown exception: (code 0xe06d7363) at address 7609B4C2 in thread 2DB0
+Module: KERNELBASE.dll
+Logical Address: 0001:0014A4C2
+
+0019F168 7609B4C2 RaiseException+62
+Params: E06D7363 00000001 00000003 0019F194
+
+StackWalk failed (error 299)
+
+EAX:0019F110 EBX:1F7724DF ECX:00000003 EDX:00000000 ESI:006883B0 EDI:019A9161
+EIP:7609B4C2 ESP:0019F110  EBP:0019F168
+CS:0023 SS:002B DS:002B ES:002B FS:0053 GS:002B
+Flags:00200212
+
+Windows Ver: NT 6.2  Build 9200
+DDraw Ver: 10.0.22621.1
+DSound Ver: 10.0.22621.1
+
+Product: Peggle
+Version: 1.01
+Time Loaded: 01:50:59
+Fullscreen: No
+Primary ThreadId: 2DB0
+Times Played: 0
+Build Num: 0
+Build Date: 
+

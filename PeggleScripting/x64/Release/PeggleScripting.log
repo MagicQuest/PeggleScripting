@@ -1,0 +1,59 @@
+﻿  dllmain.cpp
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(4,9): warning C4005: 'V8_ENABLE_SANDBOX': macro redefinition
+      E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(4,9):
+      'V8_ENABLE_SANDBOX' previously declared on the command line
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(5,9): warning C4005: 'V8_COMPRESS_POINTERS': macro redefinition
+      E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(5,9):
+      'V8_COMPRESS_POINTERS' previously declared on the command line
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(7,9): warning C4005: 'V8_31BIT_SMIS_ON_64BIT_ARCH': macro redefinition
+      E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(7,9):
+      'V8_31BIT_SMIS_ON_64BIT_ARCH' previously declared on the command line
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(8,9): warning C4005: '_CRT_SECURE_NO_WARNINGS': macro redefinition
+      E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(8,9):
+      '_CRT_SECURE_NO_WARNINGS' previously declared on the command line
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(4,9): warning C4603: 'V8_ENABLE_SANDBOX': macro is not defined or definition is different after precompiled header use
+  (compiling source file '/dllmain.cpp')
+      E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(4,9):
+      Add macro to precompiled header instead of defining here
+      E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(10,1):
+      use of precompiled header
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(5,9): warning C4603: 'V8_COMPRESS_POINTERS': macro is not defined or definition is different after precompiled header use
+  (compiling source file '/dllmain.cpp')
+      E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(5,9):
+      Add macro to precompiled header instead of defining here
+      E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(10,1):
+      use of precompiled header
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(7,9): warning C4603: 'V8_31BIT_SMIS_ON_64BIT_ARCH': macro is not defined or definition is different after precompiled header use
+  (compiling source file '/dllmain.cpp')
+      E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(7,9):
+      Add macro to precompiled header instead of defining here
+      E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(10,1):
+      use of precompiled header
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(8,9): warning C4603: '_CRT_SECURE_NO_WARNINGS': macro is not defined or definition is different after precompiled header use
+  (compiling source file '/dllmain.cpp')
+      E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(8,9):
+      Add macro to precompiled header instead of defining here
+      E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(10,1):
+      use of precompiled header
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(182,23): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(182,23): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(182,23): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(182,23): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(182,23): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+     Creating library E:\Users\megal\source\repos\PeggleScripting\x64\Release\PeggleScripting.lib and object E:\Users\megal\source\repos\PeggleScripting\x64\Release\PeggleScripting.exp
+  Generating code
+  0 of 707 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  PeggleScripting.vcxproj -> E:\Users\megal\source\repos\PeggleScripting\x64\Release\PeggleScripting.dll

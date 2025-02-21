@@ -1,0 +1,433 @@
+﻿  dllmain.cpp
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(7,9): warning C4005: 'V8_31BIT_SMIS_ON_64BIT_ARCH': macro redefinition
+      E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(7,9):
+      'V8_31BIT_SMIS_ON_64BIT_ARCH' previously declared on the command line
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(8,9): warning C4005: '_CRT_SECURE_NO_WARNINGS': macro redefinition
+      E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(8,9):
+      '_CRT_SECURE_NO_WARNINGS' previously declared on the command line
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(4,9): warning C4603: 'V8_ENABLE_SANDBOX': macro is not defined or definition is different after precompiled header use
+  (compiling source file '/dllmain.cpp')
+      E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(4,9):
+      Add macro to precompiled header instead of defining here
+      E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(10,1):
+      use of precompiled header
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(5,9): warning C4603: 'V8_COMPRESS_POINTERS': macro is not defined or definition is different after precompiled header use
+  (compiling source file '/dllmain.cpp')
+      E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(5,9):
+      Add macro to precompiled header instead of defining here
+      E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(10,1):
+      use of precompiled header
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(7,9): warning C4603: 'V8_31BIT_SMIS_ON_64BIT_ARCH': macro is not defined or definition is different after precompiled header use
+  (compiling source file '/dllmain.cpp')
+      E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(7,9):
+      Add macro to precompiled header instead of defining here
+      E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(10,1):
+      use of precompiled header
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(8,9): warning C4603: '_CRT_SECURE_NO_WARNINGS': macro is not defined or definition is different after precompiled header use
+  (compiling source file '/dllmain.cpp')
+      E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(8,9):
+      Add macro to precompiled header instead of defining here
+      E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(10,1):
+      use of precompiled header
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(151,11): warning C4244: 'argument': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(151,11): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(151,11): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(151,11): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(151,11): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(163,23): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(163,23): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(163,23): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(163,23): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(163,23): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(266,16): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(266,16): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(266,16): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(266,16): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(266,16): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(268,12): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(268,12): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(268,12): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(268,12): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(268,12): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(274,16): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(274,16): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(274,16): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(274,16): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(274,16): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(306,20): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(306,20): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(306,20): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(306,20): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(306,20): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(309,20): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(309,20): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(309,20): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(309,20): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(309,20): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(312,19): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(312,19): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(312,19): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(312,19): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(312,19): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(447,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(447,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(447,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(447,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(447,5): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(447,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(447,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(447,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(447,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(447,5): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(448,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(448,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(448,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(448,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(448,5): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(448,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(448,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(448,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(448,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(448,5): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(452,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(452,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(452,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(452,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(452,5): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(452,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(452,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(452,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(452,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(452,5): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(453,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(453,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(453,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(453,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(453,5): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(453,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(453,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(453,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(453,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(453,5): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(455,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(455,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(455,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(455,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(455,5): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(455,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(455,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(455,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(455,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(455,5): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(456,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(456,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(456,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(456,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(456,5): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(456,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(456,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(456,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(456,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(456,5): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(458,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(458,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(458,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(458,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(458,5): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(458,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(458,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(458,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(458,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(458,5): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(459,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(459,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(459,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(459,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(459,5): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(459,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(459,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(459,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(459,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(459,5): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(460,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(460,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(460,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(460,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(460,5): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(460,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(460,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(460,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(460,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(460,5): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(461,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(461,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(461,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(461,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(461,5): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(461,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(461,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(461,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(461,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(461,5): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(462,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(462,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(462,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(462,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(462,5): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(462,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(462,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(462,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(462,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(462,5): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(463,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(463,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(463,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(463,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(463,5): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(463,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(463,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(463,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(463,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(463,5): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(465,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(465,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(465,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(465,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(465,5): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(465,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(465,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(465,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(465,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(465,5): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(497,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(497,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(497,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(497,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(497,5): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(497,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(497,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(497,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(497,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(497,5): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(509,90): warning C4244: 'argument': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(509,90): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(509,90): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(509,90): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(509,90): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(509,70): warning C4244: 'argument': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(509,70): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(509,70): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(509,70): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(509,70): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(509,50): warning C4244: 'argument': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(509,50): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(509,50): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(509,50): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(509,50): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(513,66): warning C4244: 'argument': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(513,66): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(513,66): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(513,66): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(513,66): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(513,46): warning C4244: 'argument': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(513,46): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(513,46): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(513,46): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(513,46): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(513,26): warning C4244: 'argument': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(513,26): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(513,26): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(513,26): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(513,26): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(527,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(527,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(527,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(527,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(527,5): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(527,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(527,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(527,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(527,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(527,5): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(528,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(528,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(528,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(528,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(528,5): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(528,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(528,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(528,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(528,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(528,5): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(529,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(529,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(529,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(529,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(529,5): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(529,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(529,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(529,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(529,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(529,5): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(542,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(542,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(542,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(542,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(542,9): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(542,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(543,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(543,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(543,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(543,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(543,9): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(543,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(544,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(544,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(544,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(544,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(544,9): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(544,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(546,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(546,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(546,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(546,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(546,9): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(546,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(547,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(547,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(547,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(547,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(547,9): warning C4244:         ]
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(547,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/dllmain.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\dllmain.cpp(739,31): warning C4477: 'snprintf' : format string '%u' requires an argument of type 'unsigned int', but variadic argument 1 has type 'void *'
+  (compiling source file '/dllmain.cpp')
+  
+     Creating library E:\Users\megal\source\repos\PeggleScripting\Release\PeggleScripting.lib and object E:\Users\megal\source\repos\PeggleScripting\Release\PeggleScripting.exp
+  Generating code
+  0 of 907 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  PeggleScripting.vcxproj -> E:\Users\megal\source\repos\PeggleScripting\Release\PeggleScripting.dll
