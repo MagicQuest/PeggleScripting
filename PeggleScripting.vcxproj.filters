@@ -21,10 +21,16 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="v8helper.h">
+    <ClInclude Include="FileWatcher.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FileWatcher.h">
+    <ClInclude Include="v8helper2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Peggle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dllmain.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -35,10 +41,13 @@
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="v8helper.cpp">
+    <ClCompile Include="FileWatcher.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FileWatcher.cpp">
+    <ClCompile Include="v8helper2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Peggle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,16 +1,16 @@
-Unknown exception: (code 0xe06d7363) at address 7609B4C2 in thread 2DB0
-Module: KERNELBASE.dll
-Logical Address: 0001:0014A4C2
+Exception: Access Violation (code 0xc0000005) at address 52B466B0 in thread 99AC
+Module: PeggleScripting.dll
+Logical Address: 0001:00D456B0
 
-0019F168 7609B4C2 RaiseException+62
-Params: E06D7363 00000001 00000003 0019F194
+274AFAD4 52B466B0 Peggle::InitPeggleGlobals+30
+Params: D1E8F503 52B4C9F0 52B4C9F0 24870000
 
 StackWalk failed (error 299)
 
-EAX:0019F110 EBX:1F7724DF ECX:00000003 EDX:00000000 ESI:006883B0 EDI:019A9161
-EIP:7609B4C2 ESP:0019F110  EBP:0019F168
+EAX:00000000 EBX:249DB160 ECX:249DB160 EDX:249DB160 ESI:24A9194C EDI:274AFB44
+EIP:52B466B0 ESP:274AFAAC  EBP:274AFAD4
 CS:0023 SS:002B DS:002B ES:002B FS:0053 GS:002B
-Flags:00200212
+Flags:00010286
 
 Windows Ver: NT 6.2  Build 9200
 DDraw Ver: 10.0.22621.1
@@ -18,9 +18,9 @@ DSound Ver: 10.0.22621.1
 
 Product: Peggle
 Version: 1.01
-Time Loaded: 01:50:59
+Time Loaded: 00:05:03
 Fullscreen: No
-Primary ThreadId: 2DB0
+Primary ThreadId: 97E4
 Times Played: 0
 Build Num: 0
 Build Date: 
