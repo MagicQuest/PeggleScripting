@@ -19,12 +19,17 @@ namespace v8helper2 {
 	extern DWORD threadID;
 
 	extern HANDLE notifyEvent;
+	extern HANDLE waitEvent;
 	extern HANDLE finishEvent;
 	void CreateEvents();
 
+	inline void tellWaitingThreadsToWaitLonger() {
+		SetEvent(v8helper2::waitEvent);
+	}
+
 	extern volatile DWORD notify_id;
 	extern volatile DWORD returnval;
-	void Notify(DWORD id);
+	BOOL Notify(DWORD id);
 
 	DWORD WINAPI SetupLoop(LPVOID lpParam);
 

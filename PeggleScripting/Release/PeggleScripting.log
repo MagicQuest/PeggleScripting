@@ -1,129 +1,329 @@
 ﻿  Peggle.cpp
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(147,16): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(147,16): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(147,16): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(147,16): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(147,16): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(175,16): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(175,16): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(175,16): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(175,16): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(175,16): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(149,12): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(149,12): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(149,12): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(149,12): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(149,12): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(177,12): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(177,12): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(177,12): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(177,12): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(177,12): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(155,16): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(155,16): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(155,16): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(155,16): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(155,16): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(183,16): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(183,16): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(183,16): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(183,16): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(183,16): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(162,16): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(162,16): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(162,16): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(162,16): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(162,16): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(190,16): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(190,16): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(190,16): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(190,16): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(190,16): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(164,12): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(192,12): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(170,16): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(170,16): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(170,16): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(170,16): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(170,16): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(198,16): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(198,16): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(198,16): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(198,16): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(198,16): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(205,20): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(205,20): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(205,20): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(205,20): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(205,20): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(286,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(286,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(286,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(286,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(286,9): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(208,20): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(208,20): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(208,20): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(208,20): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(208,20): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(286,9): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(286,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(286,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(286,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(286,9): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(213,19): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(213,19): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(213,19): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(213,19): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(213,19): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(300,31): warning C4244: '=': conversion from 'T' to 'ULONG_PTR', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(300,31): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(300,31): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(300,31): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(300,31): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(220,30): warning C4244: '=': conversion from 'T' to 'BOOL', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(220,30): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(220,30): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(220,30): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(220,30): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(303,31): warning C4244: '=': conversion from 'T' to 'ULONG_PTR', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(303,31): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(303,31): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(303,31): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(303,31): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(366,42): warning C4244: 'argument': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(366,42): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(366,42): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(366,42): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(366,42): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(309,41): warning C4244: 'argument': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(309,41): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(309,41): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(309,41): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(309,41): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(399,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(399,9): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(399,9): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(399,9): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(399,9): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(323,29): warning C4244: '=': conversion from 'T' to 'ULONG_PTR', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(323,29): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(323,29): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(323,29): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(323,29): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(399,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(326,29): warning C4244: '=': conversion from 'T' to 'ULONG_PTR', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(326,29): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(326,29): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(326,29): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(326,29): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(400,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(400,9): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(400,9): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(400,9): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(400,9): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(356,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(356,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(356,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(356,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(356,9): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(400,9): warning C4244: '=': conversion from 'T' to 'BYTE', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(400,9): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(400,9): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(400,9): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(400,9): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(356,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(401,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(401,9): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(401,9): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(401,9): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(401,9): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(357,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(357,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(357,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(357,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(357,9): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(401,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(357,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(402,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(402,9): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(402,9): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(402,9): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(402,9): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(358,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(358,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(358,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(358,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(358,9): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(402,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(358,9): warning C4244: '=': conversion from 'T' to 'BYTE', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(358,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(358,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(358,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(358,9): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(403,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(403,9): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(403,9): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(403,9): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(403,9): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(359,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(359,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(359,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(359,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(359,9): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(403,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(359,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(360,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(360,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(360,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(360,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(360,9): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(360,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(361,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(361,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(361,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(361,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(361,9): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(361,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(362,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(362,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(362,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(362,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(362,9): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(362,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(363,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(363,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(363,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(363,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(363,9): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(363,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(364,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(364,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(364,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(364,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(364,9): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(364,9): warning C4244: '=': conversion from 'T' to 'BYTE', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(364,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(364,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(364,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(364,9): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(365,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(365,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(365,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(365,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(365,9): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(365,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(368,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(368,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(368,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(368,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(368,9): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(368,9): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(368,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(368,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(368,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(368,9): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(374,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(374,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(374,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(374,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(374,9): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(374,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(375,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(375,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(375,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(375,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(375,9): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(375,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(378,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(378,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(378,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(378,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(378,9): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(378,9): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(378,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(378,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(378,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(378,9): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(380,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(380,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(380,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(380,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(380,9): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(380,9): warning C4244: '=': conversion from 'T' to 'BYTE', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(380,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(380,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(380,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(380,9): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(381,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(381,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(381,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(381,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(381,9): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(381,9): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(381,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(381,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(381,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(381,9): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(382,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(382,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(382,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(382,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(382,9): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(382,9): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(382,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(382,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(382,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(382,9): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(390,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(390,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(390,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(390,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(390,9): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(390,9): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(390,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(390,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(390,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(390,9): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(391,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(391,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(391,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(391,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(391,9): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(391,9): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(391,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(391,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(391,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(391,9): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(395,37): warning C4244: 'argument': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(395,37): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(395,37): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(395,37): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(395,37): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(400,47): warning C4244: 'argument': conversion from 'T' to 'BOOL', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(400,47): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(400,47): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(400,47): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(400,47): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
 E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(404,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
@@ -133,7 +333,11 @@ E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(404,9): warning C4244:   
 E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(404,9): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(404,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(404,9): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(404,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(404,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(404,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(404,9): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
 E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(405,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
@@ -143,133 +347,25 @@ E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(405,9): warning C4244:   
 E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(405,9): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(405,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(405,9): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(405,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(405,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(405,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(405,9): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(406,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(406,9): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(406,9): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(406,9): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(406,9): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(419,36): warning C4244: '=': conversion from 'T' to 'ULONG_PTR', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(419,36): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(419,36): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(419,36): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(419,36): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(406,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(407,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(407,9): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(407,9): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(407,9): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(407,9): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(407,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(410,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(410,9): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(410,9): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(410,9): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(410,9): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(410,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(411,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(411,9): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(411,9): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(411,9): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(411,9): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(411,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(412,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(412,9): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(412,9): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(412,9): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(412,9): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(412,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(413,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(413,9): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(413,9): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(413,9): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(413,9): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(413,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(414,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(414,9): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(414,9): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(414,9): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(414,9): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(414,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(418,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(418,9): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(418,9): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(418,9): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(418,9): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(418,9): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(418,9): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(418,9): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(418,9): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(418,9): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(420,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(420,9): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(420,9): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(420,9): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(420,9): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(420,9): warning C4244: '=': conversion from 'T' to 'BYTE', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(420,9): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(420,9): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(420,9): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(420,9): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(421,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(421,9): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(421,9): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(421,9): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(421,9): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(421,9): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(421,9): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(421,9): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(421,9): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(421,9): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(422,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(422,9): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(422,9): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(422,9): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(422,9): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(422,9): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(422,9): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(422,9): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(422,9): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(422,9): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(422,36): warning C4244: '=': conversion from 'T' to 'ULONG_PTR', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(422,36): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(422,36): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(422,36): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(422,36): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
 E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(425,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
@@ -279,11 +375,7 @@ E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(425,9): warning C4244:   
 E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(425,9): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(425,9): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(425,9): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(425,9): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(425,9): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(425,9): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(425,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   (compiling source file '/Peggle.cpp')
   
 E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(426,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
@@ -293,48 +385,71 @@ E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(426,9): warning C4244:   
 E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(426,9): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(426,9): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(426,9): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(426,9): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(426,9): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(426,9): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(426,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(430,45): warning C4244: 'argument': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(430,45): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(430,45): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(430,45): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(430,45): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(427,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(427,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(427,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(427,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(427,9): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(434,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(434,9): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(434,9): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(434,9): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(434,9): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(427,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(434,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(428,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(428,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(428,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(428,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(428,9): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(435,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(435,9): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(435,9): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(435,9): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(435,9): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(428,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(435,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(430,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(430,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(430,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(430,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(430,9): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(436,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(436,9): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(436,9): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(436,9): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(436,9): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(430,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(436,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(431,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(431,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(431,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(431,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(431,9): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(431,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(438,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(438,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(438,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(438,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(438,9): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(438,9): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(438,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(438,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(438,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(438,9): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(441,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(441,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(441,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(441,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(441,9): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(441,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   (compiling source file '/Peggle.cpp')
   
 E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(442,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
@@ -344,312 +459,114 @@ E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(442,9): warning C4244:   
 E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(442,9): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(442,9): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(442,9): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(442,9): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(442,9): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(442,9): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(442,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(542,40): warning C4244: '=': conversion from 'T' to 'volatile DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(542,40): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(542,40): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(542,40): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(542,40): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(446,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(446,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(446,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(446,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(446,9): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(571,40): warning C4244: '=': conversion from 'T' to 'volatile DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(571,40): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(571,40): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(571,40): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(571,40): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(446,9): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(446,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(446,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(446,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(446,9): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(594,40): warning C4244: '=': conversion from 'T' to 'volatile DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(594,40): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(594,40): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(594,40): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(594,40): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(447,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(447,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(447,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(447,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(447,9): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(676,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(676,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(676,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(676,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(676,5): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(447,9): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(447,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(447,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(447,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(447,9): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(676,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(676,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(676,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(676,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(676,5): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(449,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(449,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(449,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(449,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(449,9): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(677,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(677,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(677,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(677,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(677,5): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(449,9): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(449,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(449,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(449,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(449,9): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(677,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(677,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(677,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(677,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(677,5): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(450,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(450,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(450,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(450,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(450,9): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(678,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(678,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(678,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(678,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(678,5): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(450,9): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(450,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(450,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(450,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(450,9): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(678,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(678,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(678,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(678,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(678,5): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(451,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(451,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(451,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(451,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(451,9): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(679,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(679,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(679,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(679,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(679,5): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(451,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(679,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(679,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(679,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(679,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(679,5): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(452,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(452,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(452,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(452,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(452,9): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(680,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(680,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(680,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(680,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(680,5): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(452,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(680,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(680,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(680,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(680,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(680,5): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(453,9): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(453,9): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(453,9): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(453,9): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(453,9): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(681,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(681,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(681,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(681,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(681,5): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(453,9): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(681,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(681,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(681,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(681,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(681,5): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(563,40): warning C4244: '=': conversion from 'T' to 'volatile DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(563,40): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(563,40): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(563,40): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(563,40): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(682,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(682,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(682,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(682,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(682,5): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(595,40): warning C4244: '=': conversion from 'T' to 'volatile DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(595,40): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(595,40): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(595,40): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(595,40): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(682,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(682,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(682,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(682,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(682,5): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(684,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(684,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(684,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(684,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(684,5): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(684,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(684,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(684,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(684,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(684,5): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(685,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(685,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(685,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(685,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(685,5): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(685,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(685,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(685,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(685,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(685,5): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(686,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(686,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(686,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(686,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(686,5): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(686,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(686,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(686,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(686,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(686,5): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(688,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(688,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(688,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(688,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(688,5): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(688,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(688,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(688,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(688,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(688,5): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(690,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(690,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(690,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(690,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(690,5): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(690,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(690,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(690,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(690,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(690,5): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(694,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(694,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(694,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(694,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(694,5): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(694,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(694,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(694,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(694,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(694,5): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(696,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(696,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(696,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(696,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(696,5): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(696,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(696,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(696,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(696,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(696,5): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(698,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(698,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(698,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(698,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(698,5): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(698,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(698,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(698,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(698,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(698,5): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(699,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(699,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(699,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(699,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(699,5): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(699,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(699,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(699,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(699,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(699,5): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(700,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(700,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(700,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(700,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(700,5): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(700,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(700,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(700,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(700,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(700,5): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(702,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(702,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(702,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(702,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(702,5): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(702,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(702,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(702,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(702,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(702,5): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(703,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(703,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(703,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(703,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(703,5): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(703,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(703,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(703,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(703,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(703,5): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(704,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(704,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(704,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(704,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(704,5): warning C4244:         ]
-  (compiling source file '/Peggle.cpp')
-  
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(704,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(704,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(704,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(704,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(704,5): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(621,40): warning C4244: '=': conversion from 'T' to 'volatile DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(621,40): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(621,40): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(621,40): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(621,40): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
 E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(706,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
@@ -659,7 +576,7 @@ E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(706,5): warning C4244:   
 E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(706,5): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(706,5): warning C4244: '=': conversion from 'T' to 'BYTE', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(706,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
 E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(706,5): warning C4244:         with
 E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(706,5): warning C4244:         [
 E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(706,5): warning C4244:             T=int64_t
@@ -678,6 +595,20 @@ E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(707,5): warning C4244:   
 E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(707,5): warning C4244:         [
 E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(707,5): warning C4244:             T=int64_t
 E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(707,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(708,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(708,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(708,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(708,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(708,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(708,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(708,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(708,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(708,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(708,5): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
 E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(709,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
@@ -722,6 +653,244 @@ E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(711,5): warning C4244:   
 E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(711,5): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(712,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(712,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(712,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(712,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(712,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(712,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(712,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(712,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(712,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(712,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(713,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(713,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(713,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(713,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(713,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(713,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(713,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(713,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(713,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(713,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(714,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(714,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(714,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(714,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(714,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(714,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(714,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(714,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(714,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(714,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(715,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(715,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(715,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(715,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(715,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(715,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(715,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(715,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(715,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(715,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(716,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(716,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(716,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(716,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(716,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(716,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(716,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(716,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(716,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(716,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(717,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(717,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(717,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(717,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(717,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(717,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(717,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(717,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(717,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(717,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(722,24): warning C4244: 'initializing': conversion from 'T' to 'ULONG_PTR', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(722,24): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(722,24): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(722,24): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(722,24): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(729,24): warning C4244: 'initializing': conversion from 'T' to 'ULONG_PTR', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(729,24): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(729,24): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(729,24): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(729,24): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(732,29): warning C4244: '=': conversion from 'T' to 'ULONG_PTR', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(732,29): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(732,29): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(732,29): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(732,29): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(735,29): warning C4244: '=': conversion from 'T' to 'ULONG_PTR', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(735,29): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(735,29): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(735,29): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(735,29): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(738,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(738,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(738,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(738,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(738,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(738,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(738,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(738,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(738,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(738,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(739,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(739,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(739,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(739,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(739,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(739,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(739,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(739,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(739,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(739,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(741,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(741,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(741,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(741,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(741,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(741,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(741,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(741,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(741,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(741,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(743,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(743,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(743,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(743,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(743,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(743,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(743,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(743,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(743,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(743,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(747,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(747,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(747,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(747,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(747,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(747,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(747,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(747,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(747,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(747,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(749,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(749,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(749,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(749,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(749,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(749,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(749,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(749,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(749,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(749,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(751,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(751,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(751,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(751,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(751,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(751,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(751,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(751,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(751,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(751,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(752,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(752,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(752,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(752,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(752,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(752,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(752,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(752,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(752,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(752,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(753,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(753,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(753,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(753,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(753,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(753,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(753,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(753,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(753,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(753,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
 E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(755,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
 E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(755,5): warning C4244:         with
 E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(755,5): warning C4244:         [
@@ -736,121 +905,337 @@ E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(755,5): warning C4244:   
 E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(755,5): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(767,90): warning C4244: 'argument': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(767,90): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(767,90): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(767,90): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(767,90): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(756,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(756,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(756,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(756,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(756,5): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(767,70): warning C4244: 'argument': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(767,70): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(767,70): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(767,70): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(767,70): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(756,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(756,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(756,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(756,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(756,5): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(767,50): warning C4244: 'argument': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(767,50): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(767,50): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(767,50): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(767,50): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(757,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(757,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(757,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(757,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(757,5): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(771,66): warning C4244: 'argument': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(771,66): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(771,66): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(771,66): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(771,66): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(757,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(757,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(757,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(757,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(757,5): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(771,46): warning C4244: 'argument': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(771,46): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(771,46): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(771,46): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(771,46): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(759,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(759,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(759,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(759,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(759,5): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(771,26): warning C4244: 'argument': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(771,26): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(771,26): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(771,26): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(771,26): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(759,5): warning C4244: '=': conversion from 'T' to 'BYTE', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(759,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(759,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(759,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(759,5): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(792,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(792,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(792,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(792,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(792,5): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(760,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(760,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(760,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(760,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(760,5): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(792,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(792,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(792,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(792,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(792,5): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(760,5): warning C4244: '=': conversion from 'T' to 'BYTE', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(760,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(760,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(760,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(760,5): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(793,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(793,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(793,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(793,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(793,5): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(762,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(762,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(762,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(762,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(762,5): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(793,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(793,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(793,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(793,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(793,5): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(762,5): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(794,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(794,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(794,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(794,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(794,5): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(763,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(763,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(763,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(763,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(763,5): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(794,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(794,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(794,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(794,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(794,5): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(763,5): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(795,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(795,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(795,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(795,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(795,5): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(765,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(765,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(765,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(765,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(765,5): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(795,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(795,5): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(795,5): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(795,5): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(795,5): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(765,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(765,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(765,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(765,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(765,5): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(842,41): warning C4244: '=': conversion from 'T' to 'ULONG_PTR', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(842,41): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(842,41): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(842,41): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(842,41): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(766,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(766,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(766,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(766,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(766,5): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(845,41): warning C4244: '=': conversion from 'T' to 'ULONG_PTR', possible loss of data
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(845,41): warning C4244:         with
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(845,41): warning C4244:         [
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(845,41): warning C4244:             T=int64_t
-E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(845,41): warning C4244:         ]
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(766,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(766,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(766,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(766,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(766,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(767,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(767,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(767,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(767,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(767,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(767,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(767,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(767,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(767,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(767,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(770,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(770,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(770,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(770,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(770,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(770,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(770,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(770,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(770,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(770,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(816,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(816,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(816,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(816,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(816,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(816,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(816,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(816,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(816,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(816,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(817,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(817,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(817,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(817,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(817,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(817,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(817,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(817,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(817,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(817,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(823,28): warning C4244: 'initializing': conversion from 'T' to 'ULONG_PTR', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(823,28): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(823,28): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(823,28): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(823,28): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(835,28): warning C4244: 'initializing': conversion from 'T' to 'ULONG_PTR', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(835,28): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(835,28): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(835,28): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(835,28): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(881,23): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(881,23): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(881,23): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(881,23): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(881,23): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(888,34): warning C4244: '=': conversion from 'T' to 'BOOL', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(888,34): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(888,34): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(888,34): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(888,34): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(899,66): warning C4244: 'argument': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(899,66): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(899,66): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(899,66): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(899,66): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(899,46): warning C4244: 'argument': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(899,46): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(899,46): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(899,46): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(899,46): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(899,26): warning C4244: 'argument': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(899,26): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(899,26): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(899,26): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(899,26): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(926,24): warning C4244: 'initializing': conversion from 'T' to 'ULONG_PTR', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(926,24): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(926,24): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(926,24): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(926,24): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(960,70): warning C4244: 'argument': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(960,70): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(960,70): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(960,70): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(960,70): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(960,50): warning C4244: 'argument': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(960,50): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(960,50): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(960,50): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(960,50): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(960,30): warning C4244: 'argument': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(960,30): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(960,30): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(960,30): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(960,30): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(962,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(962,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(962,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(962,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(962,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(962,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(962,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(962,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(962,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(962,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(963,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(963,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(963,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(963,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(963,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(963,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(963,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(963,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(963,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(963,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(964,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(964,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(964,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(964,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(964,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(964,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(964,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(964,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(964,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(964,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(965,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(965,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(965,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(965,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(965,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(965,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(965,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(965,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(965,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(965,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(966,5): warning C4244: 'initializing': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(966,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(966,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(966,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(966,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(966,5): warning C4244: '=': conversion from 'T' to 'DWORD', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(966,5): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(966,5): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(966,5): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(966,5): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(1013,41): warning C4244: '=': conversion from 'T' to 'ULONG_PTR', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(1013,41): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(1013,41): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(1013,41): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(1013,41): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(1016,41): warning C4244: '=': conversion from 'T' to 'ULONG_PTR', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(1016,41): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(1016,41): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(1016,41): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(1016,41): warning C4244:         ]
+  (compiling source file '/Peggle.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(1034,24): warning C4244: 'initializing': conversion from 'T' to 'ULONG_PTR', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(1034,24): warning C4244:         with
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(1034,24): warning C4244:         [
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(1034,24): warning C4244:             T=int64_t
+E:\Users\megal\source\repos\PeggleScripting\Peggle.cpp(1034,24): warning C4244:         ]
   (compiling source file '/Peggle.cpp')
   
      Creating library E:\Users\megal\source\repos\PeggleScripting\Release\PeggleScripting.lib and object E:\Users\megal\source\repos\PeggleScripting\Release\PeggleScripting.exp
   Generating code
-  2 of 1156 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+  34 of 1301 functions ( 2.6%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     2 functions had inline decision re-evaluated but remain unchanged
   Finished generating code

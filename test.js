@@ -22,11 +22,53 @@ function getAbilityOffset(ability) {
     return ((2*ability)*4) + 0x1D4;
 }
 
+function findFirstPeg() { //oops this still includes pegs that were hit
+    let peg = undefined;
+    Board.enumPhysObjs((obj) => {
+        if (obj.name.includes("Brick") || obj.name.includes("Ball")) {
+            if (obj.PegInfo) {
+                peg = obj;
+                return true;
+            }
+        }
+    });
+    return peg;
+}
+
+function findFirstUntouchedPeg() {
+    let peg = undefined;
+    Board.enumPhysObjs((obj) => {
+        if (obj.name.includes("Brick") || obj.name.includes("Ball")) {
+            let pinfo;
+            if ((pinfo = obj.PegInfo) && !pinfo.hit) {
+                peg = obj;
+                return true;
+            }
+        }
+    });
+    return peg;
+}
+
+function findFirstMovingPeg() {
+    let peg = undefined;
+    Board.enumPhysObjs((obj) => {
+        if (obj.name.includes("Brick") || obj.name.includes("Ball")) {
+            let pinfo;
+            if ((pinfo = obj.PegInfo) && !pinfo.hit && obj.Mover) {
+                peg = obj;
+                return true;
+            }
+        }
+    });
+    return peg;
+}
+
 onInit(() => { //runs on every file change or whenever you start a new level (which also triggers a file read)
     both("doin' ya mam doin' doin' ya mam");
 
     //do init stuff for global variables if you have any
     pegs = []; //initialize de global
+    lastHit = undefined;
 
     //LogicMgr.currentAbility = ABILITY_MULTIBALL;
     both(version());
@@ -43,7 +85,7 @@ onBallCountModify((eax, amountToAdd, edx, ballCount) => { //runs every time you 
     return amountToAdd;
 });
 
-onPegHit((currentBall, physObj2, bool) => { //runs every time any ball hits a peg (even those hit by a multiball) 
+onPegHit((currentBall, physObj2, bool) => { //runs every time any ball hits a peg (even those hit by a multiball)
     //i think physObj2 can either be a brick or a ball?
     //no way...
     //the Ball class doubles as a peg!
@@ -54,29 +96,50 @@ onPegHit((currentBall, physObj2, bool) => { //runs every time any ball hits a pe
     //print(currentBall); //i think the first parameter is the same ball that Board has
     //print(currentBall.location == Board.Ball.location); //is true right>? yes!
     //print(physObj2); //sometimes brick (depending on what kind of peg you hit, circle == ball, square == brick)
+    lastHit = physObj2;
     const pinfo = physObj2.PegInfo;
     if (!pinfo.hit) {
         pegs.push(pinfo);
         print("bpushed");
     }
+    //print(physObj2);
     //physObj2.PegInfo.type++; //LKMAO! (ok i crashed that shit)
     /*if (pinfo.type < 4) { //4 is the max type i think (PEG_GREEN)
         pinfo.type++;
     }*/
 
     //Board.Ball = physObj2; //aw damn nothing too cool happened (the ball and the peg disappeared but the ball was still hitting pegs)
+    //wait hold on i should test if setting the peg info does anything special
+    //Board.Ball.PegInfo = physObj2.PegInfo; //lmao it looks kind of cool because it shows the peg effects on the ball but it will crash the next time you shoot (so not worth it)
+    //wait hold on i should see if anything happens if i set the image at 0x24C
+    //Board.Ball.set_dword(0x24C, physObj2.get_dword(0x24C));
 
     //LogicMgr.currentAbility = Math.floor(Math.random() * ABILITY_WARRENSPECIAL); //THIS IS GOATED!
 
     //idk if this function does anything more special than just setting the type yourself...
     //physObj2.set_peginfo_type(PEG_PURPLE); //they use this function to move the purple peg around after every shot
-    if (pinfo.type != PEG_ORANGE) { //actually i could just change the amount of orange pegs left and still do the effect too
+    if (pinfo.type != PEG_ORANGE && pinfo.type != PEG_GREEN) { //actually i could just change the amount of orange pegs left and still do the effect too
         //if (pegs.length == 1) {
-            physObj2.set_peginfo_type(PEG_GREEN);
+            //physObj2.set_peginfo_type(PEG_GREEN);
         //}
+        //pinfo.type = Math.floor(Math.random()*PEG_GREEN)+1;
     }
 
-    //LogicMgr.activate_ability(currentBall.location, physObj2.location, 7); //don't use this in this commit because im not sure if it's gonna work lol im going to bed
+    //print(Math.floor(Math.random() * ABILITY_WARRENSPECIAL)+1);
+
+    //OH NO!
+    //space blast hits all the pegs around it so when i activate it, it calls PegHit for each of those pegs!
+    //now we're calling RunEvent from this thread instead of the main one and it's getting totally fucked!
+    //never mind my boys i've fixed it but the down side is that we can't handle the PegHit event for those on the JS side
+    //so i guess if you want to activate space blast (and get the peghit events) you might have to do the technique of setting your current ability to space blast and then setting the peg type to be green like i did earlier lol
+
+    //const goodpowers = [ABILITY_SUPERGUIDE, ABILITY_FLIPPERS, ABILITY_MULTIBALL, ABILITY_PYRAMID, ABILITY_SPOOKYBALL, ABILITY_ZENSHOT, ABILITY_SHOTEXTENDER, ABILITY_FIREBALL]
+
+    //LogicMgr.activate_ability(currentBall, physObj2, goodpowers[Math.floor(Math.random()*goodpowers.length)], 1);
+
+    //LogicMgr.activate_ability(currentBall, physObj2, Math.floor(Math.random() * (ABILITY_WARRENSPECIAL-1)) + 1, 1); //uh oh does space blast do something special because why is it hanging my thread
+
+    //LogicMgr.activate_ability(currentBall, physObj2, 5, 1); //uh oh does space blast do something special because why is it hanging my thread
 
     //physObj2.x = currentBall.x;
     //physObj2.y += 10;
@@ -119,11 +182,25 @@ onKeyDown((key, unused2, unused3) => { //runs every time you press a key while l
         //print(rect.top, rect.top-y);
         const ball = Board.Ball;
 
-        ball.x = x - (rect.left+77);
-        ball.y = y - (rect.top+52);
+        ball.x = x - (rect.left + 77);
+        ball.y = y - (rect.top + 52);
         //hmm i still can't set the velocity because i lowkey don't know where they keep that at (just kidding i found it)
         ball.velX = 0;
         ball.velY = 0;
+    } else if (key == 'P'.charCodeAt(0)) {
+        //let allpegs = [];
+        Board.enumPhysObjs((obj) => { //hell yeah
+            //if (obj.name.includes("Ball") || obj.name.includes("Brick")) {
+            //    allpegs.push();
+            //}
+            //print(obj.name); //simple my boy
+        });
+        /*for (const peg of allpegs) {
+            const pinfo = peg.PegInfo;
+            if (pinfo) {
+                
+            }
+        }*/
     }
 });
 

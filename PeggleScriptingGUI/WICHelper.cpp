@@ -41,6 +41,7 @@ IWICFormatConverter* WICHelper::LoadBitmapFromFilename(const wchar_t* filenamews
 
     HRESULT shit = this->wicFactory->CreateDecoderFromFilename(filenamews/*.c_str()*/, NULL, GENERIC_READ, WICDecodeMetadataCacheOnLoad, &wicDecoder);
     if (shit != S_OK) {
+        MessageBox(NULL, filenamews, L"couldn't find file", MB_OK | MB_SYSTEMMODAL);
         ERRORMB(shit, "yeah we failed that hoe (CreateDecoderFromFilename)");
         //MessageBoxA(NULL, "NewWICBitmap likely failed because the file was not found", "yeah we failed that hoe (CreateDecoderFromFilename)", MB_OK | MB_ICONERROR);
         return nullptr;

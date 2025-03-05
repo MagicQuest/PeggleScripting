@@ -60,6 +60,27 @@ void showOpenFilePicker(wchar_t* out_file_name, size_t length) {
     }
 }
 
+DWORD HandleWaitResponse(DWORD result) {
+    if (result == WAIT_OBJECT_0) { //v8helper2::finishEvent
+        return v8helper2::returnval; //well im setting it on a diff thread but i wait for it so...
+    }
+    else if (result == WAIT_OBJECT_0 + 1) { //v8helper2::waitEvent
+        //recursive technique so i don't have to write this code again lol
+        print("waiting the long way " << GetCurrentThreadId());
+        DWORD res = WaitForSingleObject(v8helper2::finishEvent, INFINITE);
+        print("done waiting the long way");
+        return HandleWaitResponse(res);
+    }
+    else {
+        print("(RunEvent) WaitForSingleObject failed with " << result << " " << GetLastError());
+        //uh oh sometimes this happens twice which should only happen if 2 threads are calling this function (and that shouldn't happen...)
+        char buffer[100];
+        snprintf(buffer, sizeof(buffer), "Thread ID: %u", GetCurrentThreadId());
+        MessageBoxA(NULL, buffer, NULL, MB_OK);
+    }
+    return -1;
+}
+
 //Highlight defined in v8helper.cpp
 
 extern "C" {
@@ -152,6 +173,7 @@ extern "C" {
             FileWatcher::StartThread(g_filename);
         }
         if (!v8helper2::thread) {
+            print("v8u hleper2  start");
             //should be good...
             v8helper2::thread = CreateThread(NULL, 0, v8helper2::SetupLoop, NULL, 0, &v8helper2::threadID);
             if (!v8helper2::thread) {
@@ -159,10 +181,13 @@ extern "C" {
                 __debugbreak();
             }
         }
+        print("cont RunEvent");
         g_eax = eax;
         g_ecx = ecx;
         g_edx = edx;
-        v8helper2::Notify(id);
+        if (!v8helper2::Notify(id)) {
+            return -1;
+        }
         DWORD waitTime = 15000;
         if (id == V8_NOTIFY_FILECHANGE) {
             //don't wait because i lowkey don't send a response for this one
@@ -171,15 +196,13 @@ extern "C" {
         else if (id == V8_NOTIFY_EVAL) {
             waitTime = INFINITE;
         }
-        DWORD result = WaitForSingleObject(v8helper2::finishEvent, waitTime); //yeah im not sure why this started hanging so clearly i shouldn't use infinite lmao
-        if (result == WAIT_OBJECT_0) {
-            return v8helper2::returnval; //well im setting it on a diff thread but i wait for it so...
-        }
-        else {
-            print("(RunEvent) WaitForSingleObject failed with " << result << " " << GetLastError());
-            MessageBoxA(NULL, NULL, NULL, MB_OK);
-        }
-        return -1;
+        HANDLE events[] {
+            v8helper2::finishEvent,
+            v8helper2::waitEvent,
+        };
+        DWORD result = WaitForMultipleObjects(2, events, FALSE, waitTime); //yeah im not sure why this started hanging so clearly i shouldn't use infinite lmao
+        return HandleWaitResponse(result);
+        //return -1;
     }
 }
 
@@ -682,7 +705,8 @@ BOOL APIENTRY DllMain(HMODULE hModule,
         OverwriteWindowProcKeyDownSection(g_peggle);
         OverwritePegHitSection(g_peggle);
         OverwriteLevelLoadEnd(g_peggle);
-
+        //not totally sure if this is needed as its been working fine for me without it (but you can never be too safe)
+        FlushInstructionCache(GetCurrentProcess(), NULL, NULL); //idk how big peggle is and you have to specify the size with the base address if you supply it
         //char exe[MAX_PATH]; GetModuleFileNameA(hModule, exe, MAX_PATH); //nah no way i wrote NULL instead of THIS module (it was using popcapgame1???)
         //print(exe);
         //nah im moving all this to the top of RunLeCode (and making the exe path automatic in the constructor);
@@ -719,6 +743,7 @@ BOOL APIENTRY DllMain(HMODULE hModule,
     }
     else if (ul_reason_for_call == DLL_PROCESS_DETACH) {
         //delete virtualeight;
+        //oops bruh im disposing on the wrong thread!
         v8helper2::Dispose();
     }
 

@@ -1,6 +1,6 @@
 eval(require("fs").read(__dirname+"/mastercontrols.js"));
-print("lowkey we need marshallib so im checking for it in ../dllstuffs/marshallib.js");
-eval(require("fs").read(__dirname+"/../dllstuffs/marshallib.js"));
+print("lowkey we need marshallib so im checking for it in /marshallib.js");
+eval(require("fs").read(__dirname+"/marshallib.js"));
 
 //i've actually already defined these objects back in /dllstuffs/ffigetexportedfunctions.js
 //these objects are for the LocateAndGetProcAddressEx function
@@ -587,7 +587,8 @@ class PeggleUI extends Parent { //i just spent the last few hours semi-rewrittin
             }
             print("LLA:", LoadLibraryA);
             //return;
-            const dllpath = "E:\\Users\\megal\\source\\repos\\PeggleScripting\\Release\\PeggleScripting.dll";
+            const dllpath = __dirname+"/PeggleScripting.dll";
+            print("looking for pegglescripting dll at", dllpath);
             const addressToWriteDllPath = VirtualAllocEx(this.peggleProcess, NULL, dllpath.length, MEM_RESERVE | MEM_COMMIT, PAGE_READWRITE);
             if(!addressToWriteDllPath) {
                 this.hookErr("VirtualAllocEx failed! (perhaps you don't have permission? idk)");

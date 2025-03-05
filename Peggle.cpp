@@ -115,6 +115,8 @@ struct RTTICompleteObjectLocator
 
 #define ConstProperty(OT, constname) OT->Set(isolate, #constname, Number::New(isolate, constname))
 
+#define __UNTESTED __debugbreak()
+
 #define ABILITY_SUPERGUIDE 1
 #define ABILITY_FLIPPERS 2
 #define ABILITY_MULTIBALL 3
@@ -136,6 +138,32 @@ struct RTTICompleteObjectLocator
 #define PEG_ORANGE 2
 #define PEG_PURPLE 3
 #define PEG_GREEN 4
+
+//wait are these a bit field (yeah im not sure)
+#define MOVEMENT_NONE 0
+#define MOVEMENT_VERTICAL 1
+#define MOVEMENT_HORIZONTAL 2
+#define MOVEMENT_VERTICAL_HORIZONTAL 3
+#define MOVEMENT_INFINITY 4
+//uhh i forgot hold on
+#define MOVEMENT_FIGURE_EIGHT 5
+#define MOVEMENT_HORIZONTAL_SEMICIRCLE 6
+#define MOVEMENT_VERTICAL_SEMICIRCLE 7
+#define MOVEMENT_ROTATE_AT_ORIGIN 8
+#define MOVEMENT_SMOOTH_ROTATE_AT_ORIGIN 9
+#define MOVEMENT_VERTICAL_SNAP 11
+#define MOVEMENT_HORIZONTAL_SNAP 12
+#define MOVEMENT_ROTATE_AROUND_ORIGIN 13
+
+#define LOGIC_EVENT_DEFAULT 1
+#define LOGIC_EVENT_START_TURN 2
+//if you set the current event to end turn without shooting the ball it will bring up the free ball coin
+#define LOGIC_EVENT_END_TURN 3
+#define LOGIC_EVENT_GRANT_FREE_BALL 4
+#define LOGIC_EVENT_END_GAME 5
+//uhh i thought this opened the character select menu but it seems to show the last pane thing that was on screen (including the tips that the masters give you)
+#define LOGIC_EVENT_OPEN_PANE 8
+//#define LOGIC_EVENT_CHARACTER_SELECT 9
 
 //DWORD peggle_getAbilityOffset(DWORD ability) {
 //    return ((2 * ability) * 4) + 0x1D4;
@@ -171,74 +199,6 @@ void generic_get_float(const v8::FunctionCallbackInfo<v8::Value>& info) {
     info.GetReturnValue().Set(Number::New(isolate, *(float*)(base + IntegerFI(info[0]))));
 }
 
-void peggle_activate_ability(const v8::FunctionCallbackInfo<v8::Value>& info) {
-    using namespace v8;
-    Isolate* isolate = info.GetIsolate();
-    //uhh we need to call this function
-    //uh oh how the fuck do i call a member function myself
-    //well since we've got the option i might have to __asm this shit!
-
-    constexpr DWORD offset = 0x0006EDF0;
-
-
-    //i think there are 2 ways to call this function
-    //if you know which ability you want, you pass it
-    //if you don't, set ability to 0
-    //the problem is i don't really know what you pass as the first 2 arguments
-    //if you don't know the ability (meaning it's implied), the first 2 arguments seem to point to 2 different Ball objects (which is weird because why are there 2)
-
-    //ok for some reason the first 2 parameters point to the same address so lets allocate that on le stack right here
-    //yeah im not gonna lie idk if these were ever right? they still worked though so imma use them as default params
-    DWORD unknown1 = 0x005F19B4; //these are the addresses of some function in a vtable!
-    //DWORD unknown2 = 0x005F1FDC; //for some reason this one was different! (when i used warren and got uhh i forgot what exactly it gave me thhis)
-    DWORD unknown2 = unknown1;
-
-    //yeah so i asked chat and he said asm was the goat so...
-    //hold on i just randomly thought about it and i think you could still call a method without asm!
-    //void*(__fastcall mango)(DWORD register_ecx, DWORD register_edx_unused, DWORD stack_param2, DWORD stack_param3, ...);
-    //using fastcall you could pass the object as the very first parameter
-    //DWORD unknown1 = IntegerFI(info[0]);
-
-    //DWORD unknown2;// = IntegerFI(info[1]);
-
-    if (info[0]->BooleanValue(isolate)) {
-        unknown1 = IntegerFI(info[0]);
-    }
-    if (info[1]->BooleanValue(isolate)) {
-        unknown2 = IntegerFI(info[1]);
-    }
-
-    DWORD ability = 0; //IntegerFI(info[2]);
-    if (info[2]->BooleanValue(isolate)) {
-        ability = IntegerFI(info[2]);
-    }
-
-
-    BOOL isAbilitySpecified = false;
-
-    if (info[3]->BooleanValue(isolate)) {
-        isAbilitySpecified = IntegerFI(info[3]);
-    }
-
-    ULONG_PTR peggle_internal_activate_ability = (ULONG_PTR)g_peggle + offset;
-
-    //bruh this actually worked but didn't at the same time
-    __asm {
-        //int 3
-        push isAbilitySpecified
-        push ability
-        //lea eax, unknown2
-        //push eax
-        //lea eax, unknown1
-        //push eax
-        push unknown2
-        push unknown1
-        mov ecx, Peggle::logicMgr
-        call peggle_internal_activate_ability
-    }
-    //g_peggle_internal_activate_ability(nullptr, nullptr, IntegerFI(info[0]), 1); //idk im assuming this shit...
-}
-
 /*void peggle_get_board(const v8::FunctionCallbackInfo<v8::Value>& info) {
     using namespace v8;
     Isolate* isolate = info.GetIsolate();
@@ -246,238 +206,19 @@ void peggle_activate_ability(const v8::FunctionCallbackInfo<v8::Value>& info) {
 
 }*/
 
-void peggle_something_about_shooting_the_ball(DWORD mouseX, DWORD mouseY, DWORD mouseButton = 1) { //ohhhh right click is -1 and middle mouse is 3
-    //third parameter is usually one
-    constexpr DWORD offset = 0x00002810;
-
-    ULONG_PTR funcaddr = ULONG_PTR(g_peggle) + offset;
-
-    __asm {
-        //this function is a method of the Board class and it's definitely related to shooting the ball in some way lol but the main important part is super long and i haven't been bothered to analyze it yet
-        //yeah i think that this function is normally called when you interact with the main screen and it happens to call the actual ball shooting function in it (i think i still haven't analyzed that big ass function)
-        //int 3
-        mov eax, funcaddr
-        push mouseButton
-        push mouseY
-        push mouseX
-        mov ecx, Peggle::board
-        call eax
-    }
-}
-
-void peggle_add_balls(DWORD amount, DWORD unknown, DWORD b_unknown2) { //b_unknown2 is some kinda boolean or something
-    //unknown is usually 0
-    //b_unknown2 is usually 1
-    //i think
-
-    constexpr DWORD offset = 0x0005D880;
-
-    ULONG_PTR funcaddr = ULONG_PTR(g_peggle) + offset;
-
-    __asm {
-        //this function is a method of the LogicMgr class and it directly changes the amount of balls you have
-        //it's also the function i change when this Dll is loaded
-        //if you call this function in a script it will infinitely loop so probably only eval this one
-        //int 3
-        mov eax, funcaddr
-        push b_unknown2
-        push unknown
-        push amount
-        mov ecx, Peggle::logicMgr
-        call eax
-    }
-}
-
-void peggle_set_peginfo_hit(void* PegInfo, DWORD hit) {
-    constexpr DWORD offset = 0x00076650;
-
-    ULONG_PTR funcaddr = ULONG_PTR(g_peggle) + offset;
-
-    __asm {
-        mov eax, funcaddr
-        push hit
-        mov ecx, PegInfo
-        call eax
-    }
-}
-
-void peggle_set_peg_type(void* BrickOrBall, DWORD ptype) { //im assuming i know what this function does lol (fortunately if the object doesn't have peginfo it will safely return)
-    constexpr DWORD offset = 0x00079870;
-    
-    ULONG_PTR funcaddr = ULONG_PTR(g_peggle) + offset;
-
-    __asm {
-        mov eax, funcaddr
-        push ptype
-        mov ecx, BrickOrBall
-        call eax
-    }
-}
-
-void* peggle_create_floating_text(void* board) {
-    void* floatingTextMgr = *(void**)(ULONG_PTR(board) + 0x148);
-    
-    constexpr DWORD offset = 0x00069D20;
-
-    ULONG_PTR funcaddr = ULONG_PTR(g_peggle) + offset;
-
-    __asm {
-        mov eax, funcaddr
-        mov ecx, floatingTextMgr
-        call eax
-    }
-}
-
 constexpr DWORD c_getAbilityOffset(DWORD ability) {
     return ((2 * ability) * 4) + 0x1D4;
 }
 
-namespace Templates {
-    using namespace v8;
-
-    Local<Object> getBallImpl(Isolate* isolate, void* ptr);
-    Local<Object> getBrickImpl(Isolate * isolate, void* ptr);
-    Local<Object> getPegInfoImpl(Isolate * isolate, void* ptr);
-    Local<Object> getFloatingTextImpl(Isolate * isolate, void* ptr);
-    v8::Local<v8::Object> GetBallOrBrickImplFromPtr(v8::Isolate * isolate, void* ptr);
-
-    const v8::Local<v8::ObjectTemplate>& GenericPhysObject(v8::Isolate* isolate, void* ptr) {
-        using namespace v8;
-        Local<ObjectTemplate> ptr_object = ObjectTemplate::New(isolate);
-        ptr_object->Set(isolate, "set_dword", FunctionTemplate::New(isolate, generic_set_dword));
-        ptr_object->Set(isolate, "set_float", FunctionTemplate::New(isolate, generic_set_float));
-        ptr_object->Set(isolate, "get_dword", FunctionTemplate::New(isolate, generic_get_dword));
-        ptr_object->Set(isolate, "get_float", FunctionTemplate::New(isolate, generic_get_float));
-        ptr_object->Set(isolate, "location", Number::New(isolate, (ULONG_PTR)ptr));
-
-        //sometimes PegInfo is null so we gotta check first
-        ptr_object->SetAccessorProperty(LITERAL("PegInfo"), FunctionTemplate::New(isolate, [](const FunctionCallbackInfo<Value>& info) {
-            Isolate* isolate = info.GetIsolate();
-            ULONG_PTR pegInfoPtr = *(ULONG_PTR*)(IntegerFI(info.This()->Get(isolate->GetCurrentContext(), LITERAL("location")).ToLocalChecked()) + 0xD0);
-            //peginfoptr is the value at +0xD0
-            //print(pegInfoPtr);
-            if (pegInfoPtr) {
-                info.GetReturnValue().Set(Templates::getPegInfoImpl(isolate, (void*)pegInfoPtr));
-            }
-        }), Local<FunctionTemplate>());
-        ptr_object->Set(isolate, "set_peginfo_type", FunctionTemplate::New(isolate, [](const FunctionCallbackInfo<Value>& info) {
-            Isolate* isolate = info.GetIsolate();
-            void* thisObj = (void*)IntegerFI(info.This()->Get(isolate->GetCurrentContext(), LITERAL("location")).ToLocalChecked());
-            peggle_set_peg_type(thisObj, IntegerFI(info[0]));
-        }));
-        //ptr_object->SetAccessorProperty(LITERAL("location"), Local<FunctionTemplate>(), Local<FunctionTemplate>(), PropertyAttribute::ReadOnly);
-        //ptr_object->SetAccessorProperty(LITERAL("location"), FunctionTemplate::New(isolate, [](const v8::FunctionCallbackInfo<v8::Value>& info) {
-        //    Isolate* isolate = info.GetIsolate();
-        //    info.GetReturnValue().Set(Number::New(isolate, (ULONG_PTR)g_logicmgr));
-        //}), Local<FunctionTemplate>(), v8::PropertyAttribute::ReadOnly);
-        return ptr_object;
-    }
-
-    const v8::Local<v8::ObjectTemplate>& GenericPtrObject(v8::Isolate* isolate, void* ptr) {
-        using namespace v8;
-        Local<ObjectTemplate> ptr_object = ObjectTemplate::New(isolate);
-        ptr_object->Set(isolate, "set_dword", FunctionTemplate::New(isolate, generic_set_dword));
-        ptr_object->Set(isolate, "set_float", FunctionTemplate::New(isolate, generic_set_float));
-        ptr_object->Set(isolate, "get_dword", FunctionTemplate::New(isolate, generic_get_dword));
-        ptr_object->Set(isolate, "get_float", FunctionTemplate::New(isolate, generic_get_float));
-        ptr_object->Set(isolate, "location", Number::New(isolate, (ULONG_PTR)ptr));
-        //ptr_object->SetAccessorProperty(LITERAL("location"), Local<FunctionTemplate>(), Local<FunctionTemplate>(), PropertyAttribute::ReadOnly);
-        //ptr_object->SetAccessorProperty(LITERAL("location"), FunctionTemplate::New(isolate, [](const v8::FunctionCallbackInfo<v8::Value>& info) {
-        //    Isolate* isolate = info.GetIsolate();
-        //    info.GetReturnValue().Set(Number::New(isolate, (ULONG_PTR)g_logicmgr));
-        //}), Local<FunctionTemplate>(), v8::PropertyAttribute::ReadOnly);
-        return ptr_object;
-    }
-
-    Local<ObjectTemplate> _Ball;
-    Local<ObjectTemplate> _Brick;
-    Local<ObjectTemplate> _PegInfo;
-    Local<ObjectTemplate> _FloatingText;
-    void Init(v8::Isolate* isolate) {
-        //i think ball and brick have some class in common where both Ball and Brick share a pointer to a PegInfo object at 0xD0
-        _Ball = GenericPhysObject(isolate, nullptr);
-        FloatProperty(_Ball, "multiball", 0xE8); //idk
-        ByteProperty(_Ball, "fireball", 0x161);
-        FloatProperty(_Ball, "drawX", 0x134); //honestly i don't know yet lol
-        FloatProperty(_Ball, "drawY", 0x138); //yeah idk it seems like it might be where it draws it at?
-        FloatProperty(_Ball, "radius", 0x13C); //WHY THE FUCK IS THERE A RADIUS PROPERTY AND WHY DOES IT ACTUALLY WORK?!
-        FloatProperty(_Ball, "x", 0xEC); //YES!
-        FloatProperty(_Ball, "y", 0xF0); //this is the real ball location!
-        FloatProperty(_Ball, "velX", 0xFC); //with me randomly guessing i got it
-        FloatProperty(_Ball, "velY", 0x100);
-
-        _Brick = GenericPhysObject(isolate, nullptr);
-        FloatProperty(_Brick, "threadStuff", 0x4); //prolly don't mess with this one
-        FloatProperty(_Brick, "x", 0xEC); //honestly we're gonna assume the x and y are provided by PhysObject
-        FloatProperty(_Brick, "y", 0xF0);
-        FloatProperty(_Brick, "maybeX", 0x114); //hmm when the hell did i find this, it could be right (offset 00081740 GetY(?))
-        FloatProperty(_Brick, "maybeY", 0x118);
-
-
-        _PegInfo = GenericPtrObject(isolate, nullptr);
-        Property(_PegInfo, "type", 0x10);
-        //Property(_PegInfo, "hit", 0x14); //boolean
-        ByteProperty(_PegInfo, "hit", 0x14);
-        Property(_PegInfo, "timeSinceHit", 0x18); //for some reason there's 2
-        Property(_PegInfo, "hitCount", 0x1C); //hmm
-        //what a terrible name but this might be the best way to put it
-        //it's the length of time for which this peg was the last one the ball hit
-        Property(_PegInfo, "lengthOfTimeThisPegWasLastHit", 0x20); //for some reason there's 2 (oh wait)
-        Property(_PegInfo, "popped", 0x24);
-        _PegInfo->Set(isolate, "set_peg_hit", FunctionTemplate::New(isolate, [](const v8::FunctionCallbackInfo<v8::Value>& info) {
-            Isolate* isolate = info.GetIsolate();
-            void* peginfo = (void*)IntegerFI(info.This()->Get(isolate->GetCurrentContext(), LITERAL("location")).ToLocalChecked());
-            peggle_set_peginfo_hit(peginfo, IntegerFI(info[0]));
-        }));
-
-        _FloatingText = GenericPtrObject(isolate, nullptr);
-        FloatProperty(_FloatingText, "x", 0x80); //i mean im pretty sure
-        FloatProperty(_FloatingText, "y", 0x84);
-        FloatProperty(_FloatingText, "something", 0x8C); //is like -0.1
-        //uhhh in the showHoveringScoreOverPeg function they set FloatingText+5C to 0x2D (45 idk what that is for)
-        //FloatingText+0x60 is 0x00FFFF00
-        //FloatingText+0x68 is 0x64
-        //FloatingText+0x78 is later set to A (like the number 10?!)
-        //FloatingText+0x7C is 1
-        Property(_FloatingText, "number", 0x78); //maybe? (prolly not :( )
-    }
-
-    Local<Object> getBallImpl(Isolate* isolate, void* ptr) {
-        Local<Context> context = isolate->GetCurrentContext();
-        Local<Object> object = _Ball->NewInstance(context).ToLocalChecked();
-        object->Set(context, LITERAL("location"), Number::New(isolate, (LONG_PTR)ptr));
-        return object;
-    }
-
-    Local<Object> getBrickImpl(Isolate* isolate, void* ptr) {
-        Local<Context> context = isolate->GetCurrentContext();
-        Local<Object> object = _Brick->NewInstance(context).ToLocalChecked();
-        object->Set(context, LITERAL("location"), Number::New(isolate, (LONG_PTR)ptr));
-        return object;
-    }
-
-    Local<Object> getPegInfoImpl(Isolate* isolate, void* ptr) {
-        Local<Context> context = isolate->GetCurrentContext();
-        Local<Object> object = _PegInfo->NewInstance(context).ToLocalChecked();
-        object->Set(context, LITERAL("location"), Number::New(isolate, (LONG_PTR)ptr));
-        return object;
-    }
-
-    Local<Object> getFloatingTextImpl(Isolate* isolate, void* ptr) {
-        Local<Context> context = isolate->GetCurrentContext();
-        Local<Object> object = _FloatingText->NewInstance(context).ToLocalChecked();
-        object->Set(context, LITERAL("location"), Number::New(isolate, (LONG_PTR)ptr));
-        return object;
-    }
-
-    v8::Local<v8::Object> GetBallOrBrickImplFromPtr(v8::Isolate* isolate, void* ptr) {
-        using namespace v8;
-        ULONG_PTR* vtable = *(ULONG_PTR**)g_eax;
+const char* getObjectName(void* ptr) {
+    print("getObjectName " << ptr);
+    ULONG_PTR* vtable = *(ULONG_PTR**)ptr; //wtf? g_eax? was that intentional because how has this been working
+    if (vtable) {
         //print(vtable);
         //print((ULONG_PTR)vtable - sizeof(ULONG_PTR));
         //print((ULONG_PTR)vtable - 4);
         //__debugbreak();
-        
+
         //RTTICompleteObjectLocator objRTTI = *(RTTICompleteObjectLocator*)(ULONG_PTR(vtable) - sizeof(ULONG_PTR)); //on x86 this is vtable - 4
         //OH ok the problem was that the first dereference only got the VALUE at (vtable - 4) and i had to dereference it AGAIN if i wanted the object
         //orttip is actually what i wanted to do all along!
@@ -496,15 +237,292 @@ namespace Templates {
         //print(objRTTI.pTypeDescriptor->name);
         //__debugbreak();
         //char* name = objRTTI.pTypeDescriptor->name;
-        char* name = orttip->pTypeDescriptor->name;
+        //char* name = orttip->pTypeDescriptor->name;
         //print(name);
         //__debugbreak();
+        return orttip->pTypeDescriptor->name;
+    }
+    else {
+        return "idk";
+    }
+}
+
+namespace Templates {
+    using namespace v8;
+
+    Local<Object> getBallImpl(Isolate* isolate, void* ptr);
+    Local<Object> getBrickImpl(Isolate* isolate, void* ptr);
+    Local<Object> getPegInfoImpl(Isolate* isolate, void* ptr);
+    Local<Object> getFloatingTextImpl(Isolate* isolate, void* ptr);
+    Local<Object> getHoleImpl(Isolate* isolate, void* ptr);
+    Local<Object> getMoverImpl(Isolate* isolate, void* ptr);
+    v8::Local<v8::Object> GetImplFromPtr(v8::Isolate* isolate, void* ptr);
+
+    v8::Local<v8::ObjectTemplate> GenericPtrObject(v8::Isolate* isolate, void* ptr) {
+        using namespace v8;
+        Local<ObjectTemplate> ptr_object = ObjectTemplate::New(isolate);
+        ptr_object->Set(isolate, "set_dword", FunctionTemplate::New(isolate, generic_set_dword));
+        ptr_object->Set(isolate, "set_float", FunctionTemplate::New(isolate, generic_set_float));
+        ptr_object->Set(isolate, "get_dword", FunctionTemplate::New(isolate, generic_get_dword));
+        ptr_object->Set(isolate, "get_float", FunctionTemplate::New(isolate, generic_get_float));
+        if (ptr != nullptr) {
+            ptr_object->Set(isolate, "location", Number::New(isolate, (ULONG_PTR)ptr));
+            print("setting name " << ptr);
+            ptr_object->Set(isolate, "name", String::NewFromUtf8(isolate, getObjectName(ptr)).ToLocalChecked());
+        }
+        //ptr_object->SetAccessorProperty(LITERAL("location"), Local<FunctionTemplate>(), Local<FunctionTemplate>(), PropertyAttribute::ReadOnly);
+        //ptr_object->SetAccessorProperty(LITERAL("location"), FunctionTemplate::New(isolate, [](const v8::FunctionCallbackInfo<v8::Value>& info) {
+        //    Isolate* isolate = info.GetIsolate();
+        //    info.GetReturnValue().Set(Number::New(isolate, (ULONG_PTR)g_logicmgr));
+        //}), Local<FunctionTemplate>(), v8::PropertyAttribute::ReadOnly);
+        return ptr_object;
+    }
+
+    v8::Local<v8::ObjectTemplate> GenericPhysObject(v8::Isolate* isolate, void* ptr) {
+        using namespace v8;
+        print("GenericPtrObject");
+        Local<ObjectTemplate> ptr_object = GenericPtrObject(isolate, ptr); //possible issue?
+        print("AfterGPO");
+        Property(ptr_object, "time", 0x4C);
+        //sometimes PegInfo is null so we gotta check first
+        ptr_object->SetAccessorProperty(LITERAL("pegInfo"), FunctionTemplate::New(isolate, [](const FunctionCallbackInfo<Value>& info) {
+            Isolate* isolate = info.GetIsolate();
+            ULONG_PTR pegInfoPtr = *(ULONG_PTR*)(IntegerFI(info.This()->Get(isolate->GetCurrentContext(), LITERAL("location")).ToLocalChecked()) + 0xD0);
+            //peginfoptr is the value at +0xD0
+            //print(pegInfoPtr);
+            if (pegInfoPtr) {
+                info.GetReturnValue().Set(Templates::getPegInfoImpl(isolate, (void*)pegInfoPtr));
+            }
+        }), FunctionTemplate::New(isolate, [](const FunctionCallbackInfo<Value>& info) {
+            Isolate* isolate = info.GetIsolate();
+            ULONG_PTR* pegInfoPtr = (ULONG_PTR*)(IntegerFI(info.This()->Get(isolate->GetCurrentContext(), LITERAL("location")).ToLocalChecked()) + 0xD0);
+            if (info[0]->IsNumber()) {
+                *pegInfoPtr = IntegerFI(info[0]);
+            }
+            else if (info[0]->IsObject()) {
+                *pegInfoPtr = IntegerFI(info[0].As<Object>()->Get(isolate->GetCurrentContext(), LITERAL("location")).ToLocalChecked());
+            }
+        }));
+        ptr_object->Set(isolate, "setPegType", FunctionTemplate::New(isolate, [](const FunctionCallbackInfo<Value>& info) {
+            Isolate* isolate = info.GetIsolate();
+            void* thisObj = (void*)IntegerFI(info.This()->Get(isolate->GetCurrentContext(), LITERAL("location")).ToLocalChecked());
+            Peggle::setPegType(thisObj, IntegerFI(info[0]));
+        }));
+        ptr_object->SetAccessorProperty(LITERAL("mover"), FunctionTemplate::New(isolate, [](const FunctionCallbackInfo<Value>& info) {
+            Isolate* isolate = info.GetIsolate();
+            ULONG_PTR moverPtr = *(ULONG_PTR*)(IntegerFI(info.This()->Get(isolate->GetCurrentContext(), LITERAL("location")).ToLocalChecked()) + 0x48);
+            //peginfoptr is the value at +0xD0
+            //print(pegInfoPtr);
+            if (moverPtr) {
+                info.GetReturnValue().Set(Templates::getMoverImpl(isolate, (void*)moverPtr));
+            }
+        }), FunctionTemplate::New(isolate, [](const FunctionCallbackInfo<Value>& info) {
+            Isolate* isolate = info.GetIsolate();
+            ULONG_PTR* moverPtr = (ULONG_PTR*)(IntegerFI(info.This()->Get(isolate->GetCurrentContext(), LITERAL("location")).ToLocalChecked()) + 0x48);
+            if (info[0]->IsNumber()) {
+                *moverPtr = IntegerFI(info[0]);
+            }
+            else if (info[0]->IsObject()) {
+                *moverPtr = IntegerFI(info[0].As<Object>()->Get(isolate->GetCurrentContext(), LITERAL("location")).ToLocalChecked());
+            }
+        }));
+        ptr_object->Set(isolate, "getX", FunctionTemplate::New(isolate, [](const v8::FunctionCallbackInfo<v8::Value>& info) {
+            Isolate* isolate = info.GetIsolate();
+            void* physObj = (void*)IntegerFI(info.This()->Get(isolate->GetCurrentContext(), LITERAL("location")).ToLocalChecked());
+            info.GetReturnValue().Set(Number::New(isolate, Peggle::getPhysX(physObj)));
+        }));
+        ptr_object->Set(isolate, "getY", FunctionTemplate::New(isolate, [](const v8::FunctionCallbackInfo<v8::Value>& info) {
+            Isolate* isolate = info.GetIsolate();
+            void* physObj = (void*)IntegerFI(info.This()->Get(isolate->GetCurrentContext(), LITERAL("location")).ToLocalChecked());
+            info.GetReturnValue().Set(Number::New(isolate, Peggle::getPhysY(physObj)));
+        }));
+        //ptr_object->SetAccessorProperty(LITERAL("location"), Local<FunctionTemplate>(), Local<FunctionTemplate>(), PropertyAttribute::ReadOnly);
+        //ptr_object->SetAccessorProperty(LITERAL("location"), FunctionTemplate::New(isolate, [](const v8::FunctionCallbackInfo<v8::Value>& info) {
+        //    Isolate* isolate = info.GetIsolate();
+        //    info.GetReturnValue().Set(Number::New(isolate, (ULONG_PTR)g_logicmgr));
+        //}), Local<FunctionTemplate>(), v8::PropertyAttribute::ReadOnly);
+        return ptr_object;
+    }
+
+    Local<ObjectTemplate> _Ball;
+    Local<ObjectTemplate> _Brick;
+    Local<ObjectTemplate> _PegInfo;
+    Local<ObjectTemplate> _FloatingText;
+    Local<ObjectTemplate> _Hole;
+    Local<ObjectTemplate> _Mover;
+    void Init(v8::Isolate* isolate) {
+        //i think ball and brick have some class in common where both Ball and Brick share a pointer to a PegInfo object at 0xD0
+        _Ball = GenericPhysObject(isolate, nullptr);
+        FloatProperty(_Ball, "x", 0xEC); //YES!
+        FloatProperty(_Ball, "y", 0xF0); //this is the real ball location!
+        ByteProperty(_Ball, "multiball", 0xE8); //idk what it does exactly
+        FloatProperty(_Ball, "velX", 0xFC); //with me randomly guessing i got it
+        FloatProperty(_Ball, "velY", 0x100);
+        FloatProperty(_Ball, "drawX", 0x134); //honestly i don't know yet lol
+        FloatProperty(_Ball, "drawY", 0x138); //yeah idk it seems like it might be where it draws it at?
+        FloatProperty(_Ball, "radius", 0x13C); //WHY THE FUCK IS THERE A RADIUS PROPERTY AND WHY DOES IT ACTUALLY WORK?!
+        ByteProperty(_Ball, "fireball", 0x161);
+        FloatProperty(_Ball, "idk", 0x170); //not sure.
+
+        _Brick = GenericPhysObject(isolate, nullptr);
+        Property(_Brick, "threadStuff", 0x4); //prolly don't mess with this one
+        //FloatProperty(_Brick, "x", 0xEC); //honestly we're gonna assume the x and y are provided by PhysObject (do not assume that i just crashed my shit)
+        //FloatProperty(_Brick, "y", 0xF0);
+        //Brick+0xEC actually seemed to be a pointer to an array of floats so i might try changing that lol
+        //Brick+0xF0 also seems to point to that same area but its a slightly different location so imma just start changing shit
+
+        FloatProperty(_Brick, "maybeX", 0x114); //hmm when the hell did i find this, it could be right (offset 00081740 GetY(?))
+        FloatProperty(_Brick, "maybeY", 0x118);
+
+        _PegInfo = GenericPtrObject(isolate, nullptr);
+        Property(_PegInfo, "type", 0x10);
+        //Property(_PegInfo, "hit", 0x14); //boolean
+        ByteProperty(_PegInfo, "hit", 0x14);
+        Property(_PegInfo, "timeSinceHit", 0x18); //for some reason there's 2 (oh that was the animation percent)
+        Property(_PegInfo, "hitCount", 0x1C); //hmm
+
+        //what a terrible name but this might be the best way to put it
+        //it's the length of time for which this peg was the last one the ball hit
+        //hmm it could also be the animation frame but the peg sparkle effects have a different amount of frames so wouldn't that mean the ones with more frames appear to be faster? 
+        //it actually might be my earlier guesses might've been wrong!
+        //Property(_PegInfo, "lengthOfTimeThisPegWasLastHit", 0x20); //for some reason there's 2 (oh wait) (ah something special about this one is that it doesn't go above 100 because im assuming something happens when you do (the pegs prolly disappear (wrong!)))
+        
+        Property(_PegInfo, "animationPercent", 0x20); //confirmed! if you set this value to anything between 1-100 it will play the peg hit animation
+        Property(_PegInfo, "animationId", 0x24); //possibly confirmed
+        _PegInfo->Set(isolate, "setHit", FunctionTemplate::New(isolate, [](const v8::FunctionCallbackInfo<v8::Value>& info) {
+            Isolate* isolate = info.GetIsolate();
+            void* peginfo = (void*)IntegerFI(info.This()->Get(isolate->GetCurrentContext(), LITERAL("location")).ToLocalChecked());
+            Peggle::setHit(peginfo, IntegerFI(info[0]));
+        }));
+        _PegInfo->Set(isolate, "playPegAnimation", FunctionTemplate::New(isolate, [](const v8::FunctionCallbackInfo<v8::Value>& info) {
+            Isolate* isolate = info.GetIsolate();
+            void* peginfo = (void*)IntegerFI(info.This()->Get(isolate->GetCurrentContext(), LITERAL("location")).ToLocalChecked());
+            Peggle::playPegAnimation(peginfo, IntegerFI(info[0]));
+        }));
+
+        _FloatingText = GenericPtrObject(isolate, nullptr);
+        Property(_FloatingText, "lifeTime", 0x68);
+        Property(_FloatingText, "elapsedTime", 0x6C);
+        //if the followingObj property is not nullptr, it will call member functions on the object to get its x and y positions and then uses them to move the FloatingText
+        _FloatingText->SetAccessorProperty(LITERAL("followingObj"), FunctionTemplate::New(isolate, [](const FunctionCallbackInfo<Value>& info) {
+            Isolate* isolate = info.GetIsolate();
+            ULONG_PTR followingObjPtr = *(ULONG_PTR*)(IntegerFI(info.This()->Get(isolate->GetCurrentContext(), LITERAL("location")).ToLocalChecked()) + 0xB4);
+            //peginfoptr is the value at +0xD0
+            //print(pegInfoPtr);
+            if (followingObjPtr) {
+                info.GetReturnValue().Set(Templates::GetImplFromPtr(isolate, (void*)followingObjPtr));
+            }
+        }), FunctionTemplate::New(isolate, [](const FunctionCallbackInfo<Value>& info) {
+            Isolate* isolate = info.GetIsolate();
+            ULONG_PTR* followingObjPtr = (ULONG_PTR*)(IntegerFI(info.This()->Get(isolate->GetCurrentContext(), LITERAL("location")).ToLocalChecked()) + 0xB4);
+            if (info[0]->IsNumber()) {
+                *followingObjPtr = IntegerFI(info[0]);
+            }
+            else if (info[0]->IsObject()) {
+                *followingObjPtr = IntegerFI(info[0].As<Object>()->Get(isolate->GetCurrentContext(), LITERAL("location")).ToLocalChecked());
+            }
+        }));
+        FloatProperty(_FloatingText, "lastX", 0xB8); //#true
+        FloatProperty(_FloatingText, "lastY", 0xBC); //#true
+        FloatProperty(_FloatingText, "x", 0x80); //i mean im pretty sure #true
+        FloatProperty(_FloatingText, "y", 0x84); //#true
+        //0x88 and 0x8C could offsets or velocity?
+        FloatProperty(_FloatingText, "velX", 0x88); //#true
+        FloatProperty(_FloatingText, "velY", 0x8C); //#true
+        //FloatProperty(_FloatingText, "something", 0x8C); //is like -0.1
+        //uhhh in the showHoveringScoreOverPeg function they set FloatingText+5C to 0x2D (45 idk what that is for)
+        //FloatingText+0x60 is 0x00FFFF00
+        //FloatingText+0x68 is 0x64
+        //FloatingText+0x78 is later set to A (like the number 10?!)
+        //FloatingText+0x7C is 1
+        Property(_FloatingText, "number", 0x78); //maybe? (prolly not :( )
+
+        _Hole = GenericPhysObject(isolate, nullptr); //assuming generic phys lol
+        FloatProperty(_Hole, "velX", 0x14); //not sure
+        FloatProperty(_Hole, "velY", 0x18);
+        //Property(_Hole, "time", 0x4C); //also not sure (i've moved the time property into the GenericPhysObject itself because i think they all have it)
+        
+        _Mover = GenericPtrObject(isolate, nullptr);
+        Property(_Mover, "type", 0x10); //confirmed
+        Property(_Mover, "offset", 0x14); //another offset?
+        //Property(_Mover, "somethingtime", 0x18); //hmm idk how i thought this might be related to time this seems like amplitude
+        Property(_Mover, "amplitude", 0x18); //confirmed!
+        Property(_Mover, "speedDivisor", 0x1C); //confirmed! related to the speed of the movement
+        FloatProperty(_Mover, "timingOffset", 0x20); //confirmed
+        FloatProperty(_Mover, "originX", 0x5C); //oh yeah confirmed
+        FloatProperty(_Mover, "originY", 0x60); //confirmed
+    }
+
+    Local<Object> getBallImpl(Isolate* isolate, void* ptr) {
+        Local<Context> context = isolate->GetCurrentContext();
+        Local<Object> object = _Ball->NewInstance(context).ToLocalChecked();
+        object->Set(context, LITERAL("location"), Number::New(isolate, (LONG_PTR)ptr));
+        object->Set(context, LITERAL("name"), String::NewFromUtf8(isolate, getObjectName(ptr)).ToLocalChecked());
+        return object;
+    }
+
+    Local<Object> getBrickImpl(Isolate* isolate, void* ptr) {
+        Local<Context> context = isolate->GetCurrentContext();
+        Local<Object> object = _Brick->NewInstance(context).ToLocalChecked();
+        object->Set(context, LITERAL("location"), Number::New(isolate, (LONG_PTR)ptr));
+        object->Set(context, LITERAL("name"), String::NewFromUtf8(isolate, getObjectName(ptr)).ToLocalChecked());
+        return object;
+    }
+
+    Local<Object> getPegInfoImpl(Isolate* isolate, void* ptr) {
+        Local<Context> context = isolate->GetCurrentContext();
+        Local<Object> object = _PegInfo->NewInstance(context).ToLocalChecked();
+        object->Set(context, LITERAL("location"), Number::New(isolate, (LONG_PTR)ptr));
+        object->Set(context, LITERAL("name"), String::NewFromUtf8(isolate, getObjectName(ptr)).ToLocalChecked());
+        return object;
+    }
+
+    Local<Object> getFloatingTextImpl(Isolate* isolate, void* ptr) {
+        Local<Context> context = isolate->GetCurrentContext();
+        Local<Object> object = _FloatingText->NewInstance(context).ToLocalChecked();
+        object->Set(context, LITERAL("location"), Number::New(isolate, (LONG_PTR)ptr));
+        object->Set(context, LITERAL("name"), String::NewFromUtf8(isolate, getObjectName(ptr)).ToLocalChecked());
+        return object;
+    }
+
+    Local<Object> getHoleImpl(Isolate* isolate, void* ptr) {
+        Local<Context> context = isolate->GetCurrentContext();
+        Local<Object> object = _Hole->NewInstance(context).ToLocalChecked();
+        object->Set(context, LITERAL("location"), Number::New(isolate, (LONG_PTR)ptr));
+        object->Set(context, LITERAL("name"), String::NewFromUtf8(isolate, getObjectName(ptr)).ToLocalChecked());
+        return object;
+    }
+    
+    Local<Object> getMoverImpl(Isolate* isolate, void* ptr) {
+        Local<Context> context = isolate->GetCurrentContext();
+        Local<Object> object = _Mover->NewInstance(context).ToLocalChecked();
+        object->Set(context, LITERAL("location"), Number::New(isolate, (LONG_PTR)ptr));
+        object->Set(context, LITERAL("name"), String::NewFromUtf8(isolate, getObjectName(ptr)).ToLocalChecked());
+        return object;
+    }
+
+    v8::Local<v8::Object> GetImplFromPtr(v8::Isolate* isolate, void* ptr) {
+        using namespace v8;
+
+        if (ptr == nullptr) {
+            __debugbreak(); //uh oh something weird is happening!
+        }
+
+        const char* name = getObjectName(ptr);
+        print(name << " GetMimplfromptr");
+
         Local<Object> obj;
         if (strcmp(".?AVBall@Sexy@@", name) == 0) {
-            obj = Templates::getBallImpl(isolate, ptr);
+            obj = getBallImpl(isolate, ptr);
         }
         else if (strcmp(".?AVBrick@Sexy@@", name) == 0) {
-            obj = Templates::getBrickImpl(isolate, ptr);
+            obj = getBrickImpl(isolate, ptr);
+        }
+        else if (strcmp(".?AVHole@Sexy@@", name) == 0) {
+            obj = getHoleImpl(isolate, ptr);
+        }
+        else if (strcmp(".?AVFloatingText@Sexy@@", name) == 0) {
+            obj = getFloatingTextImpl(isolate, ptr);
         }
         //print("about to return!");
         return obj;
@@ -534,6 +552,9 @@ namespace Events {
         DWORD id = InterlockedCompareExchange((volatile ULONG_PTR*)&v8helper2::notify_id, 0, 0);
         if (id == V8_NOTIFY_RUN_MODIFYBALLPTR) {
             //print("running ball count");
+            if (info[1]->BooleanValue(isolate)) { //if the second parameter is true then we'll tell the main thread to wait longer
+                v8helper2::tellWaitingThreadsToWaitLonger();
+            }
             Local<Value> args[] = { Integer::New(isolate, g_eax), Integer::New(isolate, g_ecx), Integer::New(isolate, g_edx), Integer::New(isolate, *(DWORD*)(ULONG_PTR(Peggle::GetLogicMgrFromBoard(Peggle::board)) + 0x17C)) };
             TryCatch errhandler(isolate);
             MaybeLocal<Value> result = func->Call(isolate->GetCurrentContext(), isolate->GetCurrentContext()->Global(), 4, args);
@@ -558,10 +579,13 @@ namespace Events {
 
         DWORD id = InterlockedCompareExchange((volatile ULONG_PTR*)&v8helper2::notify_id, 0, 0);
         if (id == V8_NOTIFY_RUN_PEGHIT) {
+            if (info[1]->BooleanValue(isolate)) { //if the second parameter is true then we'll tell the main thread to wait longer
+                v8helper2::tellWaitingThreadsToWaitLonger();
+            }
             //print("running peg hit");
             //nah i gotta check the types of these bruh
-            Local<Object> ball1 = Templates::GetBallOrBrickImplFromPtr(isolate, (void*)g_eax); //Templates::getBallImpl(isolate, (void*)g_eax);
-            Local<Object> ball2 = Templates::GetBallOrBrickImplFromPtr(isolate, (void*)g_ecx);
+            Local<Object> ball1 = Templates::GetImplFromPtr(isolate, (void*)g_eax); //Templates::getBallImpl(isolate, (void*)g_eax);
+            Local<Object> ball2 = Templates::GetImplFromPtr(isolate, (void*)g_ecx);
 
             Local<Value> args[] = { ball1, ball2, Integer::New(isolate, g_edx) };
             TryCatch errhandler(isolate);
@@ -581,12 +605,15 @@ namespace Events {
     void onKeyDown(const v8::FunctionCallbackInfo<v8::Value>& info) {
         using namespace v8;
         Isolate* isolate = info.GetIsolate();
-        //print("on key down js callback");
+        print("on key down js callback");
         Local<Function> func = info[0].As<Function>();
         DWORD id = InterlockedCompareExchange((volatile ULONG_PTR*)&v8helper2::notify_id, 0, 0);
         if (id == V8_NOTIFY_RUN_KEYDOWN) {
-            Local<Value> args[] = { Integer::New(isolate, g_eax), Integer::New(isolate, g_ecx), Integer::New(isolate, g_edx)};
-            //print("running on keydow " << sizeof(args)); //what the hell is sizeof doing (oops it returns the size in bytes not elements!)
+            if (info[1]->BooleanValue(isolate)) { //if the second parameter is true then we'll tell the main thread to wait longer
+                v8helper2::tellWaitingThreadsToWaitLonger();
+            }
+            Local<Value> args[] = { Integer::New(isolate, g_eax), Integer::New(isolate, g_ecx), Integer::New(isolate, g_edx) };
+            print("running on keydow " << sizeof(args) << " " << ARRAYSIZE(args)); //what the hell is sizeof doing (oops it returns the size in bytes not elements!)
             TryCatch errhandler(isolate);
             MaybeLocal<Value> result = func->Call(isolate->GetCurrentContext(), isolate->GetCurrentContext()->Global(), ARRAYSIZE(args), args);
             CHECKEXCEPTIONS(errhandler);
@@ -597,7 +624,7 @@ namespace Events {
                 v8helper2::returnval = g_ecx;
             }
         }
-        //print("key down eixt");
+        print("key down eixt");
     }
 }
 
@@ -633,17 +660,21 @@ void Peggle::InitPeggleGlobals(const v8::Local<v8::ObjectTemplate>& global, v8::
     using namespace v8;
     //Local<ObjectTemplate> global;// = ObjectTemplate::New(isolate);
 
+    print("init globals");
+
     board = GetBoard();
     logicMgr = GetLogicMgrFromBoard(board);
     //g_ball = TryGetBallFromBoard(g_board);
 
     Templates::Init(isolate);
-    
+
+    print("tempalkte inites");
+
     global->Set(isolate, "onInit", FunctionTemplate::New(isolate, Events::onInit));
     global->Set(isolate, "onBallCountModify", FunctionTemplate::New(isolate, Events::onBallCountModify));
     global->Set(isolate, "onPegHit", FunctionTemplate::New(isolate, Events::onPegHit));
     global->Set(isolate, "onKeyDown", FunctionTemplate::New(isolate, Events::onKeyDown));
-//#error LogicMgr will be invalid if we choose a new level, i'd have to re call init peggle globals
+    //#error LogicMgr will be invalid if we choose a new level, i'd have to re call init peggle globals
     Local<ObjectTemplate> LogicMgr = Templates::GenericPtrObject(isolate, logicMgr); //ObjectTemplate::New(isolate);
 
     //peggle->SetAccessorProperty(LITERAL("balls"), 
@@ -672,19 +703,41 @@ void Peggle::InitPeggleGlobals(const v8::Local<v8::ObjectTemplate>& global, v8::
     //    })
     //);
 
-
-    Property(LogicMgr, "time", 0x8); //idk what the purpose of this one is
+    Property(LogicMgr, "currentEvent", 0x4); //what the hell? changing this value forces seemingly random things to happen (1 does nothing, 2 automatically skips to 3)
+    Property(LogicMgr, "eventTime", 0x8); //idk what the purpose of this one is
     Property(LogicMgr, "relatedX", 0xA0);
     Property(LogicMgr, "relatedY", 0xA4);
     Property(LogicMgr, "specialsomething", 0x20); //hmm this doesn't seem to change alot
+    Property(LogicMgr, "nudgeTimeout", 0xE8); //this number becomes non-zero after you nudge the gun with the arrows or scrolling (while this value is non-zero it disables your ability to move the gun until it decrements itself to 0)
+    Property(LogicMgr, "mouseX", 0x98); //hmm these are correct but it will randomly decide to discard these with a random const 0xFFFFD8F0
+    Property(LogicMgr, "mouseY", 0x9C);
     Property(LogicMgr, "multipliedPointsThisShot", 0x108); //YO LET'S GOT THIS HAS TO BE RIGHT!
     Property(LogicMgr, "originalPointsThisShot", 0x10C); //also special in some weay
     Property(LogicMgr, "pegsHit", 0x120);
+    Property(LogicMgr, "gunReloadAnimationFrame", 0x138); //i assume
 
-    Property(LogicMgr, "specialsomething2", 0x170);
+    ////Property(LogicMgr, "specialsomething2", 0x170); //lmao for some reason this is a pointer to the purple peg
+    LogicMgr->SetAccessorProperty(LITERAL("purplePeg"), FunctionTemplate::New(isolate, [](const FunctionCallbackInfo<Value>& info) {
+        Isolate* isolate = info.GetIsolate();
+        ULONG_PTR base = IntegerFI(info.This()->Get(isolate->GetCurrentContext(), LITERAL("location")).ToLocalChecked());
+        ULONG_PTR purplePegPtr = *(ULONG_PTR*)(base + 0x170);
+        if (purplePegPtr) {
+            info.GetReturnValue().Set(Templates::GetImplFromPtr(isolate, (void*)purplePegPtr)); //what a handy function
+        }
+    }), FunctionTemplate::New(isolate, [](const FunctionCallbackInfo<Value>& info) { //just in case?
+        Isolate* isolate = info.GetIsolate();
+        ULONG_PTR base = IntegerFI(info.This()->Get(isolate->GetCurrentContext(), LITERAL("location")).ToLocalChecked());
+        ULONG_PTR* purplePegPtr = (ULONG_PTR*)(base + 0x170);
+        if (info[0]->IsNumber()) {
+            *purplePegPtr = IntegerFI(info[0]);
+        }
+        else if (info[0]->IsObject()) {
+            *purplePegPtr = IntegerFI(info[0].As<Object>()->Get(isolate->GetCurrentContext(), LITERAL("location")).ToLocalChecked());
+        }
+    }));
     Property(LogicMgr, "score", 0x174);
     Property(LogicMgr, "balls", 0x17C);
-    
+
     Property(LogicMgr, "currentAbility", 0x1C4);
 
     Property(LogicMgr, "superGuideCount", c_getAbilityOffset(ABILITY_SUPERGUIDE));
@@ -701,15 +754,20 @@ void Peggle::InitPeggleGlobals(const v8::Local<v8::ObjectTemplate>& global, v8::
 
     Property(LogicMgr, "ballsShot", 0x248);
     Property(LogicMgr, "freeBallsGivenByBucket", 0x254);
-    Property(LogicMgr, "freeBallsGivenByPoints", 0x254); //oops what was it?
+    Property(LogicMgr, "freeBallsGivenByPoints", 0x258); //oops what was it?
 
     ByteProperty(LogicMgr, "won", 0xF6);
-    Property(LogicMgr, "checkshit", 0xFB); //idk yet lol
+    ByteProperty(LogicMgr, "checkshit", 0xFB); //idk yet lol
 
+    FloatProperty(LogicMgr, "pegX", 0x330); //not sure what for yet but thats what these seem to be
+    FloatProperty(LogicMgr, "pegY", 0x334);
+
+    Property(LogicMgr, "pegsLeftToPop", 0x354); //changed when the turn is over
     Property(LogicMgr, "orangePegsLeft", 0x360); //yo this might be the amount of orange pegs left...
     Property(LogicMgr, "bluePegsLeft", 0x36C);
-    Property(LogicMgr, "uniquePegsHit", 0x12C); //amount of pegs hit or SOMETHING?
-    //Property(LogicMgr, "uniquePegsHit", 0x354); //um im pretty sure they both hold the exact same value (but technically this might be a different object)
+    //Property(LogicMgr, "uniquePegsHit", 0x12C); //amount of pegs hit or SOMETHING?
+    //Property(LogicMgr, "uniquePegsHit", 0x354); //um im pretty sure they both hold the exact same value (but technically this might be a different object) (nah they ain' tthe same)
+    Property(LogicMgr, "pegsHitThisTurn", 0x12C);
 
     //i think i've addded them all but im not sure whawt some of them do yet because they have weird names
     ConstProperty(global, ABILITY_SUPERGUIDE);
@@ -731,12 +789,40 @@ void Peggle::InitPeggleGlobals(const v8::Local<v8::ObjectTemplate>& global, v8::
     ConstProperty(global, PEG_PURPLE);
     ConstProperty(global, PEG_GREEN);
 
-    LogicMgr->SetAccessorProperty(LITERAL("text"),
+    ConstProperty(global, MOVEMENT_NONE);
+    ConstProperty(global, MOVEMENT_VERTICAL);
+    ConstProperty(global, MOVEMENT_HORIZONTAL);
+    ConstProperty(global, MOVEMENT_VERTICAL_HORIZONTAL);
+    ConstProperty(global, MOVEMENT_INFINITY);
+    ConstProperty(global, MOVEMENT_FIGURE_EIGHT);
+    ConstProperty(global, MOVEMENT_HORIZONTAL_SEMICIRCLE);
+    ConstProperty(global, MOVEMENT_VERTICAL_SEMICIRCLE);
+    ConstProperty(global, MOVEMENT_ROTATE_AT_ORIGIN);
+    ConstProperty(global, MOVEMENT_SMOOTH_ROTATE_AT_ORIGIN);
+    ConstProperty(global, MOVEMENT_VERTICAL_SNAP);
+    ConstProperty(global, MOVEMENT_HORIZONTAL_SNAP);
+    ConstProperty(global, MOVEMENT_ROTATE_AROUND_ORIGIN);
+
+    ConstProperty(global, LOGIC_EVENT_DEFAULT);
+    ConstProperty(global, LOGIC_EVENT_START_TURN);
+    ConstProperty(global, LOGIC_EVENT_END_TURN);
+    ConstProperty(global, LOGIC_EVENT_GRANT_FREE_BALL);
+    ConstProperty(global, LOGIC_EVENT_END_GAME);
+    //
+    ConstProperty(global, LOGIC_EVENT_OPEN_PANE);
+
+    Local<ObjectTemplate> textObject = Templates::GenericPtrObject(isolate, nullptr); //passing nullptr here because getObjectName will fail because this object has no RTTI
+    textObject->Set(isolate, "location", Number::New(isolate, ((ULONG_PTR)logicMgr + 0x7C))); //oh boy you can't re-set an object template's value
+    Property(textObject, "textLength", 0x14);
+    Property(textObject, "maxLength", 0x18); //assuming lol
+
+    textObject->SetAccessorProperty(LITERAL("text"),
         FunctionTemplate::New(isolate, [](const FunctionCallbackInfo<Value>& info) {
             //getter
             Isolate* isolate = info.GetIsolate();
+            ULONG_PTR base = IntegerFI(info.This()->Get(isolate->GetCurrentContext(), LITERAL("location")).ToLocalChecked());
             Local<String> str;
-            if (String::NewFromUtf8(isolate, (const char*)(ULONG_PTR(logicMgr) + 0x80)).ToLocal(&str)) {
+            if (String::NewFromUtf8(isolate, (const char*)(base+0x4)).ToLocal(&str)) {
                 info.GetReturnValue().Set(str);
             }
             else {
@@ -746,13 +832,20 @@ void Peggle::InitPeggleGlobals(const v8::Local<v8::ObjectTemplate>& global, v8::
         FunctionTemplate::New(isolate, [](const FunctionCallbackInfo<Value>& info) {
             //setter
             Isolate* isolate = info.GetIsolate();
-            char* text = (char*)((ULONG_PTR)logicMgr + 0x80);
-            Local<String> str = info[0].As<String>();
+            ULONG_PTR base = IntegerFI(info.This()->Get(isolate->GetCurrentContext(), LITERAL("location")).ToLocalChecked());
+            //hold on there's an actual function for this!
+            //im just gonna allocate the string length right here using ALLOCA!!!
+            Local<String> jsstr = info[0].As<String>();
+            char* stackstr = (char*)_alloca(jsstr->Length()+1); //this is awesome (don't let the haters tell you otherwise bruh)
+            strcpy(stackstr, CStringFI(jsstr)); //almost didn't allocate space for the null terminator i would've had the worst bug ever
+            Peggle::setEmbeddedText((void*)base, stackstr, jsstr->Length());
+            //char* text = (char*)(base + 0x4);
             //memcpy(text, CStringFI(info[0]), str->Length());
-            strcpy(text, CStringFI(str)); //also copies null terminator
+            //strcpy(text, CStringFI(str)); //also copies null terminator
         })
     );
-    Property(LogicMgr, "textLength", 0x90);
+    LogicMgr->Set(isolate, "textObject", textObject);
+    //Property(LogicMgr, "textLength", 0x90);
 
     //LogicMgr->SetAccessorProperty(LITERAL("location"), FunctionTemplate::New(isolate, [](const v8::FunctionCallbackInfo<v8::Value>& info) {
     //    Isolate* isolate = info.GetIsolate();
@@ -761,14 +854,49 @@ void Peggle::InitPeggleGlobals(const v8::Local<v8::ObjectTemplate>& global, v8::
     //
     //LogicMgr->Set(isolate, "set_dword", FunctionTemplate::New(isolate, generic_set_dword));
     //LogicMgr->Set(isolate, "get_dword", FunctionTemplate::New(isolate, generic_get_dword));
-    LogicMgr->Set(isolate, "activate_ability", FunctionTemplate::New(isolate, peggle_activate_ability));
-    LogicMgr->Set(isolate, "shoot_ball_idk", FunctionTemplate::New(isolate, [](const v8::FunctionCallbackInfo<v8::Value>& info) {
+    LogicMgr->Set(isolate, "activateAbility", FunctionTemplate::New(isolate, [](const v8::FunctionCallbackInfo<v8::Value>& info) {
         Isolate* isolate = info.GetIsolate();
-        peggle_something_about_shooting_the_ball(IntegerFI(info[0]), IntegerFI(info[1]), IntegerFI(info[2]));
+
+        //lowkey you should be passing your own parameters because idk what this even points to
+        //DWORD unknown1 = 0x005F19B4;
+        void* ball = TryGetBallFromBoard(Peggle::board);
+
+        void* physObj2 = ball; //i wonder what that would do
+
+        if (info[0]->IsNumber()) {
+            ball = (void*)IntegerFI(info[0]);
+        }
+        else if (info[0]->IsObject()) {
+            ball = (void*)IntegerFI(info[0].As<Object>()->Get(isolate->GetCurrentContext(), LITERAL("location")).ToLocalChecked());
+        }
+        if (info[1]->IsNumber()) {
+            physObj2 = (void*)IntegerFI(info[1]);
+        }
+        else if (info[1]->IsObject()) {
+            physObj2 = (void*)IntegerFI(info[1].As<Object>()->Get(isolate->GetCurrentContext(), LITERAL("location")).ToLocalChecked());
+        }
+
+        DWORD ability = 0; //IntegerFI(info[2]);
+        if (info[2]->BooleanValue(isolate)) {
+            ability = IntegerFI(info[2]);
+        }
+
+
+        BOOL isAbilitySpecified = FALSE;
+
+        if (info[3]->BooleanValue(isolate)) {
+            isAbilitySpecified = IntegerFI(info[3]);
+        }
+
+        Peggle::activateAbility(ball, physObj2, ability, isAbilitySpecified);
     }));
-    LogicMgr->Set(isolate, "add_balls", FunctionTemplate::New(isolate, [](const v8::FunctionCallbackInfo<v8::Value>& info) {
+    //LogicMgr->Set(isolate, "click", FunctionTemplate::New(isolate, [](const v8::FunctionCallbackInfo<v8::Value>& info) {
+    //    Isolate* isolate = info.GetIsolate();
+    //    Peggle::clickOnBoard(IntegerFI(info[0]), IntegerFI(info[1]), IntegerFI(info[2]));
+    //}));
+    LogicMgr->Set(isolate, "addBalls", FunctionTemplate::New(isolate, [](const v8::FunctionCallbackInfo<v8::Value>& info) {
         Isolate* isolate = info.GetIsolate();
-        peggle_add_balls(IntegerFI(info[0]), IntegerFI(info[1]), IntegerFI(info[2]));
+        Peggle::addBalls(IntegerFI(info[0]), IntegerFI(info[1]), IntegerFI(info[2]));
     }));
     //peggle->Set(isolate, "get_board", FunctionTemplate::New(isolate, peggle_get_board));
 
@@ -782,17 +910,60 @@ void Peggle::InitPeggleGlobals(const v8::Local<v8::ObjectTemplate>& global, v8::
     );*/
 
     Local<ObjectTemplate> Board = Templates::GenericPtrObject(isolate, board);
-    Board->Set(isolate, "createFloatingText", FunctionTemplate::New(isolate, [](const v8::FunctionCallbackInfo<v8::Value>& info) {
+    //Board->Set(isolate, "createFloatingText", FunctionTemplate::New(isolate, [](const v8::FunctionCallbackInfo<v8::Value>& info) {
+    //    Isolate* isolate = info.GetIsolate();
+    //    void* floatingText = Peggle::createFloatingText((void*)IntegerFI(info.This()->Get(isolate->GetCurrentContext(), LITERAL("location")).ToLocalChecked()));
+    //    if (floatingText) {
+    //        info.GetReturnValue().Set(Templates::getFloatingTextImpl(isolate, floatingText));
+    //    }
+    //}));
+    Board->Set(isolate, "enumPhysObjs", FunctionTemplate::New(isolate, [](const v8::FunctionCallbackInfo<v8::Value>& info) {
         Isolate* isolate = info.GetIsolate();
-        void* floatingText = peggle_create_floating_text((void*)IntegerFI(info.This()->Get(isolate->GetCurrentContext(), LITERAL("location")).ToLocalChecked()));
-        if (floatingText) {
-            info.GetReturnValue().Set(Templates::getFloatingTextImpl(isolate, floatingText));
+        Local<Context> context = isolate->GetCurrentContext();
+        Local<Function> func = info[0].As<Function>();
+        //__debugbreak();
+        //unfortunately this loop is really weird and complicated so hopefully i can get it right on the first try
+        ULONG_PTR base = (info.This()->Get(context, LITERAL("location")).ToLocalChecked())->IntegerValue(context).FromJust();
+        ULONG_PTR esi = (**(ULONG_PTR**)(base + 0x194)); // + 0x190; //haha no way im stepping through it and the compiler actually chose to store this in the esi register (aw nevermind they tricked me and actually used the edi register instead)
+        ULONG_PTR ebx = base + 0x190;
+        //cmp for error checking that i can't be bothered to do
+        ULONG_PTR ecx = *(ULONG_PTR*)(ebx + 4);
+    
+        print(base << " " << esi << " " << ebx << " " << ecx);
+    
+        //some how this all worked out on the first try
+
+        while (esi != ecx) {
+            //__debugbreak();
+            print("yerp " << esi << " " << ebx << " " << ecx);
+            ecx = *(ULONG_PTR*)(ebx + 4); //wait do i have to do this? ebx isn't what's changing and nothing is changing base+0x194
+            void* physObj = *(void**)(esi + 8);
+            //check type of physObj
+            Local<Value> obj = Templates::GetImplFromPtr(isolate, physObj);
+            if (obj.IsEmpty()) {
+                //well it's one of the other physobjs i haven't implemented yet lol just slap a generic on there
+                obj = Templates::GenericPtrObject(isolate, physObj)->NewInstance(context).ToLocalChecked();
+            }
+            TryCatch errhandler(isolate);
+            MaybeLocal<Value> result = func->Call(context, context->Global(), 1, &obj); //why do i gotta cast it myself i should be able to see that right? i might be doing it wrong
+            CHECKEXCEPTIONS(errhandler);
+            if (!result.IsEmpty()) {
+                if (result.ToLocalChecked()->BooleanValue(isolate)) {
+                    break;
+                }
+            }
+            esi = *(ULONG_PTR*)(esi);
         }
+    }));
+    Board->Set(isolate, "click", FunctionTemplate::New(isolate, [](const v8::FunctionCallbackInfo<v8::Value>& info) {
+        Isolate* isolate = info.GetIsolate();
+        Peggle::clickOnBoard(IntegerFI(info[0]), IntegerFI(info[1]), IntegerFI(info[2]));
     }));
     Property(Board, "ballHasBeenShot", 0x1A4); //idk about this one lol (seems very very likely tho)
     Property(Board, "viewX", 0x1A8);
     Property(Board, "viewY", 0x1AC);
     Property(Board, "paused", 0x1B8); //prolly  
+    Property(Board, "pauseMenuVisibility", 0x1BC);
     //Board->Set(isolate, "set_dword", FunctionTemplate::New(isolate, generic_set_dword));
     //Board->Set(isolate, "get_dword", FunctionTemplate::New(isolate, generic_get_dword));
     //Board->SetAccessorProperty(LITERAL("location"), FunctionTemplate::New(isolate, [](const v8::FunctionCallbackInfo<v8::Value>& info) {
@@ -819,7 +990,7 @@ void Peggle::InitPeggleGlobals(const v8::Local<v8::ObjectTemplate>& global, v8::
 
         Board->Set(isolate, "Ball", Ball);
     }*/
-    Board->SetAccessorProperty(LITERAL("Ball"), FunctionTemplate::New(isolate, [](const v8::FunctionCallbackInfo<v8::Value>& info) {
+    Board->SetAccessorProperty(LITERAL("ball"), FunctionTemplate::New(isolate, [](const v8::FunctionCallbackInfo<v8::Value>& info) {
         Isolate* isolate = info.GetIsolate();
         void* ball = TryGetBallFromBoard(board);
         if (ball) {
@@ -837,7 +1008,7 @@ void Peggle::InitPeggleGlobals(const v8::Local<v8::ObjectTemplate>& global, v8::
         ULONG_PTR first = ULONG_PTR(board) + 0x1A0;
         ULONG_PTR second = **(ULONG_PTR**)(first);
 
-        __debugbreak();
+        //__debugbreak();
         if (info[0]->IsNumber()) {
             *(ULONG_PTR*)(second + 8) = IntegerFI(info[0]);
         }
@@ -846,8 +1017,51 @@ void Peggle::InitPeggleGlobals(const v8::Local<v8::ObjectTemplate>& global, v8::
         }
     })); //lmao i accidently left that shit read only
 
+    Local<ObjectTemplate> FloatingTextMgr = Templates::GenericPtrObject(isolate, *(void**)(ULONG_PTR(board)+0x148));
+    FloatingTextMgr->Set(isolate, "createFloatingText", FunctionTemplate::New(isolate, [](const v8::FunctionCallbackInfo<v8::Value>& info) {
+        Isolate* isolate = info.GetIsolate();
+        void* floatingText = Peggle::createFloatingText((void*)IntegerFI(info.This()->Get(isolate->GetCurrentContext(), LITERAL("location")).ToLocalChecked()));
+        if (floatingText) {
+            info.GetReturnValue().Set(Templates::getFloatingTextImpl(isolate, floatingText));
+        }
+    }));
+    FloatingTextMgr->Set(isolate, "enumFloatingTextObjs", FunctionTemplate::New(isolate, [](const v8::FunctionCallbackInfo<v8::Value>& info) {
+        Isolate* isolate = info.GetIsolate();
+        Local<Context> context = isolate->GetCurrentContext();
+        Local<Function> func = info[0].As<Function>();
+        //__debugbreak();
+        //unfortunately this loop is really weird and complicated so hopefully i can get it right on the first try
+        ULONG_PTR base = (info.This()->Get(context, LITERAL("location")).ToLocalChecked())->IntegerValue(context).FromJust();
+        ULONG_PTR eax = *(ULONG_PTR*)(base + 0xC); //eax not used again lol
+        ULONG_PTR esi = *(ULONG_PTR*)(eax);
+        ULONG_PTR edi = base + 8;
+
+        ULONG_PTR ebx = *(ULONG_PTR*)(edi + 4);
+        
+        while (esi != ebx) {
+            //__debugbreak();
+            void* floatingText = (void*)(esi + 8); //oh wait i wasn't supposed to dereference it lol
+            //check type of physObj
+            Local<Value> obj = Templates::GetImplFromPtr(isolate, floatingText);
+            if (obj.IsEmpty()) {
+                //well it's one of the other physobjs i haven't implemented yet lol just slap a generic on there
+                obj = Templates::GenericPtrObject(isolate, floatingText)->NewInstance(context).ToLocalChecked();
+            }
+            TryCatch errhandler(isolate);
+            MaybeLocal<Value> result = func->Call(context, context->Global(), 1, &obj); //why do i gotta cast it myself i should be able to see that right? i might be doing it wrong
+            CHECKEXCEPTIONS(errhandler);
+            if (!result.IsEmpty()) {
+                if (result.ToLocalChecked()->BooleanValue(isolate)) {
+                    break;
+                }
+            }
+            esi = *(ULONG_PTR*)(esi);
+        }
+    }));
+    global->Set(isolate, "FloatingTextMgr", FloatingTextMgr);
     global->Set(isolate, "Board", Board);
     global->Set(isolate, "LogicMgr", LogicMgr);
+    print("done!e");
     //global->Set(isolate, "peggle", peggle);
 
     //global->Set(isolate, "eax", Integer::New(isolate, g_eax));
@@ -889,4 +1103,195 @@ void* Peggle::TryGetBallFromBoard(void* board) {
         return (void*)third;
     }
     return nullptr;
+}
+
+void Peggle::activateAbility(void* ball, void* physObj2, DWORD ability, BOOL isAbilitySpecified) {
+    //uhh we need to call this function
+    //uh oh how the fuck do i call a member function myself
+    //well since we've got the option i might have to __asm this shit!
+
+    //constexpr DWORD offset = 0x0006EDF0;
+
+    //i think there are 2 ways to call this function
+    //if you know which ability you want, you pass it
+    //if you don't, set ability to 0
+    //the problem is i don't really know what you pass as the first 2 arguments
+    //if you don't know the ability (meaning it's implied), the first 2 arguments seem to point to 2 different Ball objects (which is weird because why are there 2)
+
+    //ok for some reason the first 2 parameters point to the same address so lets allocate that on le stack right here
+    //yeah im not gonna lie idk if these were ever right? they still worked though so imma use them as default params
+    //DWORD unknown1 = 0x005F19B4; //idk
+    ////DWORD unknown2 = 0x005F1FDC; //for some reason this one was different! (when i used warren and got uhh i forgot what exactly it gave me thhis)
+    //DWORD unknown2 = unknown1;
+
+    //yeah so i asked chat and he said asm was the goat so...
+    //hold on i just randomly thought about it and i think you could still call a method without asm!
+    //void*(__fastcall mango)(DWORD register_ecx, DWORD register_edx_unused, DWORD stack_param2, DWORD stack_param3, ...);
+    //using fastcall you could pass the object as the very first parameter
+    //DWORD unknown1 = IntegerFI(info[0]);
+
+    //DWORD unknown2;// = IntegerFI(info[1]);
+
+    constexpr DWORD offset = 0x0006EDF0;
+
+    ULONG_PTR funcaddr = ULONG_PTR(g_peggle) + offset;
+
+    ////bruh this actually worked but didn't at the same time
+    //__asm {
+    //    //int 3
+    //    push isAbilitySpecified
+    //    push ability
+    //    //lea eax, unknown2
+    //    //push eax
+    //    //lea eax, unknown1
+    //    //push eax
+    //    push unknown2
+    //    push unknown1
+    //    mov ecx, Peggle::logicMgr
+    //    call peggle_internal_activate_ability
+    //}
+    ////g_peggle_internal_activate_ability(nullptr, nullptr, IntegerFI(info[0]), 1); //idk im assuming this shit...
+
+
+    __asm {
+        //int 3
+        push isAbilitySpecified
+        push ability
+        push physObj2
+        push ball
+        mov ecx, Peggle::logicMgr
+        call funcaddr
+    }
+}
+
+void Peggle::clickOnBoard(DWORD mouseX, DWORD mouseY, DWORD mouseButton = 1) { //ohhhh right click is -1 and middle mouse is 3
+    //third parameter is usually one
+    constexpr DWORD offset = 0x00002810;
+
+    ULONG_PTR funcaddr = ULONG_PTR(g_peggle) + offset;
+
+    __asm {
+        //this function is a method of the Board class and it's definitely related to shooting the ball in some way lol but the main important part is super long and i haven't been bothered to analyze it yet
+        //yeah i think that this function is normally called when you interact with the main screen and it happens to call the actual ball shooting function in it (i think i still haven't analyzed that big ass function)
+        //int 3
+        mov eax, funcaddr
+        push mouseButton
+        push mouseY
+        push mouseX
+        mov ecx, Peggle::board
+        call eax
+    }
+}
+
+void Peggle::addBalls(DWORD amount, DWORD unknown, DWORD b_unknown2) { //b_unknown2 is some kinda boolean or something
+    //unknown is usually 0
+    //b_unknown2 is usually 1
+    //i think
+
+    constexpr DWORD offset = 0x0005D880;
+
+    ULONG_PTR funcaddr = ULONG_PTR(g_peggle) + offset;
+
+    __asm {
+        //this function is a method of the LogicMgr class and it directly changes the amount of balls you have
+        //it's also the function i change when this Dll is loaded
+        //if you call this function in a script it will infinitely loop so probably only eval this one
+        //int 3
+        mov eax, funcaddr
+        push b_unknown2
+        push unknown
+        push amount
+        mov ecx, Peggle::logicMgr
+        call eax
+    }
+}
+
+void Peggle::setHit(void* pegInfo, DWORD hit) {
+    constexpr DWORD offset = 0x00076650;
+
+    ULONG_PTR funcaddr = ULONG_PTR(g_peggle) + offset;
+
+    __asm {
+        mov eax, funcaddr
+        push hit
+        mov ecx, pegInfo
+        call eax
+    }
+}
+
+void Peggle::setPegType(void* BrickOrBall, DWORD ptype) { //im assuming i know what this function does lol (fortunately if the object doesn't have peginfo it will safely return)
+    constexpr DWORD offset = 0x00079870;
+
+    ULONG_PTR funcaddr = ULONG_PTR(g_peggle) + offset;
+
+    //"type" is reserved in __asm blocks so i named the parameter ptype lol
+    __asm {
+        mov eax, funcaddr
+        push ptype
+        mov ecx, BrickOrBall
+        call eax
+    }
+}
+
+void* Peggle::createFloatingText(void* floatingTextMgr) { //uhhh every time i use this function it crashes lol hold on imma figure out how it works in a minute
+    __UNTESTED;
+    constexpr DWORD offset = 0x00069D20;
+
+    ULONG_PTR funcaddr = ULONG_PTR(g_peggle) + offset;
+
+    __asm {
+        mov eax, funcaddr
+        mov ecx, floatingTextMgr
+        call eax
+    }
+}
+
+void Peggle::setEmbeddedText(void* textObject, const char* text, size_t textLength) {
+    constexpr DWORD offset = 0x0000CEA0;
+    ULONG_PTR funcaddr = ULONG_PTR(g_peggle) + offset;
+
+    //"length" is reserved in __asm blocks so i had to use textLength lol
+    __asm {
+        mov eax, funcaddr
+        mov ecx, textObject
+        push textLength
+        push text
+        call eax
+    }
+}
+
+//calls a member function that (im assuming) all phys objects have (Ball/Brick/Hole)
+extern "C" float __stdcall Peggle::getPhysX(void* physObj) {
+    __UNTESTED;
+    __asm {
+        mov ecx, physObj
+        //lmao for some reason i tried to do mov eax, [physObj] and it lowkey ignored the brackets
+        mov eax, [ecx]
+        mov edx, [eax+0x78]
+        call edx
+    }
+}
+
+extern "C" float __stdcall Peggle::getPhysY(void* physObj) {
+    __UNTESTED;
+    __asm {
+        mov ecx, physObj
+        //lmao for some reason i tried to do mov eax, [physObj] and it lowkey ignored the brackets
+        mov eax, [ecx]
+        mov edx, [eax+0x7C]
+        call edx
+    }
+}
+
+void Peggle::playPegAnimation(void* pegInfo, BOOL animationId) {
+    constexpr DWORD offset = 0x00076670;
+
+    ULONG_PTR funcaddr = ULONG_PTR(g_peggle) + offset;
+
+    __asm {
+        mov eax, funcaddr
+        mov ecx, pegInfo
+        push animationId
+        call eax
+    }
 }

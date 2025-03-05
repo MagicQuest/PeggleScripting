@@ -11,6 +11,7 @@ HANDLE v8helper2::thread;
 DWORD v8helper2::threadID;
 
 HANDLE v8helper2::notifyEvent;
+HANDLE v8helper2::waitEvent;
 HANDLE v8helper2::finishEvent;
 volatile DWORD v8helper2::notify_id;
 volatile DWORD v8helper2::returnval;
@@ -212,7 +213,67 @@ void GetWindowRectWrapper(const v8::FunctionCallbackInfo<v8::Value>& info) {
     info.GetReturnValue().Set(jsRect);
 }
 
-void v8helper2::Notify(DWORD id) {
+void GetKey(const v8::FunctionCallbackInfo<v8::Value>& info) {
+    using namespace v8;
+    Isolate* isolate = info.GetIsolate();
+    int key = IntegerFI(info[0]);
+    if (info[0]->IsString()) {
+        key = toupper((CStringFI(info[0]))[0]);
+    }
+    info.GetReturnValue().Set(GetAsyncKeyState(key) & 0x8000);
+}
+
+void GetKeyDown(const v8::FunctionCallbackInfo<v8::Value>& info) {
+    using namespace v8;
+    Isolate* isolate = info.GetIsolate();
+    int key = IntegerFI(info[0]);
+    if (info[0]->IsString()) {
+        key = toupper((CStringFI(info[0]))[0]);
+    }
+    info.GetReturnValue().Set(GetAsyncKeyState(key) & 0x1); //0x01 and 0x1 AND 0x001 work the same? (they all just mean 1 lil bro)
+}
+
+void getline(const v8::FunctionCallbackInfo<v8::Value>& info) {
+    using namespace v8;
+    Isolate* isolate = info.GetIsolate();
+
+    uint32_t len = 256;
+    if (info[1]->IsNumber()) {
+        len = IntegerFI(info[1]);
+    }
+
+    std::wstring wstr(len, L'#');
+    //wchar_t wstr[256];
+    std::wcout << WStringFI(info[0]);
+    std::wcin.getline((wchar_t*)wstr.data(), len);
+
+    info.GetReturnValue().Set(String::NewFromTwoByte(isolate, (const uint16_t*)wstr.data()).ToLocalChecked());
+}
+
+void SetForegroundWindowWrapper(const v8::FunctionCallbackInfo<v8::Value>& info) {
+    using namespace v8;
+    Isolate* isolate = info.GetIsolate();
+
+    info.GetReturnValue().Set(Number::New(isolate, SetForegroundWindow((HWND)IntegerFI(info[0]))));
+}
+
+void GetConsoleWindowWrapper(const v8::FunctionCallbackInfo<v8::Value>& info) {
+    using namespace v8;
+    Isolate* isolate = info.GetIsolate();
+
+    info.GetReturnValue().Set(Number::New(isolate, (LONG_PTR)GetConsoleWindow()));
+}
+
+BOOL v8helper2::Notify(DWORD id) {
+    //wait HELL no i gotta make sure im not calling this from my own thread!
+    if (GetCurrentThreadId() == v8helper2::threadID) {
+        HANDLE console = GetStdHandle(STD_OUTPUT_HANDLE);
+        SetConsoleTextAttribute(console, 4);
+        print("[V8 Thread] Notify was called on my own thread! (BAD!)\x07");
+        SetConsoleTextAttribute(console, 7);
+        return 0;
+    }
+    print("[Notify] called by Thread " << GetCurrentThreadId());
     //print("notify event and notifiy-id" << (ULONG_PTR) & notifyEvent << " " << (ULONG_PTR)&notify_id);
     //print(notifyEvent);
     //__debugbreak();
@@ -223,12 +284,14 @@ void v8helper2::Notify(DWORD id) {
     if (!result) {
         print("i did that wrong -> " << GetLastError());
     }
+    return 1;
 }
 
 void MainLoop();
 
 void v8helper2::CreateEvents() {
     v8helper2::notifyEvent = CreateEvent(NULL, FALSE, FALSE, NULL);
+    v8helper2::waitEvent = CreateEvent(NULL, FALSE, FALSE, NULL);
     v8helper2::finishEvent = CreateEvent(NULL, FALSE, FALSE, NULL);
 }
 
@@ -357,6 +420,11 @@ void MainLoop() {
         global->Set(isolate, "GetCursorPos", v8::FunctionTemplate::New(isolate, GetMousePosWrapper));
         global->Set(isolate, "GetGUIThreadInfo", v8::FunctionTemplate::New(isolate, GetGUIThreadInfoWrapper));
         global->Set(isolate, "GetWindowRect", v8::FunctionTemplate::New(isolate, GetWindowRectWrapper));
+        global->Set(isolate, "GetKey", v8::FunctionTemplate::New(isolate, GetKey));
+        global->Set(isolate, "GetKeyDown", v8::FunctionTemplate::New(isolate, GetKeyDown));
+        global->Set(isolate, "getline", v8::FunctionTemplate::New(isolate, getline));
+        global->Set(isolate, "SetForegroundWindow", v8::FunctionTemplate::New(isolate, SetForegroundWindowWrapper));
+        global->Set(isolate, "GetConsoleWindow", v8::FunctionTemplate::New(isolate, GetConsoleWindowWrapper));
 
         //i think including these would cause random exceptions to happen but im not 100% sure...
         //global->Set(isolate, "ChooseExtendedGlobals", v8::FunctionTemplate::New(isolate, ChooseExtendedGlobalsWrapper));
@@ -436,7 +504,10 @@ void MainLoop() {
                 executePeggle: {
                     //assuming RunLeCode...
                     if (scriptToRun.IsEmpty()) {
+                        HANDLE console = GetStdHandle(STD_OUTPUT_HANDLE);
+                        SetConsoleTextAttribute(console, 4);
                         print("[V8 Thread] your code is dog shit and it didn't compile, resave it with something that works buddy \x07");
+                        SetConsoleTextAttribute(console, 7);
                         goto exit;
                     }
                     v8::Local<v8::Value> result;
@@ -470,6 +541,7 @@ void MainLoop() {
                 }
 
                 exit:
+                print("skrip done");
                 SetEvent(v8helper2::finishEvent);
             }
             else {
