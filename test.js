@@ -97,7 +97,7 @@ onPegHit((currentBall, physObj2, bool) => { //runs every time any ball hits a pe
     //print(currentBall.location == Board.Ball.location); //is true right>? yes!
     //print(physObj2); //sometimes brick (depending on what kind of peg you hit, circle == ball, square == brick)
     lastHit = physObj2;
-    const pinfo = physObj2.PegInfo;
+    const pinfo = physObj2.pegInfo;
     if (!pinfo.hit) {
         pegs.push(pinfo);
         print("bpushed");
@@ -124,6 +124,10 @@ onPegHit((currentBall, physObj2, bool) => { //runs every time any ball hits a pe
         //}
         //pinfo.type = Math.floor(Math.random()*PEG_GREEN)+1;
     }
+
+    const floatingText = LogicMgr.spawnFloatingText("~SIGMA~", currentBall.x, currentBall.y, 0x2D);
+    floatingText.velRotation = .05;
+    floatingText.rotation = .1; //you have to change the rotation for velRotation to kick in
 
     //print(Math.floor(Math.random() * ABILITY_WARRENSPECIAL)+1);
 
@@ -180,7 +184,7 @@ onKeyDown((key, unused2, unused3) => { //runs every time you press a key while l
         const rect = GetWindowRect(hwndActive);
         //print(rect.left, rect.left-x);
         //print(rect.top, rect.top-y);
-        const ball = Board.Ball;
+        const ball = Board.ball;
 
         ball.x = x - (rect.left + 77);
         ball.y = y - (rect.top + 52);

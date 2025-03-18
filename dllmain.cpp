@@ -705,6 +705,38 @@ BOOL APIENTRY DllMain(HMODULE hModule,
         OverwriteWindowProcKeyDownSection(g_peggle);
         OverwritePegHitSection(g_peggle);
         OverwriteLevelLoadEnd(g_peggle);
+
+        //lol i gotta change the protection at this page for the defaultTextColor property
+        DWORD oldp;
+        BOOL success = VirtualProtect((void*)((ULONG_PTR)g_peggle + 0x00069F08), 4, PAGE_EXECUTE_READWRITE, &oldp);
+        if (!success) {
+            MessageBox(NULL, L"uhhh the VirtualProtect for the defaultTextColor property failed so probably don't try to set that lol", _com_error(GetLastError()).ErrorMessage(), MB_OK | MB_SYSTEMMODAL);
+            //print("uhhh the VirtualProtect for the defaultTextColor property failed so probably don't try to set that lol");
+        }
+        success = VirtualProtect((void*)((ULONG_PTR)g_peggle + 0x00010F97), 1, PAGE_EXECUTE_READWRITE, &oldp);
+        if (!success) {
+            MessageBox(NULL, L"the VirtualProtect call for the fast forward speed failed so don't try to modify that variable lol", _com_error(GetLastError()).ErrorMessage(), MB_OK | MB_SYSTEMMODAL);
+            //print("the VirtualProtect call for the fast forward speed failed so don't try to modify that variable lol");
+        }
+        //this might be in the same page as the last one BUT just in case
+        success = VirtualProtect((void*)((ULONG_PTR)g_peggle + 0x00010F83), 6, PAGE_EXECUTE_READWRITE, &oldp);
+        if (!success) {
+            MessageBox(NULL, L"the VirtualProtect call for allowing fast forwards during a turn failed so don't try to modify that variable lol", _com_error(GetLastError()).ErrorMessage(), MB_OK | MB_SYSTEMMODAL);
+            //print("the VirtualProtect call for allowing fast forwards during a turn failed so don't try to modify that variable lol");
+        }
+        success = VirtualProtect((void*)((ULONG_PTR)g_peggle + 0x0007299B), 5, PAGE_EXECUTE_READWRITE, &oldp);
+        if (!success) {
+            MessageBox(NULL, L"the VirtualProtect call for allowing you to shoot during a turn failed so don't try to modify that variable lol", _com_error(GetLastError()).ErrorMessage(), MB_OK | MB_SYSTEMMODAL);
+        }
+        success = VirtualProtect((void*)((ULONG_PTR)g_peggle + 0x0004DA31), 5, PAGE_EXECUTE_READWRITE, &oldp);
+        //success = success & VirtualProtect((void*)((ULONG_PTR)g_peggle + 0x00021143), 10, PAGE_EXECUTE_READWRITE, &oldp); //wait this wouldn't tell me WHICH one didn't work
+        if (!success) {
+            MessageBox(NULL, L"the VirtualProtect call for allowing you to shoot pegs didn't work so don't try to modify that variable lol", _com_error(GetLastError()).ErrorMessage(), MB_OK | MB_SYSTEMMODAL);
+        }
+        success = VirtualProtect((void*)((ULONG_PTR)g_peggle + 0x00021143), 10, PAGE_EXECUTE_READWRITE, &oldp); //wait this wouldn't tell me WHICH one didn't work
+        if (!success) {
+            MessageBox(NULL, L"the second VirtualProtect call for allowing you to shoot pegs didn't work so don't try to modify that variable lol", _com_error(GetLastError()).ErrorMessage(), MB_OK | MB_SYSTEMMODAL);
+        }
         //not totally sure if this is needed as its been working fine for me without it (but you can never be too safe)
         FlushInstructionCache(GetCurrentProcess(), NULL, NULL); //idk how big peggle is and you have to specify the size with the base address if you supply it
         //char exe[MAX_PATH]; GetModuleFileNameA(hModule, exe, MAX_PATH); //nah no way i wrote NULL instead of THIS module (it was using popcapgame1???)

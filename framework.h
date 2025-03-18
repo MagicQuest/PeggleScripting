@@ -6,6 +6,7 @@
 #include <iostream>
 #include <string>
 #include <tlhelp32.h> 
+#include <comdef.h> //_com_error
 
 #pragma comment(lib, "v8_monolith") //>ninja -C out/x64.release v8_monolith
 #pragma comment(lib, "winmm.lib")

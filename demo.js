@@ -2,11 +2,28 @@ function getAbilityOffset(ability) {
     return ((2*ability)*4) + 0x1D4;
 }
 
+//lowkey this function and createBall are pretty risky because i lowkey keep getting access violations after a while
+function reloadGun() { //i haven't ACTUALLY seen how they reload the gun so this is my take on it
+    if (!Gun.ball) {
+        const sonic = createBall(false, false, 100, 100, 0, 0); //the reason we don't pass the first parameter as 1 (anchored) here is because if you do that it also sets the phys type to PHYS_PEG instead of PHYS_BALL and it doesn't like that (maybe because of the cmp and jne at offset 0x0004DA31)
+        sonic.anchored = 1; //anyways we just set anchored ourselves here
+        //technically when the ball is attached to the gun, its refCount is one (because the gun owns it) so im setting it to one too because when you shoot the ball it decrements the ref count and something weird will happen if i don't follow the rules (i can't be bothered to find out what actually happens in this situation)
+        sonic.refCount = 1; //owned by gun (which would happen automatically if i was doing this correctly)
+        Gun.ball = sonic; //BOOM
+        //you can't shoot the gun while the game is going but im cooking up a solution for that literally right as im writing this
+        canShootBallDuringTurns = true; //now you can
+    } else {
+        print("gun already had a ball so uhhhh im doing nothing");
+        //print(sonic);
+    }
+}
+
 onInit(() => { //runs on every file change or whenever you start a new level (which also triggers a file read)
     print("doin' ya mam doin' doin' ya mam");
     choice = 0;
     reactivate = false;
     grow = false;
+    sigma = false;
 });
 
 
@@ -15,7 +32,7 @@ onBallCountModify((eax, amountToAdd, edx, ballCount) => { //runs every time you 
 });
 
 onPegHit((currentBall, physObj2, bool) => { //runs every time any ball hits a peg (even those hit by a multiball) 
-    const pinfo = physObj2.PegInfo;
+    const pinfo = physObj2.pegInfo;
 
     if (choice == 1 || choice == 2 || choice == 3 || choice == 4) {
         const peg_type = choice > 1 ? PEG_GREEN : PEG_PURPLE;
@@ -37,8 +54,29 @@ onPegHit((currentBall, physObj2, bool) => { //runs every time any ball hits a pe
         currentBall.radius += .1;
     }
 
+    if (sigma) {
+        if (!pinfo.hit) {
+            //sound id, and then another parameter that idk about lol
+            SoundMgr.playSoundSimple(Math.floor(Math.random() * 76), 1);
+        }
+        const floatingText = LogicMgr.spawnFloatingText("~SIGMA~", currentBall.x, currentBall.y);
+        floatingText.velRotation = .05;
+        floatingText.rotation = .1; //you have to change the rotation for velRotation to kick in
+        floatingText.color = Math.random()*255 << 16 | Math.random()*255 << 8 | Math.random()*255;
+    }
+
+    if (!Gun.ball) {
+        //i forgot i had this on bruh OOPS!
+        //Gun.ball = physObj2;
+    }
+
     //lowkey this worked for a second until boom access violation (but it was in a strange spot...)
+    //i think i just found out why it crashed
+    //i just did the same thing (except i only used one) and the moment the ball left the screen it crashed lmao (im assuming that once the turn is over, the ball is deleted and fucks up my trolling)
     //FloatingTextMgr.enumFloatingTextObjs((floatingText) => {
+    //    //you gotta set the position of the text to the ball so it actually follows AT the ball
+    //    floatingText.x = currentBall.x;
+    //    floatingText.y = currentBall.y;
     //    floatingText.followingObj = currentBall;
     //});
 });
@@ -49,6 +87,15 @@ onKeyDown((key, unused2, unused3) => { //runs every time you press a key while l
         //teleport the ball to our mouse!
         //and nevermind there's no function that lets me do that yet :(
         //yeah i've added a GetMousePos function now lol
+
+        //well shoot now that i've added the WidgetManager you can just get the mouse position from there i suppose
+        Board.enumBalls(ball => {
+            //const ball = Board.ball;
+            ball.setPosition(WidgetManager.mouseX - Board.viewX, WidgetManager.mouseY - Board.viewY);
+            ball.setVelocity(0, 0);
+        });
+
+        /*
         const { x, y } = GetMousePos();
         //hmmm i need to get the peggle window for the mouse coords to be in screen space...
         print(x, y);
@@ -57,13 +104,30 @@ onKeyDown((key, unused2, unused3) => { //runs every time you press a key while l
         const rect = GetWindowRect(hwndActive);
         //print(rect.left, rect.left-x);
         //print(rect.top, rect.top-y);
-        const ball = Board.Ball;
+        const ball = Board.ball;
 
-        ball.x = x - (rect.left + 77);
-        ball.y = y - (rect.top + 52);
+        ball.x = x - (rect.left + Board.viewX); //77)
+        ball.y = y - (rect.top + Board.viewY); //52)
         //hmm i still can't set the velocity because i lowkey don't know where they keep that at (just kidding i found it)
         ball.velX = 0;
         ball.velY = 0;
+        */
+    } else if (key == "M".charCodeAt(0)) {
+        Board.enumBalls(ball => {
+            //const ball = Board.ball;
+            const pos = ball.getPosition();
+            const mouse = { x: WidgetManager.mouseX - Board.viewX, y: WidgetManager.mouseY - Board.viewY };
+            //hold on lemme normalize this vector (how do i do that again?)
+            const vec = { x: mouse.x - pos.x, y: mouse.y - pos.y };
+            const magnitude = Math.sqrt(vec.x ** 2 + vec.y ** 2);
+            const newMagnitude = 1000 / magnitude; //ahh see now you get that attraction
+            const diff = magnitude / newMagnitude;
+            vec.x /= diff;
+            vec.y /= diff;
+            ball.setVelocity(vec.x, vec.y);
+        });
+    } else if (key == 'R'.charCodeAt(0)) {
+        reloadGun();
     } else if (key == 'D'.charCodeAt(0) && GetKey(0x11)) { //VK_CONTROL (0x11)
         SetForegroundWindow(GetConsoleWindow());
         print("#############");
@@ -73,12 +137,18 @@ onKeyDown((key, unused2, unused3) => { //runs every time you press a key while l
         print("3: every peg is green AND the powerup is random");
         //print("4: activate random ability");
         print("4: every peg is green AND the powerup is random (excluding warren lol)");
-        print("5: [TOGGLE] pegs can be hit multiple times");
-        print("6: [TOGGLE] ball grows with each peg hit");
+        print(`5: [TOGGLE] pegs can be hit multiple times [${reactivate ? "ON" : "OFF"}]`);
+        print(`6: [TOGGLE] ball grows with each peg hit [${grow ? "ON" : "OFF"}]`);
         print("7: set current ability");
         print("8: set ball count");
         print("9: set yellow text");
         //print("10: change peggle master"); //aw damn it doesn't work like that
+        print(`10: [TOGGLE] sigma [${sigma ? "ON" : "OFF"}]`);
+        print("11: set ball gravity");
+        print(`12: [TOGGLE] slow motion [${Board.slowmotion ? "ON" : "OFF"}]`);
+        print(`13: scramble gamble`);
+        print(`14: set fast forward speed`);
+        print(`15: [TOGGLE] allow fast forwarding during turns [${canFastForwardDuringTurns ? "ON" : "OFF"}]`);
         
         const response = parseInt(getline("type your answer nigga -> "));
         if (response == 5) {
@@ -108,11 +178,48 @@ onKeyDown((key, unused2, unused3) => { //runs every time you press a key while l
         } else if (response == 8) {
             LogicMgr.balls = parseInt(getline("type how many balls you want nigga -> "));
         } else if (response == 9) {
-            LogicMgr.textObject.text = getline("type the text you want to show -> ");
+            LogicMgr.yellowTextObj.text = getline("type the text you want to show -> ");
         } else if (response == 10) {
             //LogicMgr.currentEvent = LOGIC_EVENT_OPEN_CHARACTER_SELECT; //oops forgot to define that
             //LogicMgr.currentEvent = 8;
-        } else {
+
+            sigma = true;
+        } else if (response == 11) {
+            gravity = parseFloat(getline("type a number (default gravity is 0.05) -> "));
+        } else if (response == 12) {
+            //Board.slowmotion = !Board.slowmotion;
+            //if (Board.slowmotion) {
+            //    print("#############");
+            //    print("the slow motion speed is a number between 0 (completely frozen) and 1000 (normal speed)");
+            //    print("the default is like 100 or 250");
+            //    Board.slowMotionSpeed = parseInt(getline("type how slow you want the game to go -> "));
+            //} else {
+            //    Board.frozen = false;
+            //}
+
+            //oh wait we don't have to do it manually, i just realized there's a function for it
+            let speed = 0xFA; //0xFA is usually what they pass
+            if (!Board.slowmotion) { //checking if it's not already on since we change it AFTER this if statement
+                print("#############");
+                print("the slow motion speed is a number between 0 (completely frozen) and 1000 (normal speed)");
+                print("the default is like 100 or 250");
+                //Board.slowMotionSpeed = parseInt(getline("type how slow you want the game to go -> "));
+                speed = parseInt(getline("type how slow you want the game to go -> "));
+            }
+            Board.setSlowMotion(!Board.slowmotion, speed);
+        } else if (response == 13) {
+            defaultTextColor = Math.random() * (2 ** 24);
+            defaultBallRadius = Math.random() * 16;
+            gravity = Math.random() / 10;
+            SoundMgr.playSoundSimple(Math.floor(Math.random() * 76), 1);
+        } else if (response == 14) {
+            print("#############");
+            print("the default fast forward speed is 8 and the highest value you can put is 127 (nothing happens after 127)");
+            fastForwardSpeed = parseInt(getline("type how fast you can fast forward -> "));
+        } else if (response == 15) {
+            canFastForwardDuringTurns = !canFastForwardDuringTurns;
+        }
+        else {
             choice = response;
             if (choice == 0) {
                 grow = false;

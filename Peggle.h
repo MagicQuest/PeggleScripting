@@ -1,8 +1,8 @@
 #pragma once
 namespace Peggle {
 	extern bool init;
-	extern void* logicMgr;
 	extern void* board;
+	extern void* logicMgr;
 	extern void* ball;
 
 	void InitPeggleGlobals(const v8::Local<v8::ObjectTemplate>& global, v8::Isolate* isolate);
@@ -16,9 +16,25 @@ namespace Peggle {
 	void setHit(void* pegInfo, DWORD hit);
 	void setPegType(void* BrickOrBall, DWORD ptype);
 	void* createFloatingText(void* board);
+	void* spawnFloatingText(void* embeddedText, float* x, float* y, DWORD $idk);
+	void setFloatingTextText(void* floatingText, void* embeddedText);
 	void setEmbeddedText(void* textObject, const char* text, size_t textLength);
-	extern "C" float __stdcall getPhysX(void* physObj);
-	extern "C" float __stdcall getPhysY(void* physObj);
-	void playPegAnimation(void* pegInfo, BOOL popped);
+	void setPhysVelocity(void* physObj, float vx, float vy);
+	void getPhysPosition(void* physObj, OUT float* arr);
+	void setPhysPosition(void* physObj, float x, float y);
+	//extern "C" float __stdcall getPhysX(void* physObj);
+	//extern "C" float __stdcall getPhysY(void* physObj);
+	float getPhysX(void* physObj);
+	float getPhysY(void* physObj);
+	void setPhysActive(void* physObj, bool idk);
+	void playPegAnimation(void* pegInfo, DWORD animationId);
+	void playSoundSimple(void* soundMgr, DWORD id, DWORD idk);
+
+	void doSpecialThingForTheLoop(IN void* stack);
+
+	void* createBall(bool anchored, bool notOnBoard, float x, float y, float vx, float vy);
+
+	void setSlowMotion(bool slowmotion, DWORD speed);
+	//void* createEmbeddedText(OUT void*, DWORD text);
 }
 
