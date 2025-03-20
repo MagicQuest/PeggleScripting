@@ -10,7 +10,7 @@ void* Peggle::board = nullptr;
 //logicMgr is 924 bytes long (damn)
 void* Peggle::logicMgr = nullptr;
 //ball is 400 bytes long
-void* Peggle::ball = nullptr;
+//void* Peggle::ball = nullptr;
 
 struct TypeDescriptor {
     ULONG_PTR pVFTable;
@@ -598,6 +598,7 @@ namespace Templates {
 
         //damn that shit actually was a coincidence -> nothing happened when i changed it :(
         //hmmm nah this gotta be color
+        //i knew it
         //ok idk why it didn't work when i changed it last time but this actually is the color (maybe you just have to change it the moment you make the floating text but idk)
         Property(_FloatingText, "color", 0x60); //honestly this is just a theory but most FloatingText objects are yellow and this value is normally set to 0xFFFF00 (coincidence? i think not.)
         
@@ -1034,7 +1035,7 @@ void Peggle::InitPeggleGlobals(const v8::Local<v8::ObjectTemplate>& global, v8::
 
     Property(LogicMgr, "ballsShot", 0x248);
     Property(LogicMgr, "freeBallsGivenByBucket", 0x254);
-    Property(LogicMgr, "freeBallsGivenByPoints", 0x258); //oops what was it?
+    Property(LogicMgr, "freeBallsGivenByPoints", 0x258); //oops what was it? (fixed)
 
     Property(LogicMgr, "idkyet", 0xF0);
     ByteProperty(LogicMgr, "replay", 0xF5);
@@ -1045,7 +1046,8 @@ void Peggle::InitPeggleGlobals(const v8::Local<v8::ObjectTemplate>& global, v8::
     FloatProperty(LogicMgr, "pegY", 0x334);
     //0x338 and 0x33C also store peg x and y at offset 0x00067B4A
 
-    Property(LogicMgr, "pegsLeftToPop", 0x354); //changed when the turn is over
+    Property(LogicMgr, "pegsLeft", 0x344)
+    Property(LogicMgr, "pegsLeftToPop", 0x354); //changed when the turn is over (idk about this one)
     //oh these are actually the length of the orange peg and blue peg arrays at the address-4
     Property(LogicMgr, "orangePegsLeft", 0x360); //yo this might be the amount of orange pegs left...
     Property(LogicMgr, "bluePegsLeft", 0x36C);
@@ -1323,6 +1325,7 @@ void Peggle::InitPeggleGlobals(const v8::Local<v8::ObjectTemplate>& global, v8::
         info.GetReturnValue().Set(Templates::getFloatingTextImpl(isolate, floatingText));
     }));
 
+    //im gonna make the very quick assumption that all the peg loops do this and so i'll implement them as such
     LogicMgr->Set(isolate, "enumOrangePegs", FunctionTemplate::New(isolate, [](const v8::FunctionCallbackInfo<v8::Value>& info) {
         Isolate* isolate = info.GetIsolate();
         Local<Context> context = isolate->GetCurrentContext();
@@ -1347,7 +1350,6 @@ void Peggle::InitPeggleGlobals(const v8::Local<v8::ObjectTemplate>& global, v8::
         //for (DWORD i = 0; i < length; i++) {
         while(ecx != stack.ebp_s4) {
             //print(i);
-            __debugbreak();
             void* peg = *(void**)(stack.ebp_s4 + 0xC); //how did i forget to dereference the (void**)
             Local<Value> obj = Templates::GetImplFromPtr(isolate, peg);
             if (obj.IsEmpty()) {
@@ -1376,6 +1378,86 @@ void Peggle::InitPeggleGlobals(const v8::Local<v8::ObjectTemplate>& global, v8::
             //stack.ebp_s4 = *(ULONG_PTR*)(stack.ebp_s4 + 8);
         }
         //}
+    }));
+
+    LogicMgr->Set(isolate, "enumBluePegs", FunctionTemplate::New(isolate, [](const v8::FunctionCallbackInfo<v8::Value>& info) {
+        Isolate* isolate = info.GetIsolate();
+        Local<Context> context = isolate->GetCurrentContext();
+        Local<Function> func = info[0].As<Function>();
+
+        struct {
+            DWORD esp_s8 = (ULONG_PTR(logicMgr) + 0x364);
+            DWORD ebp_s4 = **(ULONG_PTR**)(ULONG_PTR(logicMgr) + 0x368);
+        } stack; //i have to make this struct so that these variables are in the right places because for some reason during the loop they call this weird function to find the next peg (i mean it's kinda like that)
+
+        DWORD ecx = *(DWORD*)(ULONG_PTR(logicMgr) + 0x368);
+
+        while(ecx != stack.ebp_s4) {
+            void* peg = *(void**)(stack.ebp_s4 + 0xC); //how did i forget to dereference the (void**)
+            Local<Value> obj = Templates::GetImplFromPtr(isolate, peg);
+            if (obj.IsEmpty()) {
+                //well it's one of the other physobjs i haven't implemented yet lol just slap a generic on there
+                obj = Templates::GenericPtrObject(isolate, peg)->NewInstance(context).ToLocalChecked();
+            }
+            TryCatch errhandler(isolate);
+            MaybeLocal<Value> result = func->Call(context, context->Global(), 1, &obj); //why do i gotta cast it myself it should be able to see that right? i might be doing it wrong
+            CHECKEXCEPTIONS(errhandler);
+            if (!result.IsEmpty()) {
+                if (result.ToLocalChecked()->BooleanValue(isolate)) {
+                    break;
+                }
+            }
+
+            //anyways here's the reason im using the stack local struct
+            //this function changes the memory at ecx+4 (which would be my ebp_s4 variable)
+            //__asm {
+            //    //honestly i can't tell if this function is thiscall or fastcall
+            //    lea ecx, stack
+            //    call funcaddr
+            //}
+            //aw damn you aren't allowed to use __asm in a lambda
+            Peggle::doSpecialThingForTheLoop(&stack); //this function lowkey confusing me bruh why did they do it like this
+
+            //stack.ebp_s4 = *(ULONG_PTR*)(stack.ebp_s4 + 8);
+        }
+        //}
+    }));
+
+    //wait this one might work the same way the other arrays do
+    LogicMgr->Set(isolate, "enumPegs", FunctionTemplate::New(isolate, [](const v8::FunctionCallbackInfo<v8::Value>& info) {
+        Isolate* isolate = info.GetIsolate();
+        Local<Context> context = isolate->GetCurrentContext();
+        Local<Function> func = info[0].As<Function>();
+
+        //__debugbreak();
+        DWORD pegsOnBoard = *(DWORD*)(ULONG_PTR(logicMgr) + 0x348);
+        if (pegsOnBoard) {
+            ULONG_PTR ebp_s8 = **(ULONG_PTR**)(ULONG_PTR(logicMgr) + 0x344);
+
+            ULONG_PTR eax = *(ULONG_PTR*)(ULONG_PTR(logicMgr) + 0x344);
+            //ULONG_PTR ecx = *(ULONG_PTR*)(eax);
+            //__debugbreak();
+            while (eax != ebp_s8) {
+                void* peg = *(void**)(ebp_s8 + 8);
+
+                Local<Value> obj = Templates::GetImplFromPtr(isolate, peg);
+                if (obj.IsEmpty()) {
+                    //well it's one of the other physobjs i haven't implemented yet lol just slap a generic on there
+                    obj = Templates::GenericPtrObject(isolate, peg)->NewInstance(context).ToLocalChecked();
+                }
+                TryCatch errhandler(isolate);
+                MaybeLocal<Value> result = func->Call(context, context->Global(), 1, &obj); //why do i gotta cast it myself i should be able to see that right? i might be doing it wrong
+                CHECKEXCEPTIONS(errhandler);
+                if (!result.IsEmpty()) {
+                    if (result.ToLocalChecked()->BooleanValue(isolate)) {
+                        break;
+                    }
+                }
+
+                ebp_s8 = *(ULONG_PTR*)(ebp_s8);
+                //ecx = *(ULONG_PTR*)(esi);
+            }
+        }
     }));
     //LogicMgr->SetAccessorProperty(LITERAL("ball"), FunctionTemplate::New(isolate, [](const v8::FunctionCallbackInfo<v8::Value>& info) {
     //    Isolate* isolate = info.GetIsolate();
@@ -1482,6 +1564,13 @@ void Peggle::InitPeggleGlobals(const v8::Local<v8::ObjectTemplate>& global, v8::
     Board->Set(isolate, "setSlowMotion", FunctionTemplate::New(isolate, [](const v8::FunctionCallbackInfo<v8::Value>& info) {
         Isolate* isolate = info.GetIsolate();
         Peggle::setSlowMotion(IntegerFI(info[0]), IntegerFI(info[1]));
+    }));
+    Board->Set(isolate, "reloadGun", FunctionTemplate::New(isolate, [](const v8::FunctionCallbackInfo<v8::Value>& info) {
+        Isolate* isolate = info.GetIsolate();
+        void* ball = Peggle::reloadGun();
+        if (ball) {
+            info.GetReturnValue().Set(Templates::getBallImpl(isolate, ball));
+        }
     }));
     ByteProperty(Board, "mouseOver", 0x59); //i thinkj? (idk)
     ByteProperty(Board, "slowmotion", 0xC1);
@@ -1669,6 +1758,20 @@ void Peggle::InitPeggleGlobals(const v8::Local<v8::ObjectTemplate>& global, v8::
     FloatProperty(Gun, "offsetY", 0x168);
     FloatProperty(Gun, "idkBruh", 0x16C);
     FloatProperty(Gun, "offsetBallRadius", 0x170);
+
+    //im adding this function just in case you want to create your own ball and set it as the Gun's ball (the Board function creates the ball for you and does this too)
+    Gun->Set(isolate, "setNewBall", FunctionTemplate::New(isolate, [](const v8::FunctionCallbackInfo<v8::Value>& info) {
+        Isolate* isolate = info.GetIsolate();
+        void* base = (void*)IntegerFI(info.This()->Get(isolate->GetCurrentContext(), LITERAL("location")).ToLocalChecked());
+        void* ball = nullptr;
+        if (info[0]->IsNumber()) {
+            ball = (void*)IntegerFI(info[0]);
+        }
+        else if (info[0]->IsObject()) {
+            ball = (void*)IntegerFI(info[0].As<Object>()->Get(isolate->GetCurrentContext(), LITERAL("location")).ToLocalChecked());
+        }
+        Peggle::setGunNewBall(base, ball);
+    }));
     Gun->SetAccessorProperty(LITERAL("ball"), FunctionTemplate::New(isolate, [](const v8::FunctionCallbackInfo<v8::Value>& info) {
         Isolate* isolate = info.GetIsolate();
         ULONG_PTR base = IntegerFI(info.This()->Get(isolate->GetCurrentContext(), LITERAL("location")).ToLocalChecked());
@@ -2228,9 +2331,10 @@ void Peggle::doSpecialThingForTheLoop(IN void* stack) {
 }
 
 //most of the stuff i do in this function were taken from the multiball powerup function
-//anchored controls whether the ball can move and when anchored, the ball has no collision and is not affected by velocity but also the ball constructor assumes that if it's anchored it must be a peg so it sets the phys type to PHYS_PEG which does something weird
+//oh ok i get it now: the first param isn't anchored but actually isPeg
+//isPeg determines whether or not this ball will have its phys type set to PHYS_PEG and be anchored
 //if pushOntoBoard == false, the ball will not be pushed into the physObj and ball arrays and the only time you might need this is if you want this ball to be owned by the Gun (like with demo.js' reloadGun function)
-void* Peggle::createBall(bool anchored, bool pushOntoBoard, float x, float y, float vx, float vy) {
+void* Peggle::createBall(bool isPeg, bool pushOntoBoard, float x, float y, float vx, float vy) {
     constexpr DWORD offset = 0x00080DE0;
 
     ULONG_PTR funcaddr = ULONG_PTR(g_peggle) + offset;
@@ -2246,7 +2350,7 @@ void* Peggle::createBall(bool anchored, bool pushOntoBoard, float x, float y, fl
 
         __asm {
             mov ecx, ball
-            push anchored
+            push isPeg
             call funcaddr
             //eax = the ball
             
@@ -2344,3 +2448,39 @@ void Peggle::setSlowMotion(bool slowmotion, DWORD speed) {
 //void Peggle::pushObjToPhysArray(void* physobj) {
     
 //}
+
+void Peggle::setGunNewBall(void* Gun, void* ball) {
+    constexpr DWORD offset = 0x000844C0;
+
+    ULONG_PTR funcaddr = ULONG_PTR(g_peggle) + offset;
+
+    __asm {
+        mov ecx, Gun
+        push ball
+        call funcaddr
+    }
+}
+
+void* Peggle::reloadGun() {
+    constexpr DWORD offset = 0x000090D0;
+
+    ULONG_PTR funcaddr = ULONG_PTR(g_peggle) + offset;
+
+    __asm {
+        //for later
+        push esi
+        mov esi, board
+
+        mov ecx, esi
+        call funcaddr
+
+        //this function doesn't actually return the ball so we'll just do it here
+        //Board has a pointer to Gun at 0xBC
+        mov eax, [esi+0xBC]
+        //Gun (eax) has a pointer to the ball at 0x1C0
+        mov eax, [eax+0x1C0]
+
+        //non-volatile
+        pop esi
+    }
+}

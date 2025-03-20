@@ -3,7 +3,7 @@ namespace Peggle {
 	extern bool init;
 	extern void* board;
 	extern void* logicMgr;
-	extern void* ball;
+	//extern void* ball;
 
 	void InitPeggleGlobals(const v8::Local<v8::ObjectTemplate>& global, v8::Isolate* isolate);
 	void* GetThunderballApp();
@@ -32,9 +32,12 @@ namespace Peggle {
 
 	void doSpecialThingForTheLoop(IN void* stack);
 
-	void* createBall(bool anchored, bool notOnBoard, float x, float y, float vx, float vy);
+	void* createBall(bool isPeg, bool notOnBoard, float x, float y, float vx, float vy);
 
 	void setSlowMotion(bool slowmotion, DWORD speed);
 	//void* createEmbeddedText(OUT void*, DWORD text);
+
+	void setGunNewBall(void* Gun, void* ball);
+	void* reloadGun();
 }
 

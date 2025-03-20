@@ -1,16 +1,16 @@
-Exception: Access Violation (code 0xc0000005) at address 77E50785 in thread 8B9C
+Exception: Access Violation (code 0xc0000005) at address 77E50787 in thread 3D94
 Module: ntdll.dll
-Logical Address: 0001:0008F785
+Logical Address: 0001:0008F787
 
-0019F144 77E50785 RtlRemovePropertyStore+3F5
-Params: 00000000 00000000 00000000 126D95A8
+0019F204 77E50787 RtlRemovePropertyStore+3F7
+Params: 00000000 00000000 00000000 12BF5930
 
 StackWalk failed (error 299)
 
-EAX:0D750000 EBX:00000000 ECX:00430000 EDX:00000008 ESI:006A006A EDI:126D95A0
-EIP:77E50785 ESP:0019F0F8  EBP:0019F144
+EAX:64EC8B55 EBX:00000000 ECX:5F9E2570 EDX:00000006 ESI:5CC74EF0 EDI:12BF5928
+EIP:77E50787 ESP:0019F1B8  EBP:0019F204
 CS:0023 SS:002B DS:002B ES:002B FS:0053 GS:002B
-Flags:00210212
+Flags:00210216
 
 Windows Ver: NT 6.2  Build 9200
 DDraw Ver: 10.0.22621.1
@@ -18,9 +18,9 @@ DSound Ver: 10.0.22621.1
 
 Product: Peggle
 Version: 1.01
-Time Loaded: 00:03:59
+Time Loaded: 00:00:40
 Fullscreen: No
-Primary ThreadId: 8B9C
+Primary ThreadId: 3D94
 Times Played: 0
 Build Num: 0
 Build Date: 

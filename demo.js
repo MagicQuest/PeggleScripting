@@ -2,21 +2,35 @@ function getAbilityOffset(ability) {
     return ((2*ability)*4) + 0x1D4;
 }
 
-//lowkey this function and createBall are pretty risky because i lowkey keep getting access violations after a while
-function reloadGun() { //i haven't ACTUALLY seen how they reload the gun so this is my take on it
-    if (!Gun.ball) {
-        const sonic = createBall(false, false, 100, 100, 0, 0); //the reason we don't pass the first parameter as 1 (anchored) here is because if you do that it also sets the phys type to PHYS_PEG instead of PHYS_BALL and it doesn't like that (maybe because of the cmp and jne at offset 0x0004DA31)
-        sonic.anchored = 1; //anyways we just set anchored ourselves here
-        //technically when the ball is attached to the gun, its refCount is one (because the gun owns it) so im setting it to one too because when you shoot the ball it decrements the ref count and something weird will happen if i don't follow the rules (i can't be bothered to find out what actually happens in this situation)
-        sonic.refCount = 1; //owned by gun (which would happen automatically if i was doing this correctly)
-        Gun.ball = sonic; //BOOM
-        //you can't shoot the gun while the game is going but im cooking up a solution for that literally right as im writing this
-        canShootBallDuringTurns = true; //now you can
-    } else {
-        print("gun already had a ball so uhhhh im doing nothing");
-        //print(sonic);
-    }
-}
+////lowkey this function and createBall are pretty risky because i lowkey keep getting access violations after a while
+////yeah don't use this function or reloadGun2 because i feel like they are 5x more likely to crash than just using Board's method lol
+//function reloadGun() { //i haven't ACTUALLY seen how they reload the gun so this is my take on it
+//    if (!Gun.ball) {
+//        const sonic = createBall(false, false, 100, 100, 0, 0); //the reason we don't pass the first parameter as 1 (anchored) here is because if you do that it also sets the phys type to PHYS_PEG instead of PHYS_BALL and it doesn't like that (maybe because of the cmp and jne at offset 0x0004DA31)
+//        sonic.anchored = 1; //anyways we just set anchored ourselves here
+//        //technically when the ball is attached to the gun, its refCount is one (because the gun owns it) so im setting it to one too because when you shoot the ball it decrements the ref count and something weird will happen if i don't follow the rules (i can't be bothered to find out what actually happens in this situation)
+//        sonic.refCount = 1; //owned by gun (which would happen automatically if i was doing this correctly)
+//        Gun.ball = sonic; //BOOM
+//        //you can't shoot the gun while the game is going but im cooking up a solution for that literally right as im writing this
+//        canShootBallDuringTurns = true; //now you can
+//    } else {
+//        print("gun already had a ball so uhhhh im doing nothing");
+//        //print(sonic);
+//    }
+//}
+//
+////here's a more accurate version of reloadGun (honestly i feel like this and the Board function might still cause access violations lol nothing in each function seemed to be different than what i was doing)
+//function reloadGun2() {
+//    if (!Gun.ball) {
+//        const sonic = createBall(false, false, 100, 100, 0, 0);
+//        sonic.anchored = 1;
+//        //the Gun setNewBall function actually increments the refCount
+//        Gun.setNewBall(sonic);
+//        canShootBallDuringTurns = true; //now you can
+//    } else {
+//        print("gun already had a ball so uhhhh im doing nothing");
+//    }
+//}
 
 onInit(() => { //runs on every file change or whenever you start a new level (which also triggers a file read)
     print("doin' ya mam doin' doin' ya mam");
@@ -117,17 +131,34 @@ onKeyDown((key, unused2, unused3) => { //runs every time you press a key while l
             //const ball = Board.ball;
             const pos = ball.getPosition();
             const mouse = { x: WidgetManager.mouseX - Board.viewX, y: WidgetManager.mouseY - Board.viewY };
-            //hold on lemme normalize this vector (how do i do that again?)
+            //hold on lemme normalize this vector (how do i do that again
+
             const vec = { x: mouse.x - pos.x, y: mouse.y - pos.y };
             const magnitude = Math.sqrt(vec.x ** 2 + vec.y ** 2);
-            const newMagnitude = 1000 / magnitude; //ahh see now you get that attraction
+            //wait a second this isn't what i wanted to do
+            //all i wanted to do was add it to the current velocity lol
+            //const newMagnitude = 1000 / magnitude; //ahh see now you get that attraction
+            const newMagnitude = 1;
             const diff = magnitude / newMagnitude;
             vec.x /= diff;
             vec.y /= diff;
-            ball.setVelocity(vec.x, vec.y);
+            //ball.setVelocity(vec.x, vec.y);
+            ball.setVelocity(ball.velX + vec.x, ball.velY + vec.y);
         });
     } else if (key == 'R'.charCodeAt(0)) {
-        reloadGun();
+        //reloadGun();
+        //nah we're using Board's function now lol
+        const ball = Board.reloadGun();
+        print(ball);
+        canShootBallDuringTurns = true; //wink
+        //reloadGun2();
+    } else if (key == "N".charCodeAt(0)) { //n for nuke
+        //this lowkey crashes every time i do it
+        SoundMgr.playSoundSimple(SOUND_EXPLODE, 1);
+        for (let i = 0; i < 100; i++) { //6*90 = 540 which is probably the width idk
+            const pos = { x: 20 + (i * 6), y: 20 }; //haha weird when i spaced the balls out it would crash every time but when i didn't, it would actually run for like 30 seconds before it was over
+            createBall(false, true, pos.x, pos.y, 0, 5);
+        }
     } else if (key == 'D'.charCodeAt(0) && GetKey(0x11)) { //VK_CONTROL (0x11)
         SetForegroundWindow(GetConsoleWindow());
         print("#############");
