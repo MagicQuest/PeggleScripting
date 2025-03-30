@@ -27,12 +27,19 @@ namespace Peggle {
 	float getPhysX(void* physObj);
 	float getPhysY(void* physObj);
 	void setPhysActive(void* physObj, bool idk);
+	bool loadImgIfImgName(void* physObj);
 	void playPegAnimation(void* pegInfo, DWORD animationId);
+	void lightUpPeg(void* pegInfo, DWORD timeLength);
 	void playSoundSimple(void* soundMgr, DWORD id, DWORD idk);
 
-	void doSpecialThingForTheLoop(IN void* stack);
+	void doSpecialThingForTheLoop(OUT void* stack);
 
 	void* createBall(bool isPeg, bool notOnBoard, float x, float y, float vx, float vy);
+	void destroyBall(void* ball, bool freeMemory);
+	BOOL randomBallMethod(void* ball, void* other);
+	void* MoverConstructor();
+	void* PegInfoConstructor();
+	void setPolyRotation(void* poly, float rotation);
 
 	void setSlowMotion(bool slowmotion, DWORD speed);
 	//void* createEmbeddedText(OUT void*, DWORD text);

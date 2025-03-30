@@ -4,8 +4,8 @@
 
 #pragma push_macro(print)
 #pragma push_macro(wprint)
-#define print(msg) std::cout << "[FileWatcher] " << msg << std::endl
-#define wprint(msg) std::wcout << L"[FileWatcher] " << msg << std::endl
+#define print(msg) std::cout << "[FileWatcher (sigma)] " << msg << std::endl
+#define wprint(msg) std::wcout << L"[FileWatcher (sigma)] " << msg << std::endl
 
 HANDLE FileWatcher::thread;
 DWORD FileWatcher::threadID;

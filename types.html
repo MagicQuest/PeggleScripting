@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tables for pegglescripting</title>
+    <style>
+        body {
+            font-family: monospace;
+            font-size: 1.15em;
+            background-color: #1E1E1E;
+            color: white;
+            display: flex;
+        }
+
+        table {
+            border: 2px solid rgb(115 115 115);
+        }
+
+        th, td {
+            border: 1px solid rgb(95 95 95);
+            padding: 8px 10px;
+        }
+        table {
+            display: inline-table;
+        }
+        
+        .magic {
+            color: rgb(181, 206, 168);
+        }
+        .DWORD, .BYTE {
+            color: rgb(75, 170, 109);
+        }
+        .float {
+            color: rgb(47, 128, 193);
+        }
+    </style>
+</head>
+<body>
+    <script>
+        class TypeTable {
+            type = "";
+            constructor(type, byteLength) {
+                this.type = type;
+                const div = document.createElement("div");
+                div.innerHTML = "<table></table>";
+                this.table = div.firstElementChild;
+                this.table.innerHTML = 
+                `<thead>
+                    <tr>
+                        <th colspan="3">${this.type} (${byteLength} bytes)</th>
+                    </tr>
+                    <tr>
+                        <th>offset</th>
+                        <th>type</th>
+                        <th>name</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>`;
+                this.body = this.table.lastElementChild; //lol lazymaxxing
+                document.body.appendChild(div);
+            }
+
+            addEntry(datatype, name, offset) {
+                if(datatype == "") {
+                    datatype = "DWORD";
+                }
+                const tr = document.createElement("tr");
+                tr.innerHTML = 
+                `<td class='magic'>${offset}</td>
+                <td style='font-weight: bold;' class=${datatype}>${datatype}</td>
+                <td>${name}</td>
+                `;
+                this.body.appendChild(tr);
+            }
+        }
+
+        // /^([A-z]*)Property\((.+?), *\"(.+?)", *(.+?)\)/gm
+        // https://regexr.com/8dd5i
+
+        //all of the size information for every phys object can be found in the "createObjectByType" function at offset 0x00004CA0
+
+        const ThunderballApp = new TypeTable("ThunderballApp", "???"); //thunderballapp is usually always at 0019F560
+        ThunderballApp.addEntry("DDInterface*", "ddInterface", "0x36C"); //DDInterface+2C = ThunderballApp
+        ThunderballApp.addEntry("BassMusicInterface*", "bassMusicInterface", "0x374");
+        ThunderballApp.addEntry("DSoundManager*", "dSoundManager", "0x4B4");
+        ThunderballApp.addEntry("Board*", "board", "0x7B8");
+        ThunderballApp.addEntry("ImageMgr*", "imageMgr", "0x84C");
+        ThunderballApp.addEntry("WidgetMover*", "widgetMover", "0x868");
+        ThunderballApp.addEntry("PlayerInfo*", "playerInfo", "0x878");
+
+        const LogicMgr = new TypeTable("LogicMgr", 924); //#true (0x39C)
+        LogicMgr.addEntry("", "currentEvent", "0x4");
+        LogicMgr.addEntry("", "eventTime", "0x8");
+        LogicMgr.addEntry("", "specialsomething", "0x20");
+        LogicMgr.addEntry("EmbeddedText", "usernameTextObj", "0x7C");
+        LogicMgr.addEntry("", "mouseX", "0x98");
+        LogicMgr.addEntry("", "mouseY", "0x9C");
+        LogicMgr.addEntry("", "relatedX", "0xA0");
+        LogicMgr.addEntry("", "relatedY", "0xA4");
+        LogicMgr.addEntry("float", "gunRotation", "0xE0");
+        LogicMgr.addEntry("", "nudgeTimeout", "0xE8");
+        LogicMgr.addEntry("BYTE", "shootBall", "0xEC");
+        LogicMgr.addEntry("BYTE", "playSoundAndShootBall", "0xED");
+        LogicMgr.addEntry("", "idkyet", "0xF0");
+        LogicMgr.addEntry("BYTE", "replay", "0xF5");
+        LogicMgr.addEntry("BYTE", "won", "0xF6");
+        LogicMgr.addEntry("BYTE", "checkshit", "0xFB");
+        LogicMgr.addEntry("Board*", "board", "0x104");
+        LogicMgr.addEntry("", "multipliedPointsThisTurn", "0x108");
+        LogicMgr.addEntry("", "originalPointsThisTurn", "0x10C");
+        LogicMgr.addEntry("", "orangeMultiplier", "0x114");
+        LogicMgr.addEntry("", "pegsHit", "0x120");
+        LogicMgr.addEntry("", "turnOffset", "0x128");
+        LogicMgr.addEntry("", "pegsHitThisTurn", "0x12C");
+        LogicMgr.addEntry("", "gunReloadAnimationFrame", "0x138");
+        LogicMgr.addEntry("Ball*", "purplePeg", "0x170");
+        LogicMgr.addEntry("", "score", "0x174");
+        LogicMgr.addEntry("", "balls", "0x17C");
+        LogicMgr.addEntry("", "currentMaster", "0x184");
+        LogicMgr.addEntry("EmbeddedText", "yellowTextObj", "0x18C");
+        LogicMgr.addEntry("", "currentAbility", "0x1C4");
+        LogicMgr.addEntry("", "superGuideCount", "0x1DC");
+        LogicMgr.addEntry("", "flipperCount", "0x1E4");
+        LogicMgr.addEntry("", "pyramidCount", "0x1F4");
+        LogicMgr.addEntry("", "spookyCount", "0x204");
+        LogicMgr.addEntry("", "zenCount", "0x20C");
+        LogicMgr.addEntry("", "fireBallCount", "0x234");
+        LogicMgr.addEntry("", "ballsShot", "0x248");
+        LogicMgr.addEntry("", "freeBallsGivenByBucket", "0x254");
+        LogicMgr.addEntry("", "freeBallsGivenByPoints", "0x258");
+        LogicMgr.addEntry("float", "pegX", "0x330");
+        LogicMgr.addEntry("float", "pegY", "0x334");
+        LogicMgr.addEntry("", "pegsArray", "0x344");
+        LogicMgr.addEntry("", "pegsArrayLength", "0x348");
+        LogicMgr.addEntry("", "pegsLeftToPop", "0x354");
+        LogicMgr.addEntry("void**", "orangePegsArray", "0x35C");
+        LogicMgr.addEntry("", "orangePegsArrayLength", "0x360");
+        LogicMgr.addEntry("void**", "bluePegsArray", "0x368");
+        LogicMgr.addEntry("", "bluePegsArrayLength", "0x36C");
+
+        const Board = new TypeTable("Board", 592); //#true
+        Board.addEntry("WidgetManager*", "widgetManager", "0x10");
+        Board.addEntry("BYTE", "mouseOver", "0x59");
+        Board.addEntry("ThunderballApp*", "thunderballApp", "0xB0");
+        Board.addEntry("Gun*", "gun", "0xBC");
+        Board.addEntry("BYTE", "slowmotion", "0xC1");
+        Board.addEntry("BYTE", "frozen", "0xC2");
+        Board.addEntry("", "slowMotionSpeed", "0xD0");
+        Board.addEntry("AIMgr*", "aiMgr", "0x134");
+        Board.addEntry("CharacterMgr*", "characterMgr", "0x138");
+        //0x13C points to uhhhhh idk? it has no vtable
+        Board.addEntry("DebugMgr*", "debugMgr", "0x140");
+        Board.addEntry("EffectMgr*", "effectMgr", "0x144");
+        Board.addEntry("FloatingTextMgr*", "floatingTextMgr", "0x148");
+        Board.addEntry("InterfaceMgr*", "interfaceMgr", "0x14C");
+        Board.addEntry("LevelEditor*", "levelEditor", "0x150");
+        Board.addEntry("LogicMgr*", "logicMgr", "0x154");
+        Board.addEntry("SoundMgr*", "soundMgr", "0x158"); //0x3C bytes
+        Board.addEntry("ReplayDialog*", "replayDialog", "0x15C");
+        Board.addEntry("EndLevelDialog*", "endLevelDialog", "0x160");
+        Board.addEntry("SlotMachineDialog*", "slotMachineDialog", "0x164"); //warren's spinner?
+        Board.addEntry("ThunderButton*", "button1", "0x168"); //i was right
+        Board.addEntry("ThunderButton*", "button2", "0x16C"); //lowkey board probably has more than one button so idk which one this is
+        Board.addEntry("DDImage*", "image", "0x170");
+        Board.addEntry("void**", "ballsArray", "0x1A0");
+        Board.addEntry("", "ballsArrayLength", "0x1A4");
+        Board.addEntry("", "viewX", "0x1A8");
+        Board.addEntry("", "viewY", "0x1AC");
+        Board.addEntry("", "paused", "0x1B8");
+        Board.addEntry("", "pauseMenuVisibility", "0x1BC");
+        Board.addEntry("EmbeddedText", "levelName", "0x1D4");
+        
+        const CharacterMgr = new TypeTable("CharacterMgr", "???");
+        CharacterMgr.addEntry("MemoryImage*", "image", "0xC"); //idk
+
+        const DebugMgr = new TypeTable("DebugMgr", "???");
+        DebugMgr.addEntry("Board*", "board", "0x24");
+
+        const InterfaceMgr = new TypeTable("InterfaceMgr", "???");
+        InterfaceMgr.addEntry("ThunderballApp*", "thunderballApp", "0x4");
+        InterfaceMgr.addEntry("Board*", "board", "0x8");
+        InterfaceMgr.addEntry("EmbeddedText", "usernameTextObj", "0x74");
+
+        const WidgetManager = new TypeTable("WidgetManager", "???");
+        WidgetManager.addEntry("", "mouseX", "0xE0");
+        WidgetManager.addEntry("", "mouseY", "0xE4");
+        WidgetManager.addEntry("", "mouseButtons", "0xEC"); //bit field
+
+        const Gun = new TypeTable("Gun : Poly", "480");
+        Gun.addEntry("Ball*", "ball", "0x1C0");
+        Gun.addEntry("float", "lastRotation", "0x150");
+        Gun.addEntry("float", "ballX", "0x158");
+        Gun.addEntry("float", "ballY", "0x15C");
+        Gun.addEntry("float", "offsetX", "0x164");
+        Gun.addEntry("float", "offsetY", "0x168");
+        Gun.addEntry("float", "idkBruh", "0x16C");
+        Gun.addEntry("float", "offsetBallRadius", "0x170");
+
+        const DataSync = new TypeTable("DataSync", "???");
+        DataSync.addEntry("DataReader*", "dataReader", "0x4");
+        DataSync.addEntry("DataWriter*", "dataWriter", "0x8");
+
+        const DataWriter = new TypeTable("DataWriter", "28");
+
+        const DataReader = new TypeTable("DataReader", "???");
+        DataReader.addEntry("void*", "data", "0x8");
+        DataReader.addEntry("DWORD", "byteLength", "0x10");
+        DataReader.addEntry("DWORD", "position", "0x14");
+        DataReader.addEntry("BYTE", "idkyet = 0", "0x18");
+        DataReader.addEntry("BYTE", "bitField", "0x19");
+        DataReader.addEntry("DWORD", "bitFieldPosition", "0x1C");
+
+        const LevelDatFormat = new TypeTable("LevelDatFormat", "N/A");
+        LevelDatFormat.addEntry("DWORD", "gameVersion = 0x42", "0"); //peggle says the game version is too new if the value is below 0x42
+        LevelDatFormat.addEntry("BYTE", "unknown = 1", "0x4"); //probably supposed to always be one but idk
+        LevelDatFormat.addEntry("DWORD", "physObjs? = 0x6A", "0x9"); //includes pegs and obstacles?
+
+        const LevelPhysObjFormat = new TypeTable("LevelPhysObjFormat", "3 minimum");
+        LevelPhysObjFormat.addEntry("BYTE", "field1", "0x00");
+        LevelPhysObjFormat.addEntry("BYTE", "field2", "0x01");
+        LevelPhysObjFormat.addEntry("BYTE", "field3", "0x02");
+
+        const PhysObj = new TypeTable("PhysObj", "228");
+        PhysObj.addEntry("", "refCount", "0x4");
+        PhysObj.addEntry("", "type", "0x10");
+        PhysObj.addEntry("BYTE", "collision", "0x24");
+        PhysObj.addEntry("BYTE", "visible", "0x25");
+        PhysObj.addEntry("Mover*", "mover", "0x48");
+        PhysObj.addEntry("", "time", "0x4C");
+        PhysObj.addEntry("EmbeddedText", "textidk", "0x5C");
+        PhysObj.addEntry("EmbeddedText", "textidk2", "0x78");
+        PhysObj.addEntry("EmbeddedText", "imgname", "0x94");
+        PhysObj.addEntry("DDImage*", "img", "0xB4");
+        PhysObj.addEntry("PegInfo*", "pegInfo", "0xD0");
+
+        const Ball = new TypeTable("Ball : PhysObj", "400");
+        Ball.addEntry("BYTE", "multiball?", "0xE8"); //not 100% sure about this one lowkey
+        Ball.addEntry("float", "x", "0xEC");
+        Ball.addEntry("float", "y", "0xF0");
+        Ball.addEntry("float", "velX", "0xFC");
+        Ball.addEntry("float", "velY", "0x100");
+        Ball.addEntry("float", "drawX", "0x134");
+        Ball.addEntry("float", "drawY", "0x138");
+        Ball.addEntry("float", "radius", "0x13C");
+        Ball.addEntry("BYTE", "anchored", "0x140");
+        Ball.addEntry("void*", "idkyet", "0x15C"); //an object of some kind which certainly extends RefCount
+        Ball.addEntry("BYTE", "fireball", "0x161");
+        Ball.addEntry("float", "idk", "0x170");
+
+        const Brick = new TypeTable("Brick : Poly", "1308"); //poly then extends PhysObj (holy moly 1308 bytes) (0x51C)
+        Brick.addEntry("float", "x", "0x114");
+        Brick.addEntry("float", "y", "0x118");
+
+        const Line = new TypeTable("Line : PhysObj", "276"); //0x114
+        Line.addEntry("float", "left", "0xEC");
+        Line.addEntry("float", "right", "0xF0");
+        Line.addEntry("float", "top", "0xF4");
+        Line.addEntry("float", "bottom", "0xF8");
+        Line.addEntry("float", "0xFC", "0xFC");
+        Line.addEntry("float", "0x100", "0x100");
+        Line.addEntry("float", "0x104", "0x104");
+        Line.addEntry("float", "0x108", "0x108");
+        Line.addEntry("BYTE", "0x111", "0x111");
+
+        const PegInfo = new TypeTable("PegInfo", "40");
+        PegInfo.addEntry("", "refCount", "0x4");
+        PegInfo.addEntry("", "type", "0x10");
+        PegInfo.addEntry("BYTE", "hit", "0x14");
+        PegInfo.addEntry("", "timeSinceHit", "0x18");
+        PegInfo.addEntry("", "hitCount", "0x1C");
+        PegInfo.addEntry("", "animationPercent", "0x20");
+        PegInfo.addEntry("", "animationId", "0x24");
+        
+        const FloatingText = new TypeTable("FloatingText", "???");
+        FloatingText.addEntry("EmbeddedText*", "text", "0xC"); //this time it's a pointer
+        FloatingText.addEntry("", "id", "0x58");
+        FloatingText.addEntry("", "color", "0x60");
+        FloatingText.addEntry("", "lifeTime", "0x68");
+        FloatingText.addEntry("", "elapsedTime", "0x6C");
+        FloatingText.addEntry("", "number", "0x78");
+        FloatingText.addEntry("", "something", "0x7C");
+        FloatingText.addEntry("PhysObj*", "followingObj", "0xB4");
+        FloatingText.addEntry("float", "lastX", "0xB8");
+        FloatingText.addEntry("float", "lastY", "0xBC");
+        FloatingText.addEntry("float", "x", "0x80");
+        FloatingText.addEntry("float", "y", "0x84");
+        FloatingText.addEntry("float", "velX", "0x88");
+        FloatingText.addEntry("float", "velY", "0x8C");
+        FloatingText.addEntry("float", "idk", "0x90");
+        FloatingText.addEntry("float", "rotation", "0x94");
+        FloatingText.addEntry("float", "velRotation", "0x98");
+        FloatingText.addEntry("WidgetContainer*", "widgetContainer", "0xC8"); //i can't verify this one so let's just assume that me a ~month ago was right
+
+        const Hole = new TypeTable("Hole : PhysObj", "272"); //0x110
+        //Hole.addEntry("float", "velX", "0x14"); //yeah this is very likely not true lol
+        //Hole.addEntry("float", "velY", "0x18");
+
+        const Mover = new TypeTable("Mover", "104"); //70? (idk where i got that)
+        Mover.addEntry("", "refCount", "0x4");
+        Mover.addEntry("", "type", "0x10");
+        Mover.addEntry("", "offset", "0x14");
+        Mover.addEntry("", "amplitude", "0x18");
+        Mover.addEntry("", "speedDivisor", "0x1C");
+        Mover.addEntry("float", "timingOffset", "0x20");
+        // Mover.addEntry("EmbeddedText", "ihavenoidea", "0x38"); //nah i was lying
+        Mover.addEntry("float", "x", "0x54"); //unchangable though
+        Mover.addEntry("float", "y", "0x58");
+        Mover.addEntry("float", "originX", "0x5C");
+        Mover.addEntry("float", "originY", "0x60");
+
+        const Graphics = new TypeTable("Graphics", "???");
+        Graphics.addEntry("DWORD", "red?", "0x30");
+        Graphics.addEntry("DWORD", "green?", "0x34");
+        Graphics.addEntry("DWORD", "blue?", "0x38");
+        Graphics.addEntry("DWORD", "alpha?", "0x3C");
+        Graphics.addEntry("GraphicsObject*", "obj", "0x40");
+        Graphics.addEntry("BYTE", "idk", "0x48");
+        Graphics.addEntry("BYTE", "idk", "0x4C");
+
+        const DDImage = new TypeTable("DDImage", "236"); //0xEC with DDInterface constructor
+
+        const random = new TypeTable("Misc addresses (offset from peggle base 0x400000)", "N/A");
+        random.addEntry("PakInterface**", "pakInterface", "0x002873A4");
+        random.addEntry("ThunderballApp*", "thunderballApp", "0x00287394");
+
+        const BallDSInit = new TypeTable("stack shit for ball DataSync init", "N/A");
+        //both bytes are related  to floating point math
+        BallDSInit.addEntry("BYTE", "ebp-B", "1 -> 0"); // 0 ?? [Ball+38]
+        BallDSInit.addEntry("BYTE", "ebp-D", "1 -> 0"); // 0 ?? [Ball+34]
+        BallDSInit.addEntry("BYTE", "ebp-E", "1 -> 0"); // 0 ?? [Ball+B8]
+        BallDSInit.addEntry("BYTE", "ebp-F", "1 -> 0"); // 0 ?? [Ball+BC]
+        BallDSInit.addEntry("BYTE", "ebp-10", "1 -> 0"); // 0 ?? [Ball+C0]
+        BallDSInit.addEntry("BYTE", "ebp-11", "1 -> 0"); // 0 ?? [Ball+3C]
+
+        BallDSInit.addEntry("BYTE", "ebp-1D", "!!PegInfo");
+        BallDSInit.addEntry("BYTE", "ebp-1E", "!!Mover");
+        BallDSInit.addEntry("BYTE", "ebp-12", "Time != 0"); //Ball+4C
+        BallDSInit.addEntry("BYTE", "ebp-13", "[Ball+40] != 0");
+        BallDSInit.addEntry("BYTE", "ebp-14", "[Ball+44] != 0x00FFFFFF");
+        BallDSInit.addEntry("BYTE", "ebp-15", "[Ball+A8] != 0");
+        BallDSInit.addEntry("BYTE", "ebp-16", "[Ball+C8] != 0");
+        BallDSInit.addEntry("BYTE", "ebp-17", "[Ball+70] != 0");
+        BallDSInit.addEntry("BYTE", "ebp-18", "[Ball+50] != 0");
+        BallDSInit.addEntry("BYTE", "ebp-19", "[Ball+54] != 0");
+        BallDSInit.addEntry("BYTE", "ebp-1A", "[Ball+8C] != 0");
+        BallDSInit.addEntry("BYTE", "ebp-1B", "[Ball+B0] != 0");
+        BallDSInit.addEntry("BYTE", "ebp-1C", "[Ball+CC] != 0");
+
+        const ImageMgrArray = new TypeTable("ImageMgrArray", "???");
+        ImageMgrArray.addEntry("void*", "start", "0x0");
+        ImageMgrArray.addEntry("void*", "next_index", "0x4");
+        ImageMgrArray.addEntry("void*", "start2", "0x8");
+        ImageMgrArray.addEntry("EmbeddedText", "text", "0xC");
+        ImageMgrArray.addEntry("DDImage*", "img", "0x28");
+    </script>
+</body>
+</html>

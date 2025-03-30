@@ -541,7 +541,7 @@ void MainLoop() {
                 }
 
                 exit:
-                print("skrip done");
+                //print("skrip done");
                 SetEvent(v8helper2::finishEvent);
             }
             else {

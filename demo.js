@@ -1,8 +1,12 @@
+//dummy follower object using a mover with a type higher than like 10 so i can follow the ball with a floating text object and it doesn't crash
+
 function getAbilityOffset(ability) {
     return ((2*ability)*4) + 0x1D4;
 }
 
-////lowkey this function and createBall are pretty risky because i lowkey keep getting access violations after a while
+//ignore all the notes trash talking my createBall function because it works without crashing now
+
+////lowkey this function and createBall are pretty risky because i lowkey keep getting access violations after a while (hold on wait i might have the solution!)
 ////yeah don't use this function or reloadGun2 because i feel like they are 5x more likely to crash than just using Board's method lol
 //function reloadGun() { //i haven't ACTUALLY seen how they reload the gun so this is my take on it
 //    if (!Gun.ball) {
@@ -38,6 +42,7 @@ onInit(() => { //runs on every file change or whenever you start a new level (wh
     reactivate = false;
     grow = false;
     sigma = false;
+    nuke = false;
 });
 
 
@@ -82,6 +87,10 @@ onPegHit((currentBall, physObj2, bool) => { //runs every time any ball hits a pe
     if (!Gun.ball) {
         //i forgot i had this on bruh OOPS!
         //Gun.ball = physObj2;
+    }
+
+    if (nuke) {
+        physObj2.collision = false;
     }
 
     //lowkey this worked for a second until boom access violation (but it was in a strange spot...)
@@ -139,6 +148,9 @@ onKeyDown((key, unused2, unused3) => { //runs every time you press a key while l
             //all i wanted to do was add it to the current velocity lol
             //const newMagnitude = 1000 / magnitude; //ahh see now you get that attraction
             const newMagnitude = 1;
+
+            //hold on, new idea
+            //const newMagnitude = magnitude - (1 / magnitude); //hmmm how did somehow emulate what i was doing before lol
             const diff = magnitude / newMagnitude;
             vec.x /= diff;
             vec.y /= diff;
@@ -148,18 +160,58 @@ onKeyDown((key, unused2, unused3) => { //runs every time you press a key while l
     } else if (key == 'R'.charCodeAt(0)) {
         //reloadGun();
         //nah we're using Board's function now lol
-        const ball = Board.reloadGun();
+        const ball = Board.reloadGun(); //don't worry about calling reloadGun again if there's already a ball there, the game will automatically delete the old one!
         print(ball);
         canShootBallDuringTurns = true; //wink
         //reloadGun2();
-    } else if (key == "N".charCodeAt(0)) { //n for nuke
+    } else if (key == 'N'.charCodeAt(0)) { //n for nuke
         //this lowkey crashes every time i do it
         SoundMgr.playSoundSimple(SOUND_EXPLODE, 1);
         for (let i = 0; i < 100; i++) { //6*90 = 540 which is probably the width idk
             const pos = { x: 20 + (i * 6), y: 20 }; //haha weird when i spaced the balls out it would crash every time but when i didn't, it would actually run for like 30 seconds before it was over
             createBall(false, true, pos.x, pos.y, 0, 5);
         }
-    } else if (key == 'D'.charCodeAt(0) && GetKey(0x11)) { //VK_CONTROL (0x11)
+        nuke = true;
+    } else if (key == 'C'.charCodeAt(0)) {
+        const mouse = { x: WidgetManager.mouseX - Board.viewX, y: WidgetManager.mouseY - Board.viewY };
+        let sonic;
+        if (GetKey(0x10)) {
+            sonic = createBall(true, true, mouse.x, mouse.y, 0.0, 0.0);
+            //sonic.imgname = "pinwheel"; //haha this workedf!
+            sonic.imgTextObj.text = "pinwheel";
+            sonic.loadImageIfValidPath(); //uhhhh (no way)
+            //next lets give it a mover!
+            const mover = createMover(sonic, mouse.x, mouse.y);
+            //negative movement flips the direction!
+            mover.type = -MOVEMENT_VERTICAL_HORIZONTAL; //MOVEMENT_ROTATE_AT_ORIGIN; //wait a second pegs can't rotate!
+            //amplitude doesn't effect rotate at origin (nevermind let's just use something else)
+            mover.amplitude = 50;
+            mover.speedDivisor = 0x320; //kinda slow
+            //mover.originX = mouse.x;
+            //mover.originY = mouse.y;
+        } else if (GetKey(0x11)) {
+            //oh wait i don't add this ball to the LogicMgr's peg arrays
+            sonic = createBall(true, true, mouse.x, mouse.y, 0.0, 0.0);
+            sonic.radius = 10.0; //default peg radius
+            //let'\s try to create an actual peg
+            const pinfo = createPegInfo(sonic, Math.floor(Math.random() * PEG_GREEN) + 1, 1);
+        } else {
+            sonic = createBall(false, true, mouse.x, mouse.y, -0.5, -3.0);
+        }
+        print(sonic);
+    } else if (key == 'S'.charCodeAt(0)) {
+        const ball = Board.reloadGun(); //don't worry about calling reloadGun again if there's already a ball there, the game will automatically delete the old one!
+        canShootBallDuringTurns = true;
+        LogicMgr.playSoundAndShootBall = 1;
+    } /*else if (key == 'O'.charCodeAt(0)) {
+        let hole;
+        Board.enumPhysObjs(phys => {
+            hole = phys;
+            return true;
+        });
+        hole.mover.set_float(0x54, 326);
+    }*/
+    else if (key == 'D'.charCodeAt(0) && GetKey(0x11)) { //VK_CONTROL (0x11)
         SetForegroundWindow(GetConsoleWindow());
         print("#############");
         print("0: normal");
@@ -180,6 +232,9 @@ onKeyDown((key, unused2, unused3) => { //runs every time you press a key while l
         print(`13: scramble gamble`);
         print(`14: set fast forward speed`);
         print(`15: [TOGGLE] allow fast forwarding during turns [${canFastForwardDuringTurns ? "ON" : "OFF"}]`);
+        print(`16: enable secret movers`);
+        print(`17: reactivate all pegs`);
+        print(`18: reactivate all objects (tweaking)`);
         
         const response = parseInt(getline("type your answer nigga -> "));
         if (response == 5) {
@@ -249,6 +304,18 @@ onKeyDown((key, unused2, unused3) => { //runs every time you press a key while l
             fastForwardSpeed = parseInt(getline("type how fast you can fast forward -> "));
         } else if (response == 15) {
             canFastForwardDuringTurns = !canFastForwardDuringTurns;
+        } else if (response == 16) {
+            Board.enumPhysObjs(obj => {
+                obj.enableMover = 1;
+            });
+        } else if (response == 17) {
+            LogicMgr.enumPegs(obj => {
+                obj.setActive(true);
+            });
+        } else if (response == 18) {
+            Board.enumPhysObjs(obj => {
+                obj.setActive(true); //OH MY GOD WHAT
+            });
         }
         else {
             choice = response;

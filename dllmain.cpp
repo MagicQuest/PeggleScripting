@@ -181,7 +181,7 @@ extern "C" {
                 __debugbreak();
             }
         }
-        print("cont RunEvent");
+        //print("cont RunEvent");
         g_eax = eax;
         g_ecx = ecx;
         g_edx = edx;
