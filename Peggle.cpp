@@ -680,20 +680,20 @@ namespace Templates {
         //PhysObj+5C is an embeddedText object
         //PhysObj+78 is an embeddedText object
         //PhysObj+94 is an embeddedText object
-        ptr_object->SetAccessorProperty(LITERAL("imgTextObj"), FunctionTemplate::New(isolate, [](const v8::FunctionCallbackInfo<v8::Value>& info) {
+        ptr_object->SetAccessorProperty(LITERAL("imgname"), FunctionTemplate::New(isolate, [](const v8::FunctionCallbackInfo<v8::Value>& info) {
             Isolate* isolate = info.GetIsolate();
             ULONG_PTR physObj = IntegerFI(info.This()->Get(isolate->GetCurrentContext(), LITERAL("location")).ToLocalChecked());
             EmbeddedText* imgname = (EmbeddedText*)(physObj + 0x94);
-            /*const char* text = nullptr;
-            __debugbreak();
+            const char* text = nullptr;
+            //__debugbreak();
             if (imgname->maxLength < 0x10) {
                 text = (const char*) &imgname->text;
             }
             else {
                 text = (const char*) imgname->text;
             }
-            info.GetReturnValue().Set(String::NewFromUtf8(isolate, text).ToLocalChecked());*/
-            info.GetReturnValue().Set(Templates::getEmbeddedTextImpl(isolate, imgname));
+            info.GetReturnValue().Set(String::NewFromUtf8(isolate, text).ToLocalChecked());
+            //info.GetReturnValue().Set(Templates::getEmbeddedTextImpl(isolate, imgname));
         }), FunctionTemplate::New(isolate, [](const v8::FunctionCallbackInfo<v8::Value>& info) {
             Isolate* isolate = info.GetIsolate();
             ULONG_PTR physObj = IntegerFI(info.This()->Get(isolate->GetCurrentContext(), LITERAL("location")).ToLocalChecked());
@@ -907,8 +907,8 @@ namespace Templates {
         }));
 
         _Hole = GenericPhysObject(isolate, nullptr); //assuming generic phys lol
-        FloatProperty(_Hole, "velX", 0x14); //not sure
-        FloatProperty(_Hole, "velY", 0x18);
+        //FloatProperty(_Hole, "velX", 0x14); //not sure (this CANNOT be right)
+        //FloatProperty(_Hole, "velY", 0x18);
         //Property(_Hole, "time", 0x4C); //also not sure (i've moved the time property into the GenericPhysObject itself because i think they all have it)
         
         _Mover = GenericPtrObject(isolate, nullptr);
@@ -919,6 +919,7 @@ namespace Templates {
         IntProperty(_Mover, "amplitude", 0x18); //confirmed!
         Property(_Mover, "speedDivisor", 0x1C); //confirmed! related to the speed of the movement
         FloatProperty(_Mover, "timingOffset", 0x20); //confirmed
+        FloatProperty(_Mover, "optionalVerticalAmplitude", 0x28); //optional
         FloatProperty(_Mover, "x", 0x54); //oh yeah confirmed (but nothing happens when you change these values as their calculated every frame)
         FloatProperty(_Mover, "y", 0x58); //oh yeah confirmed (but nothing happens when you change these values as their calculated every frame)
         FloatProperty(_Mover, "originX", 0x5C); //oh yeah confirmed

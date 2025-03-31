@@ -1,16 +1,16 @@
-Exception: Access Violation (code 0xc0000005) at address 2E647261 in thread 134BC
-Module: Exception: Access Violation (code 0xc0000005) at address 2E647261 in thread 134BC
+Exception: Access Violation (code 0xc0000005) at address 5251EDC8 in thread 10A84
+Module: PeggleScripting.dll
+Logical Address: 0001:00D4DDC8
 
-Logical Address: 60EF28:00000000
+28A6FADC 5251EDC8 Peggle::InitPeggleGlobals+48
+Params: D206C910 52530A60 52530A60 17E00000
 
-0019EF64 2E647261 0000:00000000 êëP
-Params: 0019EFC4 87B70D1B 0019F300 0019F290
+StackWalk failed (error 299)
 
-
-EAX:0019EFC4 EBX:23313548 ECX:159331C0 EDX:2E647261 ESI:23313348 EDI:1737706C
-EIP:2E647261 ESP:0019EF68  EBP:0019F0F4
+EAX:00000000 EBX:28A6FB44 ECX:12BAE380 EDX:525674C0 ESI:187F1614 EDI:12BAE380
+EIP:5251EDC8 ESP:28A6F034  EBP:28A6FADC
 CS:0023 SS:002B DS:002B ES:002B FS:0053 GS:002B
-Flags:00210287
+Flags:00010212
 
 Windows Ver: NT 6.2  Build 9200
 DDraw Ver: 10.0.22621.1
@@ -18,9 +18,9 @@ DSound Ver: 10.0.22621.1
 
 Product: Peggle
 Version: 1.01
-Time Loaded: 12:56:31
+Time Loaded: 00:05:23
 Fullscreen: No
-Primary ThreadId: 134BC
+Primary ThreadId: 17348
 Times Played: 0
 Build Num: 0
 Build Date: 

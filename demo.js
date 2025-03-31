@@ -90,7 +90,7 @@ onPegHit((currentBall, physObj2, bool) => { //runs every time any ball hits a pe
     }
 
     if (nuke) {
-        physObj2.collision = false;
+        physObj2.collision = false; //just a lil sumn sumn
     }
 
     //lowkey this worked for a second until boom access violation (but it was in a strange spot...)
@@ -177,8 +177,8 @@ onKeyDown((key, unused2, unused3) => { //runs every time you press a key while l
         let sonic;
         if (GetKey(0x10)) {
             sonic = createBall(true, true, mouse.x, mouse.y, 0.0, 0.0);
-            //sonic.imgname = "pinwheel"; //haha this workedf!
-            sonic.imgTextObj.text = "pinwheel";
+            sonic.imgname = "pinwheel"; //haha this workedf!
+            //sonic.imgTextObj.text = "pinwheel";
             sonic.loadImageIfValidPath(); //uhhhh (no way)
             //next lets give it a mover!
             const mover = createMover(sonic, mouse.x, mouse.y);
