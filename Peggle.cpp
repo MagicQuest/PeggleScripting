@@ -353,7 +353,7 @@ struct Poly : public PhysObj {
 #define PEG_PURPLE 3
 #define PEG_GREEN 4
 
-//wait are these a bit field (yeah im not sure)
+//wait are these a bit field (no.)
 #define MOVEMENT_NONE 0
 #define MOVEMENT_VERTICAL 1
 #define MOVEMENT_HORIZONTAL 2
@@ -465,6 +465,7 @@ struct Poly : public PhysObj {
 #define PHYS_POLY 5
 #define PHYS_BRICK 5
 
+//ok lowkey i got distracted when i was writing these and now i'd have to open peggle again and find out which ones do what again
 #define PEG_ANIMATION_SPECIAL 0
 #define PEG_ANIMATION_HIT 1
 #define PEG_ANIMATION_

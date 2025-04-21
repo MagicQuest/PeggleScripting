@@ -38,6 +38,7 @@ function getAbilityOffset(ability) {
 
 onInit(() => { //runs on every file change or whenever you start a new level (which also triggers a file read)
     print("doin' ya mam doin' doin' ya mam");
+    print("hit Control+D for le options");
     choice = 0;
     reactivate = false;
     grow = false;
