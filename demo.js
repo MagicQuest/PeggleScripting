@@ -79,7 +79,8 @@ onPegHit((currentBall, physObj2, bool) => { //runs every time any ball hits a pe
             //sound id, and then another parameter that idk about lol
             SoundMgr.playSoundSimple(Math.floor(Math.random() * 76), 1);
         }
-        const floatingText = LogicMgr.spawnFloatingText("~SIGMA~", currentBall.x, currentBall.y);
+        const floatingText = LogicMgr.spawnFloatingText("~SIGMA~", currentBall.x, currentBall.y, 0x30); //the last param is the graphics type or something and it's usually 0x2D but for the big title stuff it uses 0x30
+        floatingText.number = 0xA; //not sure if required
         floatingText.velRotation = .05;
         floatingText.rotation = .1; //you have to change the rotation for velRotation to kick in
         floatingText.color = Math.random()*255 << 16 | Math.random()*255 << 8 | Math.random()*255;
@@ -191,7 +192,7 @@ onKeyDown((key, unused2, unused3) => { //runs every time you press a key while l
             //mover.originX = mouse.x;
             //mover.originY = mouse.y;
         } else if (GetKey(0x11)) {
-            //oh wait i don't add this ball to the LogicMgr's peg arrays
+            //oh wait i don't add this ball to the LogicMgr's peg arrays (i should probably do that)
             sonic = createBall(true, true, mouse.x, mouse.y, 0.0, 0.0);
             sonic.radius = 10.0; //default peg radius
             //let'\s try to create an actual peg

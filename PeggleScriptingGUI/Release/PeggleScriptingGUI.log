@@ -1,7 +1,47 @@
-﻿  WICHelper.cpp
+﻿  Controls.cpp
+E:\Users\megal\source\repos\PeggleScripting\PeggleScriptingGUI\Direct2D.h(92,18): warning C4838: conversion from 'UINT' to 'LONG' requires a narrowing conversion
+  (compiling source file 'Controls.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\PeggleScriptingGUI\Direct2D.h(92,25): warning C4838: conversion from 'UINT' to 'LONG' requires a narrowing conversion
+  (compiling source file 'Controls.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\PeggleScriptingGUI\Controls.cpp(254,31): warning C4244: 'argument': conversion from 'float' to 'LONG', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\PeggleScriptingGUI\Controls.cpp(254,21): warning C4244: 'argument': conversion from 'float' to 'LONG', possible loss of data
+  Direct2D.cpp
+E:\Users\megal\source\repos\PeggleScripting\PeggleScriptingGUI\Direct2D.h(92,18): warning C4838: conversion from 'UINT' to 'LONG' requires a narrowing conversion
+  (compiling source file 'Direct2D.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\PeggleScriptingGUI\Direct2D.h(92,25): warning C4838: conversion from 'UINT' to 'LONG' requires a narrowing conversion
+  (compiling source file 'Direct2D.cpp')
+  
+  main.cpp
+E:\Users\megal\source\repos\PeggleScripting\PeggleScriptingGUI\Direct2D.h(92,18): warning C4838: conversion from 'UINT' to 'LONG' requires a narrowing conversion
+  (compiling source file 'main.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\PeggleScriptingGUI\Direct2D.h(92,25): warning C4838: conversion from 'UINT' to 'LONG' requires a narrowing conversion
+  (compiling source file 'main.cpp')
+  
+  PeggleUI.cpp
+E:\Users\megal\source\repos\PeggleScripting\PeggleScriptingGUI\Direct2D.h(92,18): warning C4838: conversion from 'UINT' to 'LONG' requires a narrowing conversion
+  (compiling source file 'PeggleUI.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\PeggleScriptingGUI\Direct2D.h(92,25): warning C4838: conversion from 'UINT' to 'LONG' requires a narrowing conversion
+  (compiling source file 'PeggleUI.cpp')
+  
+E:\Users\megal\source\repos\PeggleScripting\PeggleScriptingGUI\PeggleUI.cpp(207,25): warning C4305: '*=': truncation from 'double' to 'FLOAT'
+E:\Users\megal\source\repos\PeggleScripting\PeggleScriptingGUI\PeggleUI.cpp(250,25): warning C4244: 'argument': conversion from 'float' to 'LONG', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\PeggleScriptingGUI\PeggleUI.cpp(250,18): warning C4244: 'argument': conversion from 'float' to 'LONG', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\PeggleScriptingGUI\PeggleUI.cpp(417,30): warning C4018: '<': signed/unsigned mismatch
+E:\Users\megal\source\repos\PeggleScripting\PeggleScriptingGUI\PeggleUI.cpp(459,15): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\PeggleScriptingGUI\PeggleUI.cpp(484,72): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\PeggleScriptingGUI\PeggleUI.cpp(508,27): warning C4244: 'initializing': conversion from 'unsigned __int64' to 'float', possible loss of data
+E:\Users\megal\source\repos\PeggleScripting\PeggleScriptingGUI\PeggleUI.cpp(514,25): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  WICHelper.cpp
   Generating code
-  3 of 713 functions ( 0.4%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    3 functions had inline decision re-evaluated but remain unchanged
+  Previous IPDB was built with incompatible compiler, fall back to full compilation.
+E:\Users\megal\source\repos\PeggleScripting\PeggleScriptingGUI\Direct2D.h(96): warning C4715: 'Direct2D::Resize': not all control paths return a value
+E:\Users\megal\source\repos\PeggleScripting\PeggleScriptingGUI\PeggleUI.cpp(182): warning C4715: 'LocateAndGetProcAddressEx': not all control paths return a value
+E:\Users\megal\source\repos\PeggleScripting\PeggleScriptingGUI\main.cpp(139): warning C4715: 'wWinMain': not all control paths return a value
+  All 730 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
   PeggleScriptingGUI.vcxproj -> E:\Users\megal\source\repos\PeggleScripting\Release\PeggleScriptingGUI.exe

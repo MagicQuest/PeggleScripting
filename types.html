@@ -34,6 +34,10 @@
         .float {
             color: rgb(47, 128, 193);
         }
+        .unchecked {
+            text-decoration: underline dotted;
+            background-color: rgb(255, 0, 0, .25);
+        }
     </style>
 </head>
 <body>
@@ -61,7 +65,7 @@
                 document.body.appendChild(div);
             }
 
-            addEntry(datatype, name, offset) {
+            addEntry(datatype, name, offset, unchecked) {
                 if(datatype == "") {
                     datatype = "DWORD";
                 }
@@ -71,6 +75,9 @@
                 <td style='font-weight: bold;' class=${datatype}>${datatype}</td>
                 <td>${name}</td>
                 `;
+                if(unchecked) {
+                    tr.className = "unchecked";
+                }
                 this.body.appendChild(tr);
             }
         }
@@ -79,8 +86,11 @@
         // https://regexr.com/8dd5i
 
         //all of the size information for every phys object can be found in the "createObjectByType" function at offset 0x00004CA0
+        //also i've since come to the realization that the "EmbeddedText" objects i kept finding were actually std::string!
 
         const ThunderballApp = new TypeTable("ThunderballApp", "???"); //thunderballapp is usually always at 0019F560
+        ThunderballApp.addEntry("double", "idkyet", "0xD0"); //we about to change that
+        ThunderballApp.addEntry("std::map/set", "dialogs?", "0x324"); //yeah this seems to be getting righter
         ThunderballApp.addEntry("DDInterface*", "ddInterface", "0x36C"); //DDInterface+2C = ThunderballApp
         ThunderballApp.addEntry("BassMusicInterface*", "bassMusicInterface", "0x374");
         ThunderballApp.addEntry("DSoundManager*", "dSoundManager", "0x4B4");
@@ -113,6 +123,7 @@
         LogicMgr.addEntry("", "pegsHit", "0x120");
         LogicMgr.addEntry("", "turnOffset", "0x128");
         LogicMgr.addEntry("", "pegsHitThisTurn", "0x12C");
+        LogicMgr.addEntry("", "flippers??", "0x134"); //idk bruh when it's 0x82 it shows the flippers (idk if they work tho lol)
         LogicMgr.addEntry("", "gunReloadAnimationFrame", "0x138");
         LogicMgr.addEntry("Ball*", "purplePeg", "0x170");
         LogicMgr.addEntry("", "score", "0x174");
@@ -142,11 +153,28 @@
         const Board = new TypeTable("Board", 592); //#true
         Board.addEntry("WidgetManager*", "widgetManager", "0x10");
         Board.addEntry("BYTE", "mouseOver", "0x59");
+        //the easter egg names are as follows
+        //kathy
+        //steve
+        //shanon
+        //zoom
+        //scott
+
+        //ummm the easter eggs past this point seem to not work correctly?
+        //ok according to the peggle wiki it's supposed to load a level with the same name but for some reason they didn't add the levels to the game's files so it doesn't load anything :(
+
+        //seattle
+        //piano
+        //pitcher
+        //tennis
+        Board.addEntry("std::string*[9]", "easterEggNames", "0x8C"); //how did i not know this ENTIRE TIME that peggle had easter eggs, including one that allows you to fast forward after you've shoot the ball (i didn't have to make that myself!)
         Board.addEntry("ThunderballApp*", "thunderballApp", "0xB0");
         Board.addEntry("Gun*", "gun", "0xBC");
         Board.addEntry("BYTE", "slowmotion", "0xC1");
         Board.addEntry("BYTE", "frozen", "0xC2");
         Board.addEntry("", "slowMotionSpeed", "0xD0");
+        Board.addEntry("BYTE", "idk yet", "0xEA", true);
+        Board.addEntry("BYTE", "scottEasterEgg", "0x11E");
         Board.addEntry("AIMgr*", "aiMgr", "0x134");
         Board.addEntry("CharacterMgr*", "characterMgr", "0x138");
         //0x13C points to uhhhhh idk? it has no vtable
@@ -160,7 +188,7 @@
         Board.addEntry("ReplayDialog*", "replayDialog", "0x15C");
         Board.addEntry("EndLevelDialog*", "endLevelDialog", "0x160");
         Board.addEntry("SlotMachineDialog*", "slotMachineDialog", "0x164"); //warren's spinner?
-        Board.addEntry("ThunderButton*", "button1", "0x168"); //i was right
+        Board.addEntry("ThunderButton*", "menuButton", "0x168"); //i was right
         Board.addEntry("ThunderButton*", "button2", "0x16C"); //lowkey board probably has more than one button so idk which one this is
         Board.addEntry("DDImage*", "image", "0x170");
         Board.addEntry("void**", "ballsArray", "0x1A0");
@@ -186,6 +214,40 @@
         WidgetManager.addEntry("", "mouseX", "0xE0");
         WidgetManager.addEntry("", "mouseY", "0xE4");
         WidgetManager.addEntry("", "mouseButtons", "0xEC"); //bit field
+
+        const WidgetContainer = new TypeTable("WidgetContainer", "???"); //like 0x50
+        WidgetContainer.addEntry("Widget**", "children?", "0x8"); //probably!
+        WidgetContainer.addEntry("WidgetContainer*", "parent?", "0x14"); //still guessing lol
+        WidgetContainer.addEntry("DWORD", "x", "0x30");
+        WidgetContainer.addEntry("DWORD", "y", "0x34");
+        WidgetContainer.addEntry("BYTE", "mouseButtons", "0x58"); //idk im guessing lo.
+        
+        const Widget = new TypeTable("Widget : WidgetContainer", "???"); //like 0x84
+        Widget.addEntry("BYTE", "idk", "7D"); //controls which method is called when clicked (usually 0)
+
+        const Dialog = new TypeTable("Dialog : Widget", "???");
+        Dialog.addEntry("DWORD", "type", "0xF4"); //can be 1, 2, or 3
+        Dialog.addEntry("ImageFont", "idk", "0xF8"); //appears so.
+        Dialog.addEntry("DDImage*", "background?", "0x90");
+        Dialog.addEntry("std::function", "somecallback", "0x88"); //wait this might be Dialog2 ?
+        Dialog.addEntry("ThunderballApp+4*", "parent?", "0x8C");
+
+        const ButtonWidget = new TypeTable("ButtonWidget : Widget", "???"); //smaller than 0x138 lol closer to 0x104
+
+
+        const DialogButton = new TypeTable("DialogButton : ButtonWidget", "312"); //0x138
+
+        const ReplayDialog = new TypeTable("ReplayDialog", "???");
+        ReplayDialog.addEntry("ThunderButton*", "button1", "0x17C");
+        ReplayDialog.addEntry("ThunderButton*", "button2", "0x180");
+        ReplayDialog.addEntry("ThunderButton*", "button3", "0x184");
+        ReplayDialog.addEntry("ThunderButton*", "button4", "0x188");
+        ReplayDialog.addEntry("ThunderButton*", "button5", "0x18C");
+
+        const ThunderButton = new TypeTable("ThunderButton", "???"); //0x2D0?
+        ThunderButton.addEntry("std::string", "text", "0x8C");
+        ThunderButton.addEntry("DWORD", "id", "0x88"); //i think? this value is passed when a method of the parent is called about the click
+        ThunderButton.addEntry("void*", "parent?", "0x104"); //2
 
         const Gun = new TypeTable("Gun : Poly", "480");
         Gun.addEntry("Ball*", "ball", "0x1C0");
@@ -275,14 +337,12 @@
         const FloatingText = new TypeTable("FloatingText", "???");
         FloatingText.addEntry("EmbeddedText*", "text", "0xC"); //this time it's a pointer
         FloatingText.addEntry("", "id", "0x58");
+        FloatingText.addEntry("", "graphicsType?", "0x5C"); //usually 0x2D but the big title ones are 0x30
         FloatingText.addEntry("", "color", "0x60");
         FloatingText.addEntry("", "lifeTime", "0x68");
         FloatingText.addEntry("", "elapsedTime", "0x6C");
         FloatingText.addEntry("", "number", "0x78");
         FloatingText.addEntry("", "something", "0x7C");
-        FloatingText.addEntry("PhysObj*", "followingObj", "0xB4");
-        FloatingText.addEntry("float", "lastX", "0xB8");
-        FloatingText.addEntry("float", "lastY", "0xBC");
         FloatingText.addEntry("float", "x", "0x80");
         FloatingText.addEntry("float", "y", "0x84");
         FloatingText.addEntry("float", "velX", "0x88");
@@ -290,6 +350,9 @@
         FloatingText.addEntry("float", "idk", "0x90");
         FloatingText.addEntry("float", "rotation", "0x94");
         FloatingText.addEntry("float", "velRotation", "0x98");
+        FloatingText.addEntry("PhysObj*", "followingObj", "0xB4");
+        FloatingText.addEntry("float", "lastX", "0xB8");
+        FloatingText.addEntry("float", "lastY", "0xBC");
         FloatingText.addEntry("WidgetContainer*", "widgetContainer", "0xC8"); //i can't verify this one so let's just assume that me a ~month ago was right
 
         const Hole = new TypeTable("Hole : PhysObj", "272"); //0x110

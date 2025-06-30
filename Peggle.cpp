@@ -29,7 +29,7 @@ struct RTTICompleteObjectLocator
     struct RTTIClassHierarchyDescriptor* pClassDescriptor; //describes inheritance hierarchy
 };
 
-//this object is used in a lot of random places but has no vtable so who knows what its real name is
+//this object is used in a lot of random places but has no vtable so who knows what its real name is (it's an std::string!!!!!!!!!)
 struct EmbeddedText {
     //0
     DWORD unknown; //lowkey idk if this means anything
