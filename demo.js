@@ -186,7 +186,7 @@ onKeyDown((key, unused2, unused3) => { //runs every time you press a key while l
             const mover = createMover(sonic, mouse.x, mouse.y);
             //negative movement flips the direction!
             mover.type = -MOVEMENT_VERTICAL_HORIZONTAL; //MOVEMENT_ROTATE_AT_ORIGIN; //wait a second pegs can't rotate!
-            //amplitude doesn't effect rotate at origin (nevermind let's just use something else)
+            //amplitude doesn't affect rotate at origin (nevermind let's just use something else)
             mover.amplitude = 50;
             mover.speedDivisor = 0x320; //kinda slow
             //mover.originX = mouse.x;
